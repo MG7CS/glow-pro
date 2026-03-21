@@ -137,7 +137,7 @@ const BusinessOnboarding = () => {
             onClick={() => setMobileTab("edit")}
             className={`flex-1 border-b-2 py-3 text-center text-sm font-medium transition-colors ${
               mobileTab === "edit"
-                ? "border-[#E11D48] text-foreground"
+                ? "border-[#D97706] text-foreground"
                 : "border-transparent text-muted-foreground"
             }`}
           >
@@ -148,7 +148,7 @@ const BusinessOnboarding = () => {
             onClick={() => setMobileTab("preview")}
             className={`flex-1 border-b-2 py-3 text-center text-sm font-medium transition-colors ${
               mobileTab === "preview"
-                ? "border-[#E11D48] text-foreground"
+                ? "border-[#D97706] text-foreground"
                 : "border-transparent text-muted-foreground"
             }`}
           >

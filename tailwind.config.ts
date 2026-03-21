@@ -18,7 +18,12 @@ export default {
     extend: {
       colors: {
         kigali: {
-          rose: "hsl(347, 77%, 50%)",
+          gold: "hsl(32, 95%, 44%)",
+        },
+        brand: {
+          DEFAULT: "#d97706",
+          dark: "#b45309",
+          light: "#fef3c7",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

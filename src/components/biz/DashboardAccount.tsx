@@ -81,8 +81,8 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
             Your listing
           </p>
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center">
-              <span className="text-base font-bold text-rose-700">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
+              <span className="text-base font-bold text-amber-700">
                 {businessName[0]?.toUpperCase()}
               </span>
             </div>

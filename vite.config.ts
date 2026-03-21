@@ -19,8 +19,8 @@ export default defineConfig({
       manifest: {
         name: "GlowPro",
         short_name: "GlowPro",
-        description: "Find salons and stylists across Rwanda — book beauty on GlowPro",
-        theme_color: "hsl(347, 77%, 50%)",
+        description: "Rwanda's #1 beauty platform. Find and book salons and stylists near you.",
+        theme_color: "#d97706",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",

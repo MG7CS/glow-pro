@@ -29,7 +29,7 @@ const StepWelcome = ({ form, update, onNext }: Props) => {
           {/* Trust badge */}
           <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Join Rwanda&apos;s growing beauty directory
+            Rwanda&apos;s #1 beauty platform
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
@@ -94,7 +94,7 @@ const MockbusinessProfile = () => (
       alt="Sample salon listing"
       className="block w-full"
     />
-    <div className="flex items-center gap-2 border-t border-[rgba(0,0,0,0.05)] bg-rose-50/80 px-4 py-2.5">
+    <div className="flex items-center gap-2 border-t border-[rgba(0,0,0,0.05)] bg-amber-50/80 px-4 py-2.5">
       <span>✨</span>
       <p className="text-[11px] font-semibold text-primary">This is what your listing will look like</p>
     </div>

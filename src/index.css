@@ -12,8 +12,11 @@
     --card-foreground: 0 0% 13.3%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 13.3%;
-    --primary: 347 77% 50%;
+    --primary: 32 95% 44%;
     --primary-foreground: 0 0% 100%;
+    --brand: #d97706;
+    --brand-dark: #b45309;
+    --brand-light: #fef3c7;
     --secondary: 0 0% 96.9%;
     --secondary-foreground: 0 0% 13.3%;
     --muted: 0 0% 96.9%;
@@ -24,16 +27,16 @@
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 86.7%;
     --input: 0 0% 86.7%;
-    --ring: 347 77% 50%;
+    --ring: 32 95% 44%;
     --radius: 0.75rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 347 77% 50%;
+    --sidebar-primary: 32 95% 44%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 347 77% 50%;
+    --sidebar-ring: 32 95% 44%;
     --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
     --shadow-card-hover: 0 8px 28px rgba(0, 0, 0, 0.12);
     --shadow-search: 0 3px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
@@ -101,8 +104,8 @@
 .biz-portal .biz-field:focus,
 .biz-portal .biz-field:focus-visible {
   outline: none;
-  border: 2px solid #e11d48;
-  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.08);
+  border: 2px solid #d97706;
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.08);
 }
 
 .biz-portal .biz-field.biz-field--error:not(:focus):not(:focus-visible) {
@@ -116,17 +119,17 @@
 }
 
 .biz-portal .biz-field.biz-field--success:not(:focus):not(:focus-visible) {
-  border: 1px solid #e11d48;
+  border: 1px solid #d97706;
 }
 
 .biz-portal .biz-field.biz-field--success:focus,
 .biz-portal .biz-field.biz-field--success:focus-visible {
-  border: 2px solid #e11d48;
-  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.12);
+  border: 2px solid #d97706;
+  box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.12);
 }
 
 .biz-portal .biz-continue-btn {
-  background-color: #e11d48;
+  background-color: #d97706;
   color: #ffffff;
   font-weight: 600;
   border-radius: 12px;
@@ -134,7 +137,7 @@
 }
 
 .biz-portal .biz-continue-btn:hover:not(:disabled) {
-  background-color: #be123c;
+  background-color: #b45309;
 }
 
 .biz-portal .biz-preview-panel {

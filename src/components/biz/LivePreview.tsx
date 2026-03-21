@@ -130,7 +130,7 @@ const MiniPill = ({
 }) => (
   <div
     className={`flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-medium ${
-      primary ? "bg-[#E11D48] text-white" : "border border-[rgba(0,0,0,0.1)] text-foreground"
+      primary ? "bg-[#D97706] text-white" : "border border-[rgba(0,0,0,0.1)] text-foreground"
     }`}
   >
     {icon}

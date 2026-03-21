@@ -77,7 +77,7 @@
       "nameQuestion": "What's your salon called?",
       "nameHint": "You can always change this later.",
       "hint": "Free • Takes about 5 minutes",
-      "trustBadge": "Join Rwanda's growing beauty directory"
+      "trustBadge": "Rwanda's #1 beauty platform"
     },
     "auth": {
       "title": "Almost there — create your account",
@@ -173,7 +173,7 @@
     "passwordMismatch": "Passwords do not match."
   },
   "footer": {
-    "tagline": "Find any salon or stylist in Rwanda",
+    "tagline": "Find any stylist or salon in Rwanda",
     "explore": "Explore",
     "home": "Home",
     "about": "About",

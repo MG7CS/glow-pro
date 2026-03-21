@@ -77,7 +77,7 @@
       "nameQuestion": "Comment s'appelle votre salon ?",
       "nameHint": "Vous pouvez toujours le modifier plus tard.",
       "hint": "Gratuit • Environ 5 minutes",
-      "trustBadge": "Rejoignez l'annuaire beauté du Rwanda"
+      "trustBadge": "La plateforme beauté n°1 au Rwanda"
     },
     "auth": {
       "title": "Presque fini — créez votre compte",
@@ -173,7 +173,7 @@
     "passwordMismatch": "Les mots de passe ne correspondent pas."
   },
   "footer": {
-    "tagline": "Trouvez un salon ou un styliste au Rwanda",
+    "tagline": "Trouvez un styliste ou un salon au Rwanda",
     "explore": "Explorer",
     "home": "Accueil",
     "about": "À propos",

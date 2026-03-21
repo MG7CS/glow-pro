@@ -116,7 +116,7 @@ const getStatus = (verified: boolean | null | undefined): ShopStatus => {
   return "pending";
 };
 
-const GREEN = "#22c55e";
+const GREEN = "#d97706";
 const AMBER = "#ca8a04";
 const RED_ST = "#ef4444";
 
@@ -758,7 +758,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                 className={cn(
                                   "capitalize",
                                   status === "approved" &&
-                                    "border-rose-200 bg-rose-100 text-rose-800 hover:bg-rose-100",
+                                    "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "pending" &&
                                     "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "rejected" &&
@@ -775,7 +775,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                     type="button"
                                     variant="outline"
                                     size="sm"
-                                    className="border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800"
+                                    className="border-amber-700 text-amber-700 hover:bg-amber-50 hover:text-amber-800"
                                     onClick={() => setVerified(shop.id, true)}
                                     disabled={busy}
                                   >
@@ -852,7 +852,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                 className={cn(
                                   "capitalize",
                                   status === "approved" &&
-                                    "border-rose-200 bg-rose-100 text-rose-800 hover:bg-rose-100",
+                                    "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "pending" &&
                                     "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "rejected" &&
@@ -871,7 +871,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                               variant="outline"
                               size="sm"
                               className={cn(
-                                "w-full border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800",
+                                "w-full border-amber-700 text-amber-700 hover:bg-amber-50 hover:text-amber-800",
                                 !showReject && "col-span-2",
                               )}
                               onClick={() => setVerified(shop.id, true)}
@@ -981,7 +981,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                   type="button"
                                   variant="outline"
                                   size="sm"
-                                  className="border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800"
+                                  className="border-amber-700 text-amber-700 hover:bg-amber-50 hover:text-amber-800"
                                   onClick={() => handleApproveRecruiter(r.username)}
                                   disabled={recruiterActionId === r.username}
                                 >
@@ -1338,13 +1338,13 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                     <div
                       key={r.username}
                       className={`grid grid-cols-2 md:grid-cols-6 gap-3 rounded-xl border px-3 py-3 ${
-                        index === 0 ? "bg-rose-50 border-rose-200" : "bg-white border-border"
+                        index === 0 ? "bg-amber-50 border-amber-200" : "bg-white border-border"
                       }`}
                     >
                       <span className="text-sm font-semibold text-foreground">{rank}</span>
                       <span className="text-sm font-medium text-foreground truncate">{r.fullName}</span>
                       <span className="text-sm text-foreground">{r.totalRecruited}</span>
-                      <span className="text-sm text-rose-700 font-semibold">{r.approved}</span>
+                      <span className="text-sm text-amber-700 font-semibold">{r.approved}</span>
                       <span className="text-sm text-amber-700 font-semibold">{r.pending}</span>
                       <span className="text-sm text-foreground">{rate}%</span>
                     </div>

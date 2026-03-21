@@ -29,7 +29,7 @@ const BizNavbar = () => {
             <span className="text-lg font-bold tracking-tight text-primary">Glow</span>
             <span className="text-lg font-bold tracking-tight text-foreground">Pro</span>
           </Link>
-          <span className="hidden items-center rounded-full bg-rose-50 px-2.5 py-0.5 text-[11px] font-semibold text-rose-700 sm:inline-flex">
+          <span className="hidden items-center rounded-full bg-amber-50 px-2.5 py-0.5 text-[11px] font-semibold text-amber-700 sm:inline-flex">
             for salons
           </span>
         </div>

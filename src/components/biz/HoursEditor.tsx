@@ -36,7 +36,7 @@ const HoursEditor = ({ hours, onChange }: Props) => {
               onClick={() => toggle(day)}
               className={`h-8 w-24 shrink-0 rounded-lg border text-xs font-semibold transition-colors ${
                 entry
-                  ? "border-[#E11D48] bg-[#E11D48] text-white"
+                  ? "border-[#D97706] bg-[#D97706] text-white"
                   : "border-[rgba(0,0,0,0.12)] bg-white text-muted-foreground hover:bg-black/[0.02]"
               }`}
             >

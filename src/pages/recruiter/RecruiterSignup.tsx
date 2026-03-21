@@ -192,7 +192,7 @@ const RecruiterSignup = () => {
 
         {step === "success" ? (
           <div className="space-y-4">
-            <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
               Application sent! 🎉 We&apos;ll review it and get back to you soon. Keep an eye on your email.
             </div>
             <Link to="/" className="block text-sm text-primary font-medium hover:underline">
@@ -217,7 +217,7 @@ const RecruiterSignup = () => {
             </div>
 
             {resendMessage && (
-              <p className={`text-sm ${resendMessage.startsWith("Code resent") ? "text-rose-700" : "text-destructive"}`}>
+              <p className={`text-sm ${resendMessage.startsWith("Code resent") ? "text-amber-700" : "text-destructive"}`}>
                 {resendMessage}
               </p>
             )}

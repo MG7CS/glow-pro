@@ -10,7 +10,7 @@ const Footer = () => {
               <span className="text-primary text-lg font-bold tracking-tight">Glow</span>
               <span className="text-foreground text-lg font-bold tracking-tight">Pro</span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">Find any salon or stylist in Rwanda</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Find any stylist or salon in Rwanda</p>
           </div>
 
           <div>

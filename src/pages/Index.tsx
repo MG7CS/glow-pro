@@ -25,14 +25,14 @@ const HERO_SLIDES = [
     portrait: heroOwnerPortrait,
     landscape: heroOwnerLandscape,
     alt: "Salon owner on GlowPro",
-    headline: "Be the salon everyone finds first.",
-    subtitle: "Join hundreds of salons on GlowPro.",
+    headline: "Be the stylist everyone books first.",
+    subtitle: "Join hundreds of salons and stylists on GlowPro.",
   },
   {
     portrait: heroSalonPortrait,
     landscape: heroSalonLandscape,
     alt: "Hair and beauty salon in Rwanda",
-    headline: "Connect with customers instantly.",
+    headline: "Get booked instantly.",
     subtitle: "No calls, no hassle — just tap and message.",
   },
 ] as const;
@@ -467,7 +467,7 @@ const Index = () => {
           <div className="pointer-events-auto flex w-full flex-col items-stretch">
             <div className="w-full text-left">
               <p className="mb-4 inline-flex max-w-full items-center rounded-full bg-white/20 px-3.5 py-1.5 text-sm text-white backdrop-blur-md">
-                🇷🇼 Rwanda&apos;s #1 beauty directory
+                🇷🇼 Rwanda&apos;s #1 Beauty Platform
               </p>
               <div key={heroSlide} className="hero-slide-text-reveal">
                 <h1 className="max-w-none font-black tracking-tight text-white leading-[1.02] text-[clamp(2.25rem,8vw,7rem)] md:max-w-2xl md:text-5xl xl:text-6xl">
@@ -500,7 +500,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto w-full">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-              Find any salon or stylist in Rwanda
+              Find any stylist or salon in Rwanda
             </h2>
             <p className="mt-2 text-base text-gray-500">
               Search by name, category or neighborhood
@@ -568,7 +568,7 @@ const Index = () => {
                 See it in action
               </span>
               <h3 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-[#111]">
-                Find any salon or stylist in Rwanda in seconds
+                Find any stylist or salon in Rwanda in seconds
               </h3>
               <ul className="mt-8 space-y-4 text-left text-base md:text-lg">
                 {[
@@ -598,7 +598,7 @@ const Index = () => {
 
       <section
         id="for-businesses"
-        className="scroll-mt-[7rem] mx-3 mt-4 rounded-3xl bg-[#4c0519] text-white relative overflow-hidden py-14 md:mx-6 md:scroll-mt-[6.5rem] md:py-20"
+        className="scroll-mt-[7rem] mx-3 mt-4 rounded-3xl bg-amber-950 text-white relative overflow-hidden py-14 md:mx-6 md:scroll-mt-[6.5rem] md:py-20"
       >
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.4)_1px,transparent_0)] [background-size:20px_20px]" />
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-10">
@@ -614,7 +614,7 @@ const Index = () => {
                 <br />
                 for you.
               </h3>
-              <p className="mt-5 text-base md:text-lg text-rose-100/80 leading-relaxed">
+              <p className="mt-5 text-base md:text-lg text-amber-100/80 leading-relaxed">
                 List your salon on GlowPro for free. Takes 5 minutes. No technical skills needed.
               </p>
               <a

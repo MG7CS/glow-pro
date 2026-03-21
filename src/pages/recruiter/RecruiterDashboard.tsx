@@ -271,7 +271,7 @@ const StatCard = ({ label, value }: { label: string; value: string }) => (
 const StatusBadge = ({ status }: { status: RecruiterStatus }) => {
   const styles: Record<RecruiterStatus, string> = {
     pending: "text-amber-700 bg-amber-100 border-amber-200",
-    approved: "text-rose-700 bg-rose-100 border-rose-200",
+    approved: "text-amber-700 bg-amber-100 border-amber-200",
     rejected: "text-red-700 bg-red-100 border-red-200",
   };
 

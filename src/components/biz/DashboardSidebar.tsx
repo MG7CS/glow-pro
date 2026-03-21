@@ -43,13 +43,13 @@ const DashboardSidebar = ({ tab, setTab, businessName, isLive, className = "" }:
               className={cn(
                 "w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all",
                 tab === item.key
-                  ? "max-md:bg-rose-50 max-md:text-rose-700 max-md:shadow-none md:bg-white md:text-foreground md:shadow-sm"
+                  ? "max-md:bg-amber-50 max-md:text-amber-700 max-md:shadow-none md:bg-white md:text-foreground md:shadow-sm"
                   : "text-muted-foreground hover:bg-white/60 hover:text-foreground",
               )}
             >
               <span
                 className={cn(
-                  tab === item.key && "max-md:text-rose-700 md:text-primary",
+                  tab === item.key && "max-md:text-amber-700 md:text-primary",
                 )}
               >
                 {item.icon}
@@ -65,7 +65,7 @@ const DashboardSidebar = ({ tab, setTab, businessName, isLive, className = "" }:
         {businessName && (
           <div className="px-4 py-3 mb-3 rounded-xl bg-white/70">
             <div className="flex items-center gap-2 mb-1">
-              <div className={`w-2 h-2 rounded-full flex-shrink-0 ${isLive ? "bg-rose-500" : "bg-yellow-400"}`} />
+              <div className={`w-2 h-2 rounded-full flex-shrink-0 ${isLive ? "bg-amber-500" : "bg-yellow-400"}`} />
               <span className="text-xs font-semibold text-foreground truncate">{businessName}</span>
             </div>
             <p className="text-[11px] text-muted-foreground pl-4">{isLive ? "Live" : "Incomplete"}</p>
