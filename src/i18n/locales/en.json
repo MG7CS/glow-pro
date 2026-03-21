@@ -15,35 +15,35 @@
     "seeAllPhotos": "See all photos"
   },
   "nav": {
-    "listYourBusiness": "List your business",
-    "forBusiness": "for Business",
+    "listYourBusiness": "List your salon",
+    "forBusiness": "for salons",
     "dashboard": "Dashboard"
   },
   "search": {
     "what": "What",
     "whatPlaceholder": "What are you looking for?",
-    "whatPlaceholderShort": "Search businesses...",
+    "whatPlaceholderShort": "Search salons...",
     "where": "Where",
     "wherePlaceholder": "Which neighborhood?",
     "wherePlaceholderShort": "Neighborhood"
   },
   "home": {
-    "popularBusinesses": "Popular businesses",
+    "popularBusinesses": "Popular salons",
     "trendingThisWeek": "Trending this week",
     "newlyListed": "Newly listed",
-    "emptyTitle": "No businesses yet — be the first!",
-    "emptySubtitle": "ConnectKigali is just getting started. List your business and reach thousands of customers in Kigali.",
-    "noBusinessesInCategory": "No {{category}} businesses yet",
-    "beFirstInCategory": "Be the first to list your business in this category.",
-    "showAllBusinesses": "Show all businesses",
+    "emptyTitle": "No salons yet — be the first!",
+    "emptySubtitle": "GlowPro is just getting started. List your salon and reach thousands of customers in Rwanda.",
+    "noBusinessesInCategory": "No {{category}} salons yet",
+    "beFirstInCategory": "Be the first to list your salon in this category.",
+    "showAllBusinesses": "Show all salons",
     "showMore": "Show more",
-    "noResults": "No businesses match your search",
+    "noResults": "No salons match your search",
     "tryDifferentSearch": "Try different keywords or clear your filters.",
     "clearFilters": "Clear all filters"
   },
   "business": {
-    "notFound": "Business not found",
-    "notFoundDesc": "This business doesn't exist or has been removed.",
+    "notFound": "Salon not found",
+    "notFoundDesc": "This salon doesn't exist or has been removed.",
     "backToHome": "← Back to home",
     "open": "Open now",
     "closed": "Closed",
@@ -59,7 +59,7 @@
     "reviews": "Reviews",
     "recentOnInstagram": "Recent on Instagram",
     "listedSince": "Listed since",
-    "moreBusinessesIn": "More businesses in"
+    "moreBusinessesIn": "More salons in"
   },
   "categories": {
     "shoes": "Shoes",
@@ -74,10 +74,10 @@
   "onboarding": {
     "preview": "Live preview",
     "welcome": {
-      "nameQuestion": "What's your business called?",
+      "nameQuestion": "What's your salon called?",
       "nameHint": "You can always change this later.",
       "hint": "Free • Takes about 5 minutes",
-      "trustBadge": "Join Kigali's growing business directory"
+      "trustBadge": "Join Rwanda's growing beauty directory"
     },
     "auth": {
       "title": "Almost there — create your account",
@@ -87,17 +87,17 @@
     "basics": {
       "title": "Great, {{name}}!",
       "titleShort": "Great, {{name}}!",
-      "subtitle": "Now tell us a bit more about your business.",
-      "businessName": "business name",
-      "businessNamePlaceholder": "e.g. Mama Grace's Boutique",
+      "subtitle": "Now tell us a bit more about your salon.",
+      "businessName": "salon name",
+      "businessNamePlaceholder": "e.g. Mama Grace's Salon",
       "category": "Category",
       "categoryPlaceholder": "Select a category",
       "description": "Short description",
-      "descriptionPlaceholder": "What makes your business special? (optional)"
+      "descriptionPlaceholder": "What makes your salon special? (optional)"
     },
     "location": {
       "title": "Where can people find you?",
-      "subtitle": "Help customers discover your business in their neighborhood.",
+      "subtitle": "Help customers discover your salon in their neighborhood.",
       "dropPin": "Drop a pin on the map",
       "tapToDrop": "Tap to drop a pin",
       "tapToUpdate": "Tap to update pin",
@@ -106,13 +106,13 @@
     },
     "contact": {
       "title": "How should customers reach you?",
-      "subtitle": "WhatsApp is the #1 way customers connect with businesses in Kigali.",
+      "subtitle": "WhatsApp is the #1 way customers connect with salons in Rwanda.",
       "whatsapp": "WhatsApp number",
       "phone": "Phone number"
     },
     "photos": {
-      "title": "Show off your business",
-      "subtitle": "Great photos help customers trust your business.",
+      "title": "Show off your salon",
+      "subtitle": "Great photos help customers trust your salon.",
       "cover": "Cover photo"
     },
     "social": {
@@ -122,43 +122,43 @@
     "review": {
       "title": "Looking good! Ready to publish?",
       "subtitle": "Review your listing below. You can always edit it later.",
-      "publish": "Publish your business",
+      "publish": "Publish your salon",
       "publishing": "Publishing..."
     }
   },
   "dashboard": {
-    "listingLive": "Your business is live",
-    "listingLiveDesc": "Customers can find you on ConnectKigali",
+    "listingLive": "Your salon is live",
+    "listingLiveDesc": "Customers can find you on GlowPro",
     "completeProfile": "Complete your profile",
     "completeProfileDesc": "Some fields are missing",
     "overview": "Overview",
-      "editListing": "Edit business",
+    "editListing": "Edit salon",
     "stats": "Stats",
-    "viewPublicBusiness": "View public business",
+    "viewPublicBusiness": "View public salon",
     "thingsToDo": "Things you can do",
     "addMorePhotos": "Add more photos",
-    "addMorePhotosDesc": "Businesses with photos get 3× more views",
+    "addMorePhotosDesc": "Salons with photos get 3× more views",
     "connectInstagram": "Connect Instagram",
     "connectInstagramDesc": "Show your latest posts on your listing",
-    "shareBusiness": "Share your business",
-    "shareListingDesc": "Send your ConnectKigali link to customers",
+    "shareBusiness": "Share your salon",
+    "shareListingDesc": "Send your GlowPro link to customers",
     "getFirstReview": "Get your first review",
     "getFirstReviewDesc": "Ask a customer to leave a review",
-    "businessPreview": "Your business preview"
+    "businessPreview": "Your salon preview"
   },
   "auth": {
     "signIn": "Sign in",
-    "signInSubtitle": "Access your business dashboard",
+    "signInSubtitle": "Access your salon dashboard",
     "signOut": "Sign out",
     "createAccount": "Create account",
-    "createAccountSubtitle": "List your business on ConnectKigali",
+    "createAccountSubtitle": "List your salon on GlowPro",
     "register": "Register",
     "phone": "Phone number",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
-    "businessName": "Business name",
-    "businessNamePlaceholder": "e.g. Mama Grace's Boutique",
+    "businessName": "Salon name",
+    "businessNamePlaceholder": "e.g. Mama Grace's Salon",
     "forgotPassword": "Forgot password?",
     "forgotPasswordSubtitle": "Enter your phone number and we'll send a reset code.",
     "sendResetLink": "Send reset code",
@@ -173,12 +173,12 @@
     "passwordMismatch": "Passwords do not match."
   },
   "footer": {
-    "tagline": "Find any business in Kigali",
+    "tagline": "Find any salon or stylist in Rwanda",
     "explore": "Explore",
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "forBusiness": "For Business",
+    "forBusiness": "For salons",
     "language": "Language",
     "rights": "All rights reserved.",
     "privacy": "Privacy",

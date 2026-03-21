@@ -17,10 +17,10 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "icon-192.png", "icon-512.png", "apple-touch-icon.png"],
       manifest: {
-        name: "Kigali Connect Hub",
-        short_name: "ConnectKigali",
-        description: "Discover and connect with local businesses in Kigali",
-        theme_color: "hsl(160, 81%, 40%)",
+        name: "GlowPro",
+        short_name: "GlowPro",
+        description: "Find salons and stylists across Rwanda — book beauty on GlowPro",
+        theme_color: "hsl(347, 77%, 50%)",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
@@ -40,7 +40,7 @@ export default defineConfig({
             purpose: "any maskable",
           },
         ],
-        categories: ["business", "businessping"],
+        categories: ["beauty", "lifestyle"],
       },
       workbox: {
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,

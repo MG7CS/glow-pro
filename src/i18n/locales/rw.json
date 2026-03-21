@@ -15,8 +15,8 @@
     "seeAllPhotos": "Reba amafoto yose"
   },
   "nav": {
-    "listYourBusiness": "Andika ubucuruzi bwawe",
-    "forBusiness": "ku bucuruzi",
+    "listYourBusiness": "Andika salon yawe",
+    "forBusiness": "ku masalon",
     "dashboard": "Ikibaho"
   },
   "search": {
@@ -32,7 +32,7 @@
     "trendingThisWeek": "Azwi iyi cyumweru",
     "newlyListed": "Mashya yanditswe",
     "emptyTitle": "Nta bucuruzi arahari — ba wa mbere!",
-    "emptySubtitle": "ConnectKigali itangiye. Andika ubucuruzi bwawe kugira ngo ubone abakiriya ibihumbi i Kigali.",
+    "emptySubtitle": "GlowPro itangiye. Andika salon yawe kugira ngo ubone abakiriya ibihumbi mu Rwanda.",
     "noBusinessesInCategory": "Nta {{category}} arahari",
     "beFirstInCategory": "Ba wa mbere mu gushyiraho ubucuruzi muri iki cyiciro.",
     "showAllBusinesses": "Erekana ubucuruzi bwose",
@@ -128,7 +128,7 @@
   },
   "dashboard": {
     "listingLive": "Irangwa ryawe riri kuri interineti",
-    "listingLiveDesc": "Abakiriya barashobora kukubona kuri ConnectKigali",
+    "listingLiveDesc": "Abakiriya barashobora kukubona kuri GlowPro",
     "completeProfile": "Uzuza umwirondoro wawe",
     "completeProfileDesc": "Ibintu bimwe ntibibujijwe",
     "overview": "Incamake",
@@ -141,7 +141,7 @@
     "connectInstagram": "Huza Instagram",
     "connectInstagramDesc": "Erekana inyandiko zawe ku irangwa ryawe",
     "shareListing": "Sangira irangwa ryawe",
-    "shareListingDesc": "Ohereza abakiriya bawe link ya ConnectKigali",
+    "shareListingDesc": "Ohereza abakiriya bawe link ya GlowPro",
     "getFirstReview": "Bona igitekerezo cya mbere",
     "getFirstReviewDesc": "Saba umukiriya gutanga igitekerezo",
     "listingPreview": "Igaragaza ry'irangwa ryawe"
@@ -151,7 +151,7 @@
     "signInSubtitle": "Injira mu ikibaho cyawe",
     "signOut": "Sohoka",
     "createAccount": "Fungura konti",
-    "createAccountSubtitle": "Andika iduka ryawe kuri ConnectKigali",
+    "createAccountSubtitle": "Andika salon yawe kuri GlowPro",
     "register": "Iyandikishe",
     "phone": "Numero ya telefoni",
     "email": "Imeyili",
@@ -173,7 +173,7 @@
     "passwordMismatch": "Amajambobanga ntabwo ahuye."
   },
   "footer": {
-    "tagline": "Bona iduka iryo ariryo ryose i Kigali",
+    "tagline": "Shakisha salon cyangwa udukoresha ubwiza mu Rwanda",
     "explore": "Shakisha",
     "home": "Ahabanza",
     "about": "Ibyerekeye",

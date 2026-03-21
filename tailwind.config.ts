@@ -18,7 +18,7 @@ export default {
     extend: {
       colors: {
         kigali: {
-          green: "hsl(160, 81%, 40%)",
+          rose: "hsl(347, 77%, 50%)",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

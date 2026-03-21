@@ -56,7 +56,7 @@ const StepLocation = ({ form, update, onNext, onBack }: Props) => {
         Where can people find you?
       </h1>
       <p className="text-muted-foreground mb-8">
-        Help customers discover your business in their neighborhood.
+        Help customers discover your salon in their neighborhood.
       </p>
 
       <div className="space-y-6">

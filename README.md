@@ -1,6 +1,6 @@
-# Kigali Connect Hub
+# GlowPro
 
-A business directory and marketplace app for Kigali. Browse local businesss, discover services, and onboard your business with a guided multi-step wizard.
+A beauty and salon booking platform for Rwanda. Browse salons and stylists, discover services, and onboard your salon with a guided multi-step wizard.
 
 ## Tech Stack
 
@@ -34,11 +34,11 @@ The dev server runs at `http://localhost:8080`.
 
 ```
 src/
-├── assets/          # business images
+├── assets/          # Salon images
 ├── components/      # Shared UI components
-│   ├── biz/         # Business onboarding & dashboard components
+│   ├── biz/         # Salon onboarding & dashboard components
 │   └── ui/          # shadcn/ui primitives
-├── data/            # Static data (businesss, categories)
+├── data/            # Static data (listings, categories)
 ├── hooks/           # Custom React hooks
 ├── lib/             # Utility functions
 └── pages/           # Route-level page components

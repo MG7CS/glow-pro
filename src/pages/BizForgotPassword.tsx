@@ -36,8 +36,8 @@ const BizForgotPassword = () => {
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
           <Link to="/" className="flex items-center gap-1 mb-6">
-            <span className="text-primary text-2xl font-bold tracking-tight">Connect</span>
-            <span className="text-foreground text-2xl font-bold tracking-tight">Kigali</span>
+            <span className="text-primary text-2xl font-bold tracking-tight">Glow</span>
+            <span className="text-foreground text-2xl font-bold tracking-tight">Pro</span>
           </Link>
           <h1 className="text-xl font-bold text-foreground">Forgot password?</h1>
           <p className="text-sm text-muted-foreground mt-1 text-center">

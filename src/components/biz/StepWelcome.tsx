@@ -29,11 +29,11 @@ const StepWelcome = ({ form, update, onNext }: Props) => {
           {/* Trust badge */}
           <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 rounded-full mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Join Kigali&apos;s growing business directory
+            Join Rwanda&apos;s growing beauty directory
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-            What&apos;s your business called?
+            What&apos;s your salon called?
           </h1>
           <p className="text-muted-foreground text-base mb-10">You can always change this later.</p>
 
@@ -43,7 +43,7 @@ const StepWelcome = ({ form, update, onNext }: Props) => {
             value={form.businessName}
             onChange={(e) => update({ businessName: e.target.value })}
             onKeyDown={handleKey}
-            placeholder="e.g. Mama Grace's Boutique"
+            placeholder="e.g. Mama Grace's Salon"
             className={cn(
               bizField,
               "h-14 px-5 text-lg text-foreground placeholder:text-muted-foreground/40",
@@ -91,10 +91,10 @@ const MockbusinessProfile = () => (
   <div className="w-full overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.08)] bg-white/90 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)]">
     <img
       src={businessProfileMockup}
-      alt="Sample business listing"
+      alt="Sample salon listing"
       className="block w-full"
     />
-    <div className="flex items-center gap-2 border-t border-[rgba(0,0,0,0.05)] bg-emerald-50/80 px-4 py-2.5">
+    <div className="flex items-center gap-2 border-t border-[rgba(0,0,0,0.05)] bg-rose-50/80 px-4 py-2.5">
       <span>✨</span>
       <p className="text-[11px] font-semibold text-primary">This is what your listing will look like</p>
     </div>

@@ -52,7 +52,7 @@ const BizLogin = () => {
       if (!isBizSubdomain) {
         localStorage.setItem("biz_session", identifier);
         window.dispatchEvent(new Event("biz_auth_change"));
-        window.location.href = "https://biz.connectkigali.com/dashboard";
+        window.location.href = "https://biz.glowpro.rw/dashboard";
         return;
       }
 
@@ -69,7 +69,7 @@ const BizLogin = () => {
       if (outcome === "approved") {
         localStorage.setItem("biz_session", identifier);
         window.dispatchEvent(new Event("biz_auth_change"));
-        window.location.href = "https://biz.connectkigali.com/dashboard";
+        window.location.href = "https://biz.glowpro.rw/dashboard";
         return;
       }
 
@@ -83,7 +83,7 @@ const BizLogin = () => {
       if (err?.name === "NotAuthorizedException") {
         setError("Incorrect details. Check your phone/email and password and try again.");
       } else if (err?.name === "UserNotFoundException") {
-        setError("No account found. Have you listed your business yet?");
+        setError("No account found. Have you listed your salon yet?");
       } else if (err?.name === "UserNotConfirmedException") {
         setError("Your account isn't verified yet. Please complete onboarding first.");
       } else {
@@ -114,8 +114,8 @@ const BizLogin = () => {
           </div>
           <h1 className="text-xl font-bold text-foreground">Your listing is pending approval</h1>
           <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-            Our team is reviewing your business. You&apos;ll be notified once it&apos;s approved and live on
-            ConnectKigali.
+            Our team is reviewing your salon. You&apos;ll be notified once it&apos;s approved and live on
+            GlowPro.
           </p>
           <p className="text-xs text-muted-foreground mt-6">
             Questions?{" "}
@@ -144,7 +144,7 @@ const BizLogin = () => {
           </div>
           <h1 className="text-xl font-bold text-foreground">Your listing was not approved</h1>
           <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-            Unfortunately your business listing didn&apos;t meet our requirements. Please contact us for more
+            Unfortunately your salon listing didn&apos;t meet our requirements. Please contact us for more
             information.
           </p>
           <div className="mt-8 flex flex-col gap-3">
@@ -174,11 +174,11 @@ const BizLogin = () => {
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
           <Link to="/" className="flex items-center gap-1 mb-6">
-            <span className="text-primary text-2xl font-bold tracking-tight">Connect</span>
-            <span className="text-foreground text-2xl font-bold tracking-tight">Kigali</span>
+            <span className="text-primary text-2xl font-bold tracking-tight">Glow</span>
+            <span className="text-foreground text-2xl font-bold tracking-tight">Pro</span>
           </Link>
           <h1 className="text-xl font-bold text-foreground">Sign in</h1>
-          <p className="text-sm text-muted-foreground mt-1">Sign in to manage your business listing</p>
+          <p className="text-sm text-muted-foreground mt-1">Sign in to manage your salon listing</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -244,7 +244,7 @@ const BizLogin = () => {
         <p className="text-center text-sm text-muted-foreground mt-6">
           Don&apos;t have an account?{" "}
           <Link to={bizBase || "/"} className="text-primary font-medium hover:underline">
-            List your business
+            List your salon
           </Link>
         </p>
       </div>

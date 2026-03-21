@@ -17,21 +17,21 @@ const HERO_SLIDES = [
   {
     portrait: heroCustomerPortrait,
     landscape: heroCustomerLandscape,
-    alt: "Customer discovering a local business in Kigali",
-    headline: "Every shop in Kigali, in your pocket.",
-    subtitle: "Shops, restaurants, salons and more.",
+    alt: "Customer discovering salons in Rwanda",
+    headline: "Every stylist in Rwanda, in your pocket.",
+    subtitle: "Salons, stylists, and beauty — all in one place.",
   },
   {
     portrait: heroOwnerPortrait,
     landscape: heroOwnerLandscape,
-    alt: "Business owner on ConnectKigali",
-    headline: "Be the business everyone finds first.",
-    subtitle: "Join hundreds of businesses on ConnectKigali.",
+    alt: "Salon owner on GlowPro",
+    headline: "Be the salon everyone finds first.",
+    subtitle: "Join hundreds of salons on GlowPro.",
   },
   {
     portrait: heroSalonPortrait,
     landscape: heroSalonLandscape,
-    alt: "Salon and beauty business in Kigali",
+    alt: "Hair and beauty salon in Rwanda",
     headline: "Connect with customers instantly.",
     subtitle: "No calls, no hassle — just tap and message.",
   },
@@ -122,7 +122,7 @@ function IndexMobileDrawer({
       },
     },
     {
-      label: "For businesses",
+      label: "For salons",
       action: () => {
         onForBusinesses?.();
         onClose();
@@ -184,12 +184,12 @@ function IndexMobileDrawer({
             </nav>
             <div className="pointer-events-auto px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4">
               <a
-                href="https://biz.connectkigali.com"
+                href="https://biz.glowpro.rw"
                 className="mobile-nav-link-stagger mx-auto flex w-full max-w-xs items-center justify-center rounded-full bg-primary py-4 text-center text-lg font-semibold text-white transition-colors hover:bg-primary/90"
                 style={{ animationDelay: "0.35s" }}
                 onClick={onClose}
               >
-                List your business
+                List your salon
               </a>
             </div>
           </>
@@ -282,8 +282,8 @@ const Index = () => {
           <header className="relative z-10 px-4 md:px-10 py-4 border-b border-[#0D1117]/[0.06]">
             <div className="max-w-[1200px] mx-auto flex w-full items-center justify-between gap-3">
               <div className="flex items-center gap-0.5 shrink-0">
-                <span className="text-primary text-xl font-black tracking-tight">Connect</span>
-                <span className="text-[#0D1117] text-xl font-black tracking-tight">Kigali</span>
+                <span className="text-primary text-xl font-black tracking-tight">Glow</span>
+                <span className="text-[#0D1117] text-xl font-black tracking-tight">Pro</span>
               </div>
               <button
                 type="button"
@@ -295,10 +295,10 @@ const Index = () => {
                 <Menu className="h-6 w-6" strokeWidth={2} />
               </button>
               <a
-                href="https://biz.connectkigali.com"
+                href="https://biz.glowpro.rw"
                 className="hidden md:inline-flex shrink-0 text-sm font-semibold text-white bg-[#0D1117] px-3.5 py-2 rounded-full hover:bg-[#0D1117]/90 transition-colors whitespace-nowrap"
               >
-                List your business
+                List your salon
               </a>
             </div>
           </header>
@@ -346,7 +346,7 @@ const Index = () => {
                 navScrolled ? "text-primary" : "text-white",
               )}
             >
-              Connect
+              Glow
             </span>
             <span
               className={cn(
@@ -354,7 +354,7 @@ const Index = () => {
                 navScrolled ? "text-[#0D1117]" : "text-white",
               )}
             >
-              Kigali
+              Pro
             </span>
           </div>
 
@@ -396,7 +396,7 @@ const Index = () => {
                   : "text-white hover:text-white/90",
               )}
             >
-              For businesses
+              For salons
             </button>
           </nav>
 
@@ -416,7 +416,7 @@ const Index = () => {
               <Menu className="h-6 w-6" strokeWidth={2} />
             </button>
             <a
-              href="https://biz.connectkigali.com"
+              href="https://biz.glowpro.rw"
               className={cn(
                 "hidden shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300 ease-in-out md:inline-flex",
                 navScrolled
@@ -424,7 +424,7 @@ const Index = () => {
                   : "border border-white/50 bg-white/10 text-white hover:bg-white/20",
               )}
             >
-              List your business
+              List your salon
             </a>
           </div>
         </div>
@@ -435,7 +435,7 @@ const Index = () => {
         <div
           className="absolute inset-0 min-h-full"
           aria-roledescription="carousel"
-          aria-label="Kigali businesses"
+          aria-label="Rwanda salons"
         >
           {HERO_SLIDES.map((slide, i) => (
             <div
@@ -467,7 +467,7 @@ const Index = () => {
           <div className="pointer-events-auto flex w-full flex-col items-stretch">
             <div className="w-full text-left">
               <p className="mb-4 inline-flex max-w-full items-center rounded-full bg-white/20 px-3.5 py-1.5 text-sm text-white backdrop-blur-md">
-                🇷🇼 Kigali&apos;s #1 Business Directory
+                🇷🇼 Rwanda&apos;s #1 beauty directory
               </p>
               <div key={heroSlide} className="hero-slide-text-reveal">
                 <h1 className="max-w-none font-black tracking-tight text-white leading-[1.02] text-[clamp(2.25rem,8vw,7rem)] md:max-w-2xl md:text-5xl xl:text-6xl">
@@ -482,7 +482,7 @@ const Index = () => {
                 onClick={scrollToBusinesses}
                 className="inline-flex w-auto items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#0D1117] transition-colors hover:bg-white/90"
               >
-                Explore businesses →
+                Explore salons →
               </button>
             </div>
             <div className="mt-8 flex w-full justify-center md:mt-10">
@@ -500,7 +500,7 @@ const Index = () => {
         <div className="max-w-[1200px] mx-auto w-full">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-              Find any business in Kigali
+              Find any salon or stylist in Rwanda
             </h2>
             <p className="mt-2 text-base text-gray-500">
               Search by name, category or neighborhood
@@ -527,7 +527,7 @@ const Index = () => {
                 <div className="mt-8 border-t border-[rgba(0,0,0,0.05)] pt-8">
                   <BusinessSection
                     embedded
-                    title="Popular businesses"
+                    title="Popular salons"
                     businesses={filteredPopular}
                     eyebrow="POPULAR THIS MONTH"
                   />
@@ -558,7 +558,7 @@ const Index = () => {
             <div className="order-1 md:order-2 flex justify-center shrink-0 md:w-[min(340px,42%)]">
               <img
                 src={phoneMockup}
-                alt="ConnectKigali app preview"
+                alt="GlowPro app preview"
                 className="h-auto w-[min(280px,82vw)] max-w-full object-contain"
               />
             </div>
@@ -568,7 +568,7 @@ const Index = () => {
                 See it in action
               </span>
               <h3 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-[1.05] text-[#111]">
-                Find any business in Kigali in seconds
+                Find any salon or stylist in Rwanda in seconds
               </h3>
               <ul className="mt-8 space-y-4 text-left text-base md:text-lg">
                 {[
@@ -589,7 +589,7 @@ const Index = () => {
                 onClick={scrollToBusinesses}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                Explore businesses →
+                Explore salons →
               </button>
             </div>
           </div>
@@ -598,14 +598,14 @@ const Index = () => {
 
       <section
         id="for-businesses"
-        className="scroll-mt-[7rem] mx-3 mt-4 rounded-3xl bg-[#0a2e1f] text-white relative overflow-hidden py-14 md:mx-6 md:scroll-mt-[6.5rem] md:py-20"
+        className="scroll-mt-[7rem] mx-3 mt-4 rounded-3xl bg-[#4c0519] text-white relative overflow-hidden py-14 md:mx-6 md:scroll-mt-[6.5rem] md:py-20"
       >
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.4)_1px,transparent_0)] [background-size:20px_20px]" />
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-12 lg:gap-16">
             <div className="max-w-xl md:max-w-[52%]">
               <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white/95">
-                For business owners
+                For salon owners
               </span>
               <h3 className="mt-5 text-4xl sm:text-5xl md:text-[2.75rem] lg:text-6xl font-black text-white tracking-tight leading-[1.02]">
                 Your next customer
@@ -614,11 +614,11 @@ const Index = () => {
                 <br />
                 for you.
               </h3>
-              <p className="mt-5 text-base md:text-lg text-emerald-100/80 leading-relaxed">
-                List your business on ConnectKigali for free. Takes 5 minutes. No technical skills needed.
+              <p className="mt-5 text-base md:text-lg text-rose-100/80 leading-relaxed">
+                List your salon on GlowPro for free. Takes 5 minutes. No technical skills needed.
               </p>
               <a
-                href="https://biz.connectkigali.com"
+                href="https://biz.glowpro.rw"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 Get listed free →
@@ -635,7 +635,7 @@ const Index = () => {
               </span>
               <div className="relative text-center z-[1]">
                 <p className="text-6xl lg:text-7xl font-black text-white tracking-tight">5 min</p>
-                <p className="mt-2 text-sm md:text-base text-white/80 font-medium">to list your business</p>
+                <p className="mt-2 text-sm md:text-base text-white/80 font-medium">to list your salon</p>
               </div>
             </div>
           </div>
@@ -647,30 +647,30 @@ const Index = () => {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             <div className="min-w-0 sm:max-w-none">
               <p className="text-sm text-white/85 sm:hidden">
-                <span className="block font-semibold text-white/95">ConnectKigali</span>
+                <span className="block font-semibold text-white/95">GlowPro</span>
                 <span className="mt-1 block text-xs leading-snug text-white/75 text-pretty">
-                  Connecting Kigali, one business at a time.
+                  Beauty in Rwanda — one salon at a time.
                 </span>
               </p>
               <p className="hidden text-sm text-white/85 sm:block">
-                ConnectKigali · Connecting Kigali, one business at a time.
+                GlowPro · Beauty in Rwanda, one salon at a time.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                <a href="https://biz.connectkigali.com" className="text-white/75 hover:text-white">
-                  For Businesses
+                <a href="https://biz.glowpro.rw" className="text-white/75 hover:text-white">
+                  For salons
                 </a>
                 <span className="text-white/30" aria-hidden>
                   ·
                 </span>
-                <a href="https://admin.connectkigali.com" className="text-white/75 hover:text-white">
+                <a href="https://admin.glowpro.rw" className="text-white/75 hover:text-white">
                   Admin
                 </a>
               </div>
             </div>
           </div>
-          <p className="mt-3 text-[10px] sm:text-xs text-white/45">© 2026 ConnectKigali</p>
+          <p className="mt-3 text-[10px] sm:text-xs text-white/45">© 2026 GlowPro</p>
         </div>
       </footer>
 
@@ -699,22 +699,22 @@ const EmptyState = ({
       <div className="max-w-[1200px] mx-auto px-6 py-20 text-center">
         <p className="text-4xl mb-4">🔍</p>
         <h2 className="text-xl font-semibold text-[#111] mb-2">
-          No {category} businesses yet
+          No {category} salons yet
         </h2>
-        <p className="mb-6 text-[#666]">Be the first to list your business in this category.</p>
+        <p className="mb-6 text-[#666]">Be the first to list your salon in this category.</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={onClearFilter}
             className="px-6 py-2.5 rounded-lg border border-border text-foreground hover:bg-muted transition-colors text-sm font-medium"
           >
-            Show all businesses
+            Show all salons
           </button>
           <a
-            href="https://biz.connectkigali.com"
+            href="https://biz.glowpro.rw"
             className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
           >
             <Store className="w-4 h-4" />
-            List your business
+            List your salon
           </a>
         </div>
       </div>
@@ -725,7 +725,7 @@ const EmptyState = ({
     return (
       <div className="max-w-[1200px] mx-auto px-6 py-20 text-center">
         <p className="text-4xl mb-4">🔍</p>
-        <h2 className="text-xl font-semibold text-[#111] mb-2">No businesses match your search</h2>
+        <h2 className="text-xl font-semibold text-[#111] mb-2">No salons match your search</h2>
         <p className="mb-6 text-[#666]">Try different keywords or clear your filters.</p>
         <button
           onClick={onClearFilter}
@@ -742,16 +742,16 @@ const EmptyState = ({
       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
         <Store className="w-8 h-8 text-primary" />
       </div>
-      <h2 className="text-2xl font-bold text-[#111] mb-3">No businesses yet — be the first!</h2>
+      <h2 className="text-2xl font-bold text-[#111] mb-3">No salons yet — be the first!</h2>
       <p className="mb-8 max-w-md mx-auto text-[#666]">
-        ConnectKigali is just getting started. List your business and reach thousands of customers in Kigali.
+        GlowPro is just getting started. List your salon and reach thousands of customers in Rwanda.
       </p>
       <a
-        href="https://biz.connectkigali.com"
+        href="https://biz.glowpro.rw"
         className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
       >
         <Store className="w-4 h-4" />
-        List your business
+        List your salon
       </a>
     </div>
   );

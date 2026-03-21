@@ -97,7 +97,7 @@ const BusinessProfile = () => {
       try {
         await navigator.share({
           title: name,
-          text: `Check out ${name} on ConnectKigali`,
+          text: `Check out ${name} on GlowPro`,
           url,
         });
       } catch {
@@ -135,8 +135,8 @@ const BusinessProfile = () => {
     return (
       <div className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-2xl font-semibold text-foreground mb-2">Business not found</h1>
-          <p className="text-muted-foreground mb-6">This business doesn't exist or has been removed.</p>
+          <h1 className="text-2xl font-semibold text-foreground mb-2">Salon not found</h1>
+          <p className="text-muted-foreground mb-6">This salon doesn&apos;t exist or has been removed.</p>
           <button onClick={() => navigate("/")} className="text-primary font-medium hover:underline">
             ← Back to home
           </button>
@@ -324,7 +324,7 @@ const BusinessProfile = () => {
 
       {/* More businesses nearby */}
       <div className="mt-12 border-t border-border pt-6">
-        <BusinessSection title={`More businesses in ${business.neighborhood}`} businesses={nearbyBusinesses} />
+        <BusinessSection title={`More salons in ${business.neighborhood}`} businesses={nearbyBusinesses} />
       </div>
 
       {/* Sticky bottom bar — mobile contact */}

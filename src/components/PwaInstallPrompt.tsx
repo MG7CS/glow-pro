@@ -93,7 +93,7 @@ const PwaInstallPrompt = () => {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Install ConnectKigali"
+        aria-label="Install GlowPro"
         className={`fixed bottom-0 left-0 right-0 z-50 bg-background rounded-t-3xl shadow-2xl
           transition-transform duration-350 ease-out
           ${animateIn ? "translate-y-0" : "translate-y-full"}`}
@@ -108,24 +108,24 @@ const PwaInstallPrompt = () => {
           <div className="flex items-center gap-4 mb-5">
             <img
               src="/icon-192.png"
-              alt="ConnectKigali icon"
+              alt="GlowPro icon"
               className="w-14 h-14 rounded-2xl shadow-sm"
             />
             <div>
               <div className="flex items-baseline gap-0.5">
-                <span className="text-primary text-lg font-bold leading-none">Connect</span>
-                <span className="text-foreground text-lg font-bold leading-none">Kigali</span>
+                <span className="text-primary text-lg font-bold leading-none">Glow</span>
+                <span className="text-foreground text-lg font-bold leading-none">Pro</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-0.5">connectkigali.rw</p>
+              <p className="text-xs text-muted-foreground mt-0.5">glowpro.rw</p>
             </div>
           </div>
 
           {/* Copy */}
           <h2 className="text-xl font-bold text-foreground mb-1">
-            Add ConnectKigali to your home screen
+            Add GlowPro to your home screen
           </h2>
           <p className="text-sm text-muted-foreground mb-6">
-            Find businesss faster — works offline too
+            Find salons faster — works offline too
           </p>
 
           {ios ? <IOSInstructions /> : (

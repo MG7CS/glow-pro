@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-1.5 mb-3">
-              <span className="text-primary text-lg font-bold tracking-tight">Connect</span>
-              <span className="text-foreground text-lg font-bold tracking-tight">Kigali</span>
+              <span className="text-primary text-lg font-bold tracking-tight">Glow</span>
+              <span className="text-foreground text-lg font-bold tracking-tight">Pro</span>
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">Find any business in Kigali</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Find any salon or stylist in Rwanda</p>
           </div>
 
           <div>
@@ -35,14 +35,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">For Business</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-3">For salons</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://biz.connectkigali.com"
+                  href="https://biz.glowpro.rw"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  List your business
+                  List your salon
                 </a>
               </li>
             </ul>
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} ConnectKigali. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} GlowPro. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               Privacy

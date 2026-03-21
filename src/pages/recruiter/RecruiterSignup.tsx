@@ -168,14 +168,14 @@ const RecruiterSignup = () => {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-sm border border-border p-8">
         <div className="mb-8">
-          <span className="text-primary text-xl font-bold tracking-tight">Connect</span>
-          <span className="text-foreground text-xl font-bold tracking-tight">Kigali</span>
+          <span className="text-primary text-xl font-bold tracking-tight">Glow</span>
+          <span className="text-foreground text-xl font-bold tracking-tight">Pro</span>
 
           {step === "form" && (
             <>
-              <h1 className="text-xl font-semibold text-foreground mt-4">Join the ConnectKigali team 🌍</h1>
+              <h1 className="text-xl font-semibold text-foreground mt-4">Join the GlowPro team 🌍</h1>
               <p className="text-sm text-muted-foreground mt-1">
-                Help Kigali businesses get discovered. Fill in your details and we&apos;ll review your application.
+                Help Rwanda salons get discovered. Fill in your details and we&apos;ll review your application.
               </p>
             </>
           )}
@@ -192,7 +192,7 @@ const RecruiterSignup = () => {
 
         {step === "success" ? (
           <div className="space-y-4">
-            <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+            <div className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
               Application sent! 🎉 We&apos;ll review it and get back to you soon. Keep an eye on your email.
             </div>
             <Link to="/" className="block text-sm text-primary font-medium hover:underline">
@@ -217,7 +217,7 @@ const RecruiterSignup = () => {
             </div>
 
             {resendMessage && (
-              <p className={`text-sm ${resendMessage.startsWith("Code resent") ? "text-green-700" : "text-destructive"}`}>
+              <p className={`text-sm ${resendMessage.startsWith("Code resent") ? "text-rose-700" : "text-destructive"}`}>
                 {resendMessage}
               </p>
             )}

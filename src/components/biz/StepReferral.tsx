@@ -10,7 +10,7 @@ const OPTIONS: { id: ReferralSourceValue; label: string }[] = [
   { id: "google", label: "Google / Search engine" },
   { id: "social", label: "Social media (Instagram, TikTok, Facebook)" },
   { id: "friend", label: "Friend or family recommendation" },
-  { id: "recruiter", label: "ConnectKigali Recruiter" },
+  { id: "recruiter", label: "GlowPro Recruiter" },
   { id: "other", label: "Other" },
 ];
 

@@ -275,8 +275,8 @@ const AdminLogin = ({ onSuccess }: { onSuccess: () => void }) => {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-sm border border-border p-8">
         <div className="mb-8">
-          <span className="text-primary text-xl font-bold tracking-tight">Connect</span>
-          <span className="text-foreground text-xl font-bold tracking-tight">Kigali</span>
+          <span className="text-primary text-xl font-bold tracking-tight">Glow</span>
+          <span className="text-foreground text-xl font-bold tracking-tight">Pro</span>
           <p className="text-xs text-muted-foreground mt-0.5">Admin panel</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -573,8 +573,8 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
       {/* Header */}
       <header className="flex flex-nowrap items-center justify-between gap-3 border-b border-border bg-white px-4 py-4 sm:px-6">
         <div className="min-w-0 shrink-0 whitespace-nowrap">
-          <span className="text-primary font-bold">Connect</span>
-          <span className="text-foreground font-bold">Kigali</span>
+          <span className="text-primary font-bold">Glow</span>
+          <span className="text-foreground font-bold">Pro</span>
           <span className="ml-2 whitespace-nowrap text-xs font-semibold text-muted-foreground bg-muted px-2 py-0.5 rounded">
             Admin
           </span>
@@ -695,7 +695,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                     <TableHeader>
                       <TableRow className="border-b-0 hover:bg-transparent">
                         <TableHead className="bg-muted/70 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                          Business name
+                          Salon name
                         </TableHead>
                         <TableHead className="bg-muted/70 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                           Category
@@ -758,7 +758,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                 className={cn(
                                   "capitalize",
                                   status === "approved" &&
-                                    "border-green-200 bg-green-100 text-green-800 hover:bg-green-100",
+                                    "border-rose-200 bg-rose-100 text-rose-800 hover:bg-rose-100",
                                   status === "pending" &&
                                     "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "rejected" &&
@@ -775,7 +775,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                     type="button"
                                     variant="outline"
                                     size="sm"
-                                    className="border-green-600 text-green-700 hover:bg-green-50 hover:text-green-800"
+                                    className="border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800"
                                     onClick={() => setVerified(shop.id, true)}
                                     disabled={busy}
                                   >
@@ -852,7 +852,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                 className={cn(
                                   "capitalize",
                                   status === "approved" &&
-                                    "border-green-200 bg-green-100 text-green-800 hover:bg-green-100",
+                                    "border-rose-200 bg-rose-100 text-rose-800 hover:bg-rose-100",
                                   status === "pending" &&
                                     "border-amber-200 bg-amber-100 text-amber-800 hover:bg-amber-100",
                                   status === "rejected" &&
@@ -871,7 +871,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                               variant="outline"
                               size="sm"
                               className={cn(
-                                "w-full border-green-600 text-green-700 hover:bg-green-50 hover:text-green-800",
+                                "w-full border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800",
                                 !showReject && "col-span-2",
                               )}
                               onClick={() => setVerified(shop.id, true)}
@@ -981,7 +981,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                                   type="button"
                                   variant="outline"
                                   size="sm"
-                                  className="border-green-600 text-green-700 hover:bg-green-50 hover:text-green-800"
+                                  className="border-rose-600 text-rose-700 hover:bg-rose-50 hover:text-rose-800"
                                   onClick={() => handleApproveRecruiter(r.username)}
                                   disabled={recruiterActionId === r.username}
                                 >
@@ -1338,13 +1338,13 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
                     <div
                       key={r.username}
                       className={`grid grid-cols-2 md:grid-cols-6 gap-3 rounded-xl border px-3 py-3 ${
-                        index === 0 ? "bg-green-50 border-green-200" : "bg-white border-border"
+                        index === 0 ? "bg-rose-50 border-rose-200" : "bg-white border-border"
                       }`}
                     >
                       <span className="text-sm font-semibold text-foreground">{rank}</span>
                       <span className="text-sm font-medium text-foreground truncate">{r.fullName}</span>
                       <span className="text-sm text-foreground">{r.totalRecruited}</span>
-                      <span className="text-sm text-green-700 font-semibold">{r.approved}</span>
+                      <span className="text-sm text-rose-700 font-semibold">{r.approved}</span>
                       <span className="text-sm text-amber-700 font-semibold">{r.pending}</span>
                       <span className="text-sm text-foreground">{rate}%</span>
                     </div>
@@ -1422,7 +1422,7 @@ const AdminAnalyticsSkeleton = () => (
 /** Shop listings table loading state. */
 const ShopListingsTableSkeleton = () => {
   const columns = [
-    "Business name",
+    "Salon name",
     "Category",
     "Neighborhood",
     "Submitted",

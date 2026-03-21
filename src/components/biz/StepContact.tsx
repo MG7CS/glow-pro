@@ -38,7 +38,7 @@ const StepContact = ({ form, update, onNext, onBack }: Props) => {
         How should customers reach you?
       </h1>
       <p className="text-muted-foreground mb-8">
-        WhatsApp is the #1 way customers connect with businesses in Kigali.
+        WhatsApp is the #1 way customers connect with salons in Rwanda.
       </p>
 
       <div className="space-y-6">

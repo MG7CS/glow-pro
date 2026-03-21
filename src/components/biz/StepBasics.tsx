@@ -27,7 +27,7 @@ const StepBasics = ({ form, update, onNext, onBack }: Props) => {
       <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-1">
         Great, {form.businessName}!
       </h1>
-      <p className="text-muted-foreground mb-8">Now tell us a bit more about your business.</p>
+      <p className="text-muted-foreground mb-8">Now tell us a bit more about your salon.</p>
 
       <div className="space-y-6">
         <div>
@@ -54,7 +54,7 @@ const StepBasics = ({ form, update, onNext, onBack }: Props) => {
           <textarea
             value={form.description}
             onChange={(e) => update({ description: e.target.value })}
-            placeholder="What makes your business special? (optional)"
+            placeholder="What makes your salon special? (optional)"
             rows={3}
             className={cn(
               bizField,

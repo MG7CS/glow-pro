@@ -196,7 +196,7 @@ export const useCreatebusiness = () => {
       const recruiterHost = window.location.hostname.startsWith("recruiter.");
       window.location.href = recruiterHost
         ? `${window.location.origin}/dashboard`
-        : "https://biz.connectkigali.com/dashboard";
+        : "https://biz.glowpro.rw/dashboard";
     },
     onError: (err) => {
       console.error("Failed to create shop:", err);

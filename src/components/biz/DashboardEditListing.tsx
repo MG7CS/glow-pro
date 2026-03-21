@@ -25,7 +25,7 @@ interface Props {
 
 const DashboardEditListing = ({ business, setbusiness }: Props) => {
   const update = (patch: Partial<BizFormData>) => setbusiness({ ...business, ...patch });
-  const [openSection, setOpenSection] = useState<string>("Business basics");
+  const [openSection, setOpenSection] = useState<string>("Salon basics");
   const { mutate: updateBusiness, isPending } = useUpdatebusiness();
   const { toast } = useToast();
   const [geoLoading, setGeoLoading] = useState(false);
@@ -49,14 +49,14 @@ const DashboardEditListing = ({ business, setbusiness }: Props) => {
   return (
     <div className="space-y-0">
       <EditSection
-        title="Business basics"
-        isOpen={openSection === "Business basics"}
-        onToggle={() => handleToggle("Business basics")}
+        title="Salon basics"
+        isOpen={openSection === "Salon basics"}
+        onToggle={() => handleToggle("Salon basics")}
         onSave={handleSave}
         isSaving={isPending}
       >
         <div className="space-y-4">
-          <Field label="Business name">
+          <Field label="Salon name">
             <input
               type="text"
               value={business.businessName}

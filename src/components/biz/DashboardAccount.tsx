@@ -70,7 +70,7 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
       <div>
         <h2 className="text-lg font-semibold text-foreground mb-0.5">Account settings</h2>
         <p className="text-sm text-muted-foreground">
-          Manage your ConnectKigali account and listing visibility.
+          Manage your GlowPro account and listing visibility.
         </p>
       </div>
 
@@ -81,8 +81,8 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
             Your listing
           </p>
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center">
-              <span className="text-base font-bold text-green-700">
+            <div className="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center">
+              <span className="text-base font-bold text-rose-700">
                 {businessName[0]?.toUpperCase()}
               </span>
             </div>
@@ -110,7 +110,7 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
               Suspend listing
             </p>
             <p className="text-sm text-muted-foreground mt-1 max-w-xs">
-              Your business will be hidden from ConnectKigali. Your account and data are kept safe — you can reactivate at any time.
+              Your salon will be hidden from GlowPro. Your account and data are kept safe — you can reactivate at any time.
             </p>
           </div>
           <button
@@ -145,7 +145,7 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
       {dialog === "suspend" && (
         <ConfirmDialog
           title="Suspend your listing?"
-          description="Your business will be hidden from ConnectKigali. You can sign back in and reactivate it any time."
+          description="Your salon will be hidden from GlowPro. You can sign back in and reactivate it any time."
           confirmLabel="Yes, suspend"
           confirmClass="bg-amber-500 hover:bg-amber-600 text-white"
           loading={loading}

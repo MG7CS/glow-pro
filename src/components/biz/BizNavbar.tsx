@@ -26,11 +26,11 @@ const BizNavbar = () => {
         {/* Logo + badge */}
         <div className="flex shrink-0 items-center gap-2">
           <Link to="/" className="flex items-center gap-0.5">
-            <span className="text-lg font-bold tracking-tight text-primary">Connect</span>
-            <span className="text-lg font-bold tracking-tight text-foreground">Kigali</span>
+            <span className="text-lg font-bold tracking-tight text-primary">Glow</span>
+            <span className="text-lg font-bold tracking-tight text-foreground">Pro</span>
           </Link>
-          <span className="hidden items-center rounded-full bg-green-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-700 sm:inline-flex">
-            for Business
+          <span className="hidden items-center rounded-full bg-rose-50 px-2.5 py-0.5 text-[11px] font-semibold text-rose-700 sm:inline-flex">
+            for salons
           </span>
         </div>
 

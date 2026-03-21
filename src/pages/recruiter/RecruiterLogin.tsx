@@ -67,7 +67,7 @@ const RecruiterLogin = () => {
       }
 
       await amplifySignOut({ global: false });
-      setError("Your account is not authorized as a recruiter. Contact admin@connectkigali.com");
+      setError("Your account is not authorized as a recruiter. Contact admin@glowpro.rw");
     } catch (err: any) {
       const code = err?.name ?? "";
       if (code === "NotAuthorizedException" || code === "UserNotFoundException") {
@@ -92,11 +92,11 @@ const RecruiterLogin = () => {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-sm border border-border p-8">
         <div className="mb-8">
-          <span className="text-primary text-xl font-bold tracking-tight">Connect</span>
-          <span className="text-foreground text-xl font-bold tracking-tight">Kigali</span>
+          <span className="text-primary text-xl font-bold tracking-tight">Glow</span>
+          <span className="text-foreground text-xl font-bold tracking-tight">Pro</span>
           <h1 className="text-xl font-semibold text-foreground mt-4">Hey there, superstar 👋</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Kigali&apos;s best recruiters start here. Sign in to your portal.
+            Rwanda&apos;s best recruiters start here. Sign in to your portal.
           </p>
         </div>
 

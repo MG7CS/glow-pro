@@ -39,7 +39,7 @@ const listRecruiterShops = /* GraphQL */ `
 let _client: ReturnType<typeof generateClient> | null = null;
 const getClient = () => (_client ??= generateClient());
 
-const BIZ_JOIN_BASE = "https://biz.connectkigali.com/join";
+const BIZ_JOIN_BASE = "https://biz.glowpro.rw/join";
 
 /** Matches biz onboarding `recruitedBy` when owners use /join?ref=CK-… */
 function recruiterDisplayIdFromUsername(u: string): string {
@@ -177,7 +177,7 @@ const RecruiterDashboard = () => {
               Full ID: <span className="text-foreground font-medium">{username}</span>
             </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
-              Share this ID with business owners when they sign up on ConnectKigali
+              Share this ID with salon owners when they sign up on GlowPro
             </p>
             <button
               type="button"
@@ -271,7 +271,7 @@ const StatCard = ({ label, value }: { label: string; value: string }) => (
 const StatusBadge = ({ status }: { status: RecruiterStatus }) => {
   const styles: Record<RecruiterStatus, string> = {
     pending: "text-amber-700 bg-amber-100 border-amber-200",
-    approved: "text-green-700 bg-green-100 border-green-200",
+    approved: "text-rose-700 bg-rose-100 border-rose-200",
     rejected: "text-red-700 bg-red-100 border-red-200",
   };
 

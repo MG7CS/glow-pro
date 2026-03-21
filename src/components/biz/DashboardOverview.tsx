@@ -81,7 +81,7 @@ const DashboardOverview = ({ business, setTab, businessId }: Props) => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {metrics.map((m) => (
           <div key={m.label} className="bg-white rounded-2xl px-5 pt-5 pb-3 shadow-sm">
-            <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600 mb-3">
+            <div className="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center text-rose-600 mb-3">
               {m.icon}
             </div>
             <p className="text-2xl font-bold text-foreground leading-none">{m.value}</p>
@@ -149,7 +149,7 @@ const DashboardOverview = ({ business, setTab, businessId }: Props) => {
           onClick={() => setTab("edit")}
           className="bg-white rounded-2xl px-5 py-4 shadow-sm text-left hover:shadow-md transition-shadow group"
         >
-          <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center text-green-600 mb-3 group-hover:bg-green-100 transition-colors">
+          <div className="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 mb-3 group-hover:bg-rose-100 transition-colors">
             <Pencil className="w-4 h-4" />
           </div>
           <p className="text-sm font-semibold text-foreground">Edit your listing</p>
@@ -160,7 +160,7 @@ const DashboardOverview = ({ business, setTab, businessId }: Props) => {
           onClick={() => setTab("stats")}
           className="bg-white rounded-2xl px-5 py-4 shadow-sm text-left hover:shadow-md transition-shadow group"
         >
-          <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center text-green-600 mb-3 group-hover:bg-green-100 transition-colors">
+          <div className="w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-600 mb-3 group-hover:bg-rose-100 transition-colors">
             <BarChart3 className="w-4 h-4" />
           </div>
           <p className="text-sm font-semibold text-foreground">View detailed stats</p>
@@ -183,14 +183,14 @@ const StatusBanner = ({
   if (state === "approved") {
     return (
       <div className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center gap-4">
-        <div className="w-1 self-stretch rounded-full bg-green-500 flex-shrink-0" />
+        <div className="w-1 self-stretch rounded-full bg-rose-500 flex-shrink-0" />
         <div>
-          <h2 className="text-base font-bold text-foreground">{businessName || "Your business"}</h2>
+          <h2 className="text-base font-bold text-foreground">{businessName || "Your salon"}</h2>
           <p className="text-sm text-muted-foreground mt-0.5">
-            Your listing is live · Customers can find you on ConnectKigali
+            Your listing is live · Customers can find you on GlowPro
           </p>
         </div>
-        <span className="ml-auto shrink-0 text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-1 rounded-full">
+        <span className="ml-auto shrink-0 text-xs font-semibold text-rose-700 bg-rose-100 px-2.5 py-1 rounded-full">
           Live
         </span>
       </div>
@@ -239,7 +239,7 @@ const StatusBanner = ({
     <div className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center gap-4">
       <div className="w-1 self-stretch rounded-full bg-yellow-400 flex-shrink-0" />
       <div>
-        <h2 className="text-base font-bold text-foreground">{businessName || "Your business"}</h2>
+        <h2 className="text-base font-bold text-foreground">{businessName || "Your salon"}</h2>
         <p className="text-sm text-muted-foreground mt-0.5">
           Complete your profile to start attracting customers
         </p>

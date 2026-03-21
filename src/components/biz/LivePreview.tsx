@@ -111,7 +111,7 @@ const LivePreview = ({ form }: { form: BizFormData }) => {
           </div>
           <div>
             <Skeleton className="h-3 w-20" />
-            <p className="text-[10px] text-muted-foreground mt-0.5">business owner</p>
+            <p className="text-[10px] text-muted-foreground mt-0.5">salon owner</p>
           </div>
         </div>
       </div>
@@ -130,7 +130,7 @@ const MiniPill = ({
 }) => (
   <div
     className={`flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-[10px] font-medium ${
-      primary ? "bg-[#10B981] text-white" : "border border-[rgba(0,0,0,0.1)] text-foreground"
+      primary ? "bg-[#E11D48] text-white" : "border border-[rgba(0,0,0,0.1)] text-foreground"
     }`}
   >
     {icon}

@@ -267,7 +267,7 @@ const DashboardStats = ({ businessName, businessId }: Props) => {
           <p className="text-sm font-medium text-foreground">
             {hasChartData ? (
               <>
-                <span className="font-semibold">{businessName || "Your business"}</span> was
+                <span className="font-semibold">{businessName || "Your salon"}</span> was
                 discovered by{" "}
                 <span className="font-semibold text-primary">{totalViews} people</span> this week.
               </>
