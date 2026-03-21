@@ -41,11 +41,11 @@ const StepReview = ({ form, onBack, onPublish, isPublishing = false }: Props) =>
         Looking good! Ready to publish?
       </h1>
       <p className="text-muted-foreground mb-8">
-        Review your listing below. You can always edit it later.
+        Review your profile below. You can always edit it later.
       </p>
 
       <div className="space-y-2 mb-6">
-        <CheckItem label="Salon name" done={!!form.businessName} />
+        <CheckItem label="Your name or salon name" done={!!form.businessName} />
         <CheckItem label="Category" done={!!form.category} />
         <CheckItem label="Neighborhood" done={!!form.neighborhood} />
         <CheckItem label="WhatsApp number" done={!!(form.whatsapp || form.phone)} />
@@ -59,7 +59,7 @@ const StepReview = ({ form, onBack, onPublish, isPublishing = false }: Props) =>
           <div>
             <p className="text-sm font-semibold text-amber-800">Cover photo required</p>
             <p className="text-xs text-amber-700 mt-0.5">
-              Go back and add a photo so customers can recognise your salon at a glance.
+              Go back and add a photo so clients can recognise your work at a glance.
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ const StepReview = ({ form, onBack, onPublish, isPublishing = false }: Props) =>
         disabled={isPublishing || noCoverPhoto}
         className={cn(bizContinueBtn, "w-full py-3.5 text-base disabled:opacity-50")}
       >
-        {isPublishing ? "Publishing..." : "Publish your salon"}
+        {isPublishing ? "Publishing..." : "Publish your profile"}
       </button>
 
       {noCoverPhoto && (

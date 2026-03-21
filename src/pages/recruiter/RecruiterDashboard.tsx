@@ -177,7 +177,7 @@ const RecruiterDashboard = () => {
               Full ID: <span className="text-foreground font-medium">{username}</span>
             </p>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-xl">
-              Share this ID with salon owners when they sign up on GlowPro
+              Share this ID with professionals when they sign up on GlowPro
             </p>
             <button
               type="button"
@@ -224,15 +224,15 @@ const RecruiterDashboard = () => {
           href={`${BIZ_JOIN_BASE}?ref=${encodeURIComponent(recruiterDisplayId)}`}
           className="w-full sm:w-auto mb-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
         >
-          Add a business <ArrowRight className="w-4 h-4" />
+          Add a professional <ArrowRight className="w-4 h-4" />
         </a>
 
         <div className="bg-white rounded-2xl shadow-sm border border-border p-5">
-          <h2 className="text-base font-semibold text-foreground mb-4">Your registered businesses</h2>
+          <h2 className="text-base font-semibold text-foreground mb-4">Your registered professionals</h2>
 
           {shops.length === 0 ? (
             <div className="rounded-xl border border-dashed border-border px-4 py-10 text-center text-muted-foreground text-sm">
-              No businesses yet. Start by registering your first one! 🏪
+              No professionals yet. Add your first one to get started.
             </div>
           ) : (
             <div className="space-y-2">
@@ -244,7 +244,7 @@ const RecruiterDashboard = () => {
                     className="rounded-xl border border-border px-4 py-3 flex items-center justify-between gap-3"
                   >
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground truncate">{shop.name || "Untitled business"}</p>
+                      <p className="text-sm font-semibold text-foreground truncate">{shop.name || "Untitled"}</p>
                       <p className="text-xs text-muted-foreground mt-0.5">
                         {shop.category || "Uncategorized"} · {shop.neighborhood || "Kigali"}
                       </p>

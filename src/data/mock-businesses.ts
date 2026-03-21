@@ -6,23 +6,23 @@ import shopSalonImg from "@/assets/shop-salon.jpg";
 import shopGroceryImg from "@/assets/shop-grocery.jpg";
 import shopElectronicsImg from "@/assets/shop-electronics.jpg";
 
-const kigaliKicks: Business = {
-  id: "kigalikicks",
+const polishedNails: Business = {
+  id: "polished-nails",
   image: shopShoesImg,
-  name: "KigaliKicks",
+  name: "Polished Nails Kigali",
   neighborhood: "Kimironko",
-  category: "Shoes",
+  category: "Nails",
   distance: "0.8 km",
   rating: 4.9,
   verified: true,
   description:
-    "Your go-to sneaker destination in Kimironko. We carry the latest styles from top brands alongside locally crafted leather shoes.",
+    "Manicures, pedicures, and nail art in Kimironko. Clean studio, friendly technicians, walk-ins welcome.",
   address: "KG 11 Ave, Kimironko Market, Kigali",
   phone: "+250 788 123 457",
   social: {
     whatsapp: "+250788123456",
-    instagram: "@kigalikicks",
-    facebook: "KigaliKicks",
+    instagram: "@polishednailskgl",
+    facebook: "Polished Nails Kigali",
   },
   images: [shopShoesImg, shopFashionImg, shopTailorImg],
   hours: [
@@ -43,13 +43,13 @@ const kigaliKicks: Business = {
     {
       name: "Alice M.",
       rating: 5,
-      comment: "Amazing quality and very friendly staff! Will definitely come back.",
+      comment: "Perfect gel nails and very friendly. Will book again!",
       date: "2 weeks ago",
     },
     {
       name: "Jean P.",
       rating: 5,
-      comment: "Best shoe store in Kimironko. Great selection of both local and international brands.",
+      comment: "Best nail studio in Kimironko. Great attention to detail.",
       date: "1 month ago",
     },
   ],
@@ -58,13 +58,13 @@ const kigaliKicks: Business = {
 const glamourSalon: Business = {
   id: "glamour-salon",
   image: shopSalonImg,
-  name: "Glamour Salon",
+  name: "Glamour Hair Studio",
   neighborhood: "Remera",
-  category: "Salons",
+  category: "Hair",
   distance: "1.2 km",
   rating: 4.7,
   verified: true,
-  description: "Premium hair and beauty services in the heart of Remera. Expert stylists, relaxing atmosphere.",
+  description: "Cuts, colour, and styling in the heart of Remera. Expert stylists, relaxing atmosphere.",
   address: "KN 5 Rd, Remera, Kigali",
   social: { whatsapp: "+250788654321" },
   images: [shopSalonImg, shopFashionImg],
@@ -73,46 +73,46 @@ const glamourSalon: Business = {
   ],
 };
 
-const freshMart: Business = {
-  id: "fresh-mart",
+const remeraSpa: Business = {
+  id: "remera-spa",
   image: shopGroceryImg,
-  name: "FreshMart Kimironko",
+  name: "Remera Glow Spa",
   neighborhood: "Kimironko",
-  category: "Groceries",
+  category: "Spa",
   distance: "0.3 km",
   rating: 4.5,
-  description: "Fresh produce, imported goods and everyday essentials. Open 7 days a week.",
+  description: "Facials, massage, and relaxation packages. Open 7 days a week.",
   address: "Kimironko Market, Kigali",
   social: { whatsapp: "+250788111222" },
   images: [shopGroceryImg],
   reviews: [],
 };
 
-const techHubKigali: Business = {
-  id: "tech-hub-kigali",
+const urbanBarber: Business = {
+  id: "urban-barber",
   image: shopElectronicsImg,
-  name: "TechHub Kigali",
+  name: "Urban Barber CBD",
   neighborhood: "City Centre",
-  category: "Electronics",
+  category: "Barber",
   distance: "2.1 km",
   rating: 4.8,
   verified: true,
-  description: "Your one-stop shop for smartphones, laptops, accessories and repairs.",
+  description: "Fades, beard trims, and hot towel shaves. Walk-ins and bookings.",
   address: "Kigali Business Centre, CBD",
-  social: { whatsapp: "+250788333444", instagram: "@techkigali" },
+  social: { whatsapp: "+250788333444", instagram: "@urbanbarberkgl" },
   images: [shopElectronicsImg, shopFashionImg],
   reviews: [
-    { name: "David R.", rating: 5, comment: "Fixed my phone in 30 minutes. Great service!", date: "1 week ago" },
+    { name: "David R.", rating: 5, comment: "Best cut in town. Quick and precise!", date: "1 week ago" },
   ],
 };
 
-export const allBusinesses: Business[] = [kigaliKicks, glamourSalon, freshMart, techHubKigali];
+export const allBusinesses: Business[] = [polishedNails, glamourSalon, remeraSpa, urbanBarber];
 
 export const popularBusinesses: Pick<Business, "id" | "image" | "name" | "neighborhood" | "category" | "distance" | "rating">[] =
-  [kigaliKicks, techHubKigali, glamourSalon, freshMart];
+  [polishedNails, urbanBarber, glamourSalon, remeraSpa];
 
 export const trendingBusinesses: Pick<Business, "id" | "image" | "name" | "neighborhood" | "category" | "distance" | "rating">[] =
-  [glamourSalon, kigaliKicks, freshMart, techHubKigali];
+  [glamourSalon, polishedNails, remeraSpa, urbanBarber];
 
 export const newlyListed: Pick<Business, "id" | "image" | "name" | "neighborhood" | "category" | "distance" | "rating">[] =
-  [freshMart, techHubKigali];
+  [remeraSpa, urbanBarber];

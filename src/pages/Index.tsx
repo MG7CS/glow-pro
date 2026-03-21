@@ -17,23 +17,23 @@ const HERO_SLIDES = [
   {
     portrait: heroCustomerPortrait,
     landscape: heroCustomerLandscape,
-    alt: "Customer discovering salons in Rwanda",
-    headline: "Every stylist in Rwanda, in your pocket.",
-    subtitle: "Salons, stylists, and beauty — all in one place.",
+    alt: "Customer booking beauty services in Rwanda",
+    headline: "Your next stylist is one tap away.",
+    subtitle: "Find and book beauty professionals near you.",
   },
   {
     portrait: heroOwnerPortrait,
     landscape: heroOwnerLandscape,
-    alt: "Salon owner on GlowPro",
-    headline: "Be the stylist everyone books first.",
-    subtitle: "Join hundreds of salons and stylists on GlowPro.",
+    alt: "Beauty professional on GlowPro",
+    headline: "Grow your clientele. Get booked.",
+    subtitle: "Join Rwanda's beauty professionals on GlowPro.",
   },
   {
     portrait: heroSalonPortrait,
     landscape: heroSalonLandscape,
-    alt: "Hair and beauty salon in Rwanda",
-    headline: "Get booked instantly.",
-    subtitle: "No calls, no hassle — just tap and message.",
+    alt: "Salon and beauty professional in Rwanda",
+    headline: "Beauty professionals, all in one place.",
+    subtitle: "Hair, nails, makeup, skincare and more.",
   },
 ] as const;
 
@@ -122,7 +122,7 @@ function IndexMobileDrawer({
       },
     },
     {
-      label: "For salons",
+      label: "For professionals",
       action: () => {
         onForBusinesses?.();
         onClose();
@@ -189,7 +189,7 @@ function IndexMobileDrawer({
                 style={{ animationDelay: "0.35s" }}
                 onClick={onClose}
               >
-                List your salon
+                Join as a professional
               </a>
             </div>
           </>
@@ -298,7 +298,7 @@ const Index = () => {
                 href="https://biz.glowpro.rw"
                 className="hidden md:inline-flex shrink-0 text-sm font-semibold text-white bg-[#0D1117] px-3.5 py-2 rounded-full hover:bg-[#0D1117]/90 transition-colors whitespace-nowrap"
               >
-                List your salon
+                Join as a professional
               </a>
             </div>
           </header>
@@ -396,7 +396,7 @@ const Index = () => {
                   : "text-white hover:text-white/90",
               )}
             >
-              For salons
+              For professionals
             </button>
           </nav>
 
@@ -424,7 +424,7 @@ const Index = () => {
                   : "border border-white/50 bg-white/10 text-white hover:bg-white/20",
               )}
             >
-              List your salon
+              Join as a professional
             </a>
           </div>
         </div>
@@ -482,7 +482,7 @@ const Index = () => {
                 onClick={scrollToBusinesses}
                 className="inline-flex w-auto items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#0D1117] transition-colors hover:bg-white/90"
               >
-                Explore salons →
+                Explore professionals →
               </button>
             </div>
             <div className="mt-8 flex w-full justify-center md:mt-10">
@@ -527,7 +527,7 @@ const Index = () => {
                 <div className="mt-8 border-t border-[rgba(0,0,0,0.05)] pt-8">
                   <BusinessSection
                     embedded
-                    title="Popular salons"
+                    title="Popular professionals"
                     businesses={filteredPopular}
                     eyebrow="POPULAR THIS MONTH"
                   />
@@ -540,7 +540,7 @@ const Index = () => {
               )}
               {filteredNew.length > 0 && (
                 <div className="mt-8 border-t border-[rgba(0,0,0,0.05)] pt-8">
-                  <BusinessSection embedded title="Newly listed" businesses={filteredNew} />
+                  <BusinessSection embedded title="New on GlowPro" businesses={filteredNew} />
                 </div>
               )}
             </>
@@ -589,7 +589,7 @@ const Index = () => {
                 onClick={scrollToBusinesses}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                Explore salons →
+                Explore professionals →
               </button>
             </div>
           </div>
@@ -605,23 +605,23 @@ const Index = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-12 lg:gap-16">
             <div className="max-w-xl md:max-w-[52%]">
               <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold text-white/95">
-                For salon owners
+                For professionals
               </span>
               <h3 className="mt-5 text-4xl sm:text-5xl md:text-[2.75rem] lg:text-6xl font-black text-white tracking-tight leading-[1.02]">
-                Your next customer
+                Your next client
                 <br />
                 is already looking
                 <br />
                 for you.
               </h3>
               <p className="mt-5 text-base md:text-lg text-amber-100/80 leading-relaxed">
-                List your salon on GlowPro for free. Takes 5 minutes. No technical skills needed.
+                Create your profile on GlowPro for free. Takes 5 minutes. No technical skills needed.
               </p>
               <a
                 href="https://biz.glowpro.rw"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                Get listed free →
+                Join free →
               </a>
             </div>
 
@@ -635,7 +635,7 @@ const Index = () => {
               </span>
               <div className="relative text-center z-[1]">
                 <p className="text-6xl lg:text-7xl font-black text-white tracking-tight">5 min</p>
-                <p className="mt-2 text-sm md:text-base text-white/80 font-medium">to list your salon</p>
+                <p className="mt-2 text-sm md:text-base text-white/80 font-medium">to create your profile</p>
               </div>
             </div>
           </div>
@@ -649,17 +649,17 @@ const Index = () => {
               <p className="text-sm text-white/85 sm:hidden">
                 <span className="block font-semibold text-white/95">GlowPro</span>
                 <span className="mt-1 block text-xs leading-snug text-white/75 text-pretty">
-                  Beauty in Rwanda — one salon at a time.
+                  Connecting Rwanda&apos;s beauty professionals with clients.
                 </span>
               </p>
               <p className="hidden text-sm text-white/85 sm:block">
-                GlowPro · Beauty in Rwanda, one salon at a time.
+                GlowPro · Connecting Rwanda&apos;s beauty professionals with clients.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
                 <a href="https://biz.glowpro.rw" className="text-white/75 hover:text-white">
-                  For salons
+                  For Professionals
                 </a>
                 <span className="text-white/30" aria-hidden>
                   ·
@@ -699,7 +699,7 @@ const EmptyState = ({
       <div className="max-w-[1200px] mx-auto px-6 py-20 text-center">
         <p className="text-4xl mb-4">🔍</p>
         <h2 className="text-xl font-semibold text-[#111] mb-2">
-          No {category} salons yet
+          No {category} professionals yet
         </h2>
         <p className="mb-6 text-[#666]">Be the first to list your salon in this category.</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -707,14 +707,14 @@ const EmptyState = ({
             onClick={onClearFilter}
             className="px-6 py-2.5 rounded-lg border border-border text-foreground hover:bg-muted transition-colors text-sm font-medium"
           >
-            Show all salons
+            Show all professionals
           </button>
           <a
             href="https://biz.glowpro.rw"
             className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
           >
             <Store className="w-4 h-4" />
-            List your salon
+            Join as a professional
           </a>
         </div>
       </div>
@@ -725,7 +725,7 @@ const EmptyState = ({
     return (
       <div className="max-w-[1200px] mx-auto px-6 py-20 text-center">
         <p className="text-4xl mb-4">🔍</p>
-        <h2 className="text-xl font-semibold text-[#111] mb-2">No salons match your search</h2>
+        <h2 className="text-xl font-semibold text-[#111] mb-2">No professionals match your search</h2>
         <p className="mb-6 text-[#666]">Try different keywords or clear your filters.</p>
         <button
           onClick={onClearFilter}
@@ -742,16 +742,16 @@ const EmptyState = ({
       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
         <Store className="w-8 h-8 text-primary" />
       </div>
-      <h2 className="text-2xl font-bold text-[#111] mb-3">No salons yet — be the first!</h2>
+      <h2 className="text-2xl font-bold text-[#111] mb-3">No profiles yet — be the first!</h2>
       <p className="mb-8 max-w-md mx-auto text-[#666]">
-        GlowPro is just getting started. List your salon and reach thousands of customers in Rwanda.
+        GlowPro is just getting started. Create your profile and reach thousands of clients in Rwanda.
       </p>
       <a
         href="https://biz.glowpro.rw"
         className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
       >
         <Store className="w-4 h-4" />
-        List your salon
+        Join as a professional
       </a>
     </div>
   );

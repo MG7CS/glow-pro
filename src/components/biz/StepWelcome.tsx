@@ -33,7 +33,7 @@ const StepWelcome = ({ form, update, onNext }: Props) => {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-4">
-            What&apos;s your salon called?
+            What&apos;s your name or salon name?
           </h1>
           <p className="text-muted-foreground text-base mb-10">You can always change this later.</p>
 
@@ -91,7 +91,7 @@ const MockbusinessProfile = () => (
   <div className="w-full overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.08)] bg-white/90 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)]">
     <img
       src={businessProfileMockup}
-      alt="Sample salon listing"
+      alt="Sample professional profile"
       className="block w-full"
     />
     <div className="flex items-center gap-2 border-t border-[rgba(0,0,0,0.05)] bg-amber-50/80 px-4 py-2.5">

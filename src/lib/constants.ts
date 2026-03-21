@@ -1,7 +1,14 @@
 export const CATEGORIES = [
-  "Shoes", "Groceries", "Electronics", "Fashion", "Food", "Beauty",
-  "Salons", "Services", "Pharmacy", "Hardware", "Books", "Fitness",
-  "Auto", "Crafts", "Other",
+  "Hair",
+  "Braids",
+  "Nails",
+  "Makeup",
+  "Skincare",
+  "Barber",
+  "Lashes",
+  "Massage",
+  "Spa",
+  "Other",
 ];
 
 export const NEIGHBORHOODS = [

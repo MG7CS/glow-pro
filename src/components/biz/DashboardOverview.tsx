@@ -164,7 +164,7 @@ const DashboardOverview = ({ business, setTab, businessId }: Props) => {
             <BarChart3 className="w-4 h-4" />
           </div>
           <p className="text-sm font-semibold text-foreground">View detailed stats</p>
-          <p className="text-xs text-muted-foreground mt-0.5">See how customers find and contact you</p>
+          <p className="text-xs text-muted-foreground mt-0.5">See how clients find and contact you</p>
         </button>
       </div>
     </div>
@@ -185,9 +185,9 @@ const StatusBanner = ({
       <div className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center gap-4">
         <div className="w-1 self-stretch rounded-full bg-amber-600 flex-shrink-0" />
         <div>
-          <h2 className="text-base font-bold text-foreground">{businessName || "Your salon"}</h2>
+          <h2 className="text-base font-bold text-foreground">{businessName || "Your profile"}</h2>
           <p className="text-sm text-muted-foreground mt-0.5">
-            Your listing is live · Customers can find you on GlowPro
+            Your profile is live · Clients can find you on GlowPro
           </p>
         </div>
         <span className="ml-auto shrink-0 text-xs font-semibold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">
@@ -239,9 +239,9 @@ const StatusBanner = ({
     <div className="bg-white rounded-2xl px-6 py-5 shadow-sm flex items-center gap-4">
       <div className="w-1 self-stretch rounded-full bg-yellow-400 flex-shrink-0" />
       <div>
-        <h2 className="text-base font-bold text-foreground">{businessName || "Your salon"}</h2>
+        <h2 className="text-base font-bold text-foreground">{businessName || "Your profile"}</h2>
         <p className="text-sm text-muted-foreground mt-0.5">
-          Complete your profile to start attracting customers
+          Complete your profile to start attracting clients
         </p>
       </div>
       <span className="ml-auto shrink-0 text-xs font-semibold text-yellow-700 bg-yellow-100 px-2.5 py-1 rounded-full">

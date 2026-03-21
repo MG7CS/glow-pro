@@ -15,35 +15,35 @@
     "seeAllPhotos": "See all photos"
   },
   "nav": {
-    "listYourBusiness": "List your salon",
-    "forBusiness": "for salons",
+    "listYourBusiness": "Join as a professional",
+    "forBusiness": "for professionals",
     "dashboard": "Dashboard"
   },
   "search": {
     "what": "What",
     "whatPlaceholder": "What are you looking for?",
-    "whatPlaceholderShort": "Search salons...",
+    "whatPlaceholderShort": "Search professionals...",
     "where": "Where",
     "wherePlaceholder": "Which neighborhood?",
     "wherePlaceholderShort": "Neighborhood"
   },
   "home": {
-    "popularBusinesses": "Popular salons",
+    "popularBusinesses": "Popular professionals",
     "trendingThisWeek": "Trending this week",
-    "newlyListed": "Newly listed",
-    "emptyTitle": "No salons yet — be the first!",
-    "emptySubtitle": "GlowPro is just getting started. List your salon and reach thousands of customers in Rwanda.",
-    "noBusinessesInCategory": "No {{category}} salons yet",
-    "beFirstInCategory": "Be the first to list your salon in this category.",
-    "showAllBusinesses": "Show all salons",
+    "newlyListed": "New on GlowPro",
+    "emptyTitle": "No profiles yet — be the first!",
+    "emptySubtitle": "GlowPro is just getting started. Create your profile and reach thousands of clients in Rwanda.",
+    "noBusinessesInCategory": "No {{category}} professionals yet",
+    "beFirstInCategory": "Be the first to create your profile in this category.",
+    "showAllBusinesses": "Show all professionals",
     "showMore": "Show more",
-    "noResults": "No salons match your search",
+    "noResults": "No professionals match your search",
     "tryDifferentSearch": "Try different keywords or clear your filters.",
     "clearFilters": "Clear all filters"
   },
   "business": {
-    "notFound": "Salon not found",
-    "notFoundDesc": "This salon doesn't exist or has been removed.",
+    "notFound": "Profile not found",
+    "notFoundDesc": "This profile doesn't exist or has been removed.",
     "backToHome": "← Back to home",
     "open": "Open now",
     "closed": "Closed",
@@ -59,22 +59,24 @@
     "reviews": "Reviews",
     "recentOnInstagram": "Recent on Instagram",
     "listedSince": "Listed since",
-    "moreBusinessesIn": "More salons in"
+    "moreBusinessesIn": "More professionals in"
   },
   "categories": {
-    "shoes": "Shoes",
-    "groceries": "Groceries",
-    "electronics": "Electronics",
-    "fashion": "Fashion",
-    "food": "Food",
-    "beauty": "Beauty",
-    "salons": "Salons",
-    "services": "Services"
+    "hair": "Hair",
+    "braids": "Braids",
+    "nails": "Nails",
+    "makeup": "Makeup",
+    "skincare": "Skincare",
+    "barber": "Barber",
+    "lashes": "Lashes",
+    "massage": "Massage",
+    "spa": "Spa",
+    "other": "Other"
   },
   "onboarding": {
     "preview": "Live preview",
     "welcome": {
-      "nameQuestion": "What's your salon called?",
+      "nameQuestion": "What's your name or salon name?",
       "nameHint": "You can always change this later.",
       "hint": "Free • Takes about 5 minutes",
       "trustBadge": "Rwanda's #1 beauty platform"
@@ -87,17 +89,17 @@
     "basics": {
       "title": "Great, {{name}}!",
       "titleShort": "Great, {{name}}!",
-      "subtitle": "Now tell us a bit more about your salon.",
-      "businessName": "salon name",
-      "businessNamePlaceholder": "e.g. Mama Grace's Salon",
+      "subtitle": "Now tell us a bit more about your services.",
+      "businessName": "Your name or salon name",
+      "businessNamePlaceholder": "e.g. Marie K. or Studio Glow",
       "category": "Category",
       "categoryPlaceholder": "Select a category",
       "description": "Short description",
-      "descriptionPlaceholder": "What makes your salon special? (optional)"
+      "descriptionPlaceholder": "What makes your services special? (optional)"
     },
     "location": {
       "title": "Where can people find you?",
-      "subtitle": "Help customers discover your salon in their neighborhood.",
+      "subtitle": "Help clients discover you in their neighborhood.",
       "dropPin": "Drop a pin on the map",
       "tapToDrop": "Tap to drop a pin",
       "tapToUpdate": "Tap to update pin",
@@ -105,60 +107,60 @@
       "neighborhoodPlaceholder": "Select your neighborhood"
     },
     "contact": {
-      "title": "How should customers reach you?",
-      "subtitle": "WhatsApp is the #1 way customers connect with salons in Rwanda.",
+      "title": "How should clients reach you?",
+      "subtitle": "WhatsApp is the #1 way clients connect with beauty professionals in Rwanda.",
       "whatsapp": "WhatsApp number",
       "phone": "Phone number"
     },
     "photos": {
-      "title": "Show off your salon",
-      "subtitle": "Great photos help customers trust your salon.",
+      "title": "Show off your work",
+      "subtitle": "Great photos help clients trust your profile.",
       "cover": "Cover photo"
     },
     "social": {
       "title": "Connect your social media",
-      "subtitle": "Let customers follow you — totally optional."
+      "subtitle": "Let clients follow you — totally optional."
     },
     "review": {
       "title": "Looking good! Ready to publish?",
-      "subtitle": "Review your listing below. You can always edit it later.",
-      "publish": "Publish your salon",
+      "subtitle": "Review your profile below. You can always edit it later.",
+      "publish": "Publish your profile",
       "publishing": "Publishing..."
     }
   },
   "dashboard": {
-    "listingLive": "Your salon is live",
-    "listingLiveDesc": "Customers can find you on GlowPro",
+    "listingLive": "Your profile is live",
+    "listingLiveDesc": "Clients can find you on GlowPro",
     "completeProfile": "Complete your profile",
     "completeProfileDesc": "Some fields are missing",
     "overview": "Overview",
-    "editListing": "Edit salon",
+    "editListing": "Edit profile",
     "stats": "Stats",
-    "viewPublicBusiness": "View public salon",
+    "viewPublicBusiness": "View public profile",
     "thingsToDo": "Things you can do",
     "addMorePhotos": "Add more photos",
-    "addMorePhotosDesc": "Salons with photos get 3× more views",
+    "addMorePhotosDesc": "Profiles with photos get 3× more views",
     "connectInstagram": "Connect Instagram",
-    "connectInstagramDesc": "Show your latest posts on your listing",
-    "shareBusiness": "Share your salon",
-    "shareListingDesc": "Send your GlowPro link to customers",
+    "connectInstagramDesc": "Show your latest posts on your profile",
+    "shareBusiness": "Share your profile",
+    "shareListingDesc": "Send your GlowPro link to clients",
     "getFirstReview": "Get your first review",
-    "getFirstReviewDesc": "Ask a customer to leave a review",
-    "businessPreview": "Your salon preview"
+    "getFirstReviewDesc": "Ask a client to leave a review",
+    "businessPreview": "Your profile preview"
   },
   "auth": {
     "signIn": "Sign in",
-    "signInSubtitle": "Access your salon dashboard",
+    "signInSubtitle": "Access your professional dashboard",
     "signOut": "Sign out",
     "createAccount": "Create account",
-    "createAccountSubtitle": "List your salon on GlowPro",
+    "createAccountSubtitle": "Create your profile on GlowPro",
     "register": "Register",
     "phone": "Phone number",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
-    "businessName": "Salon name",
-    "businessNamePlaceholder": "e.g. Mama Grace's Salon",
+    "businessName": "Your name or salon name",
+    "businessNamePlaceholder": "e.g. Marie K. or Studio Glow",
     "forgotPassword": "Forgot password?",
     "forgotPasswordSubtitle": "Enter your phone number and we'll send a reset code.",
     "sendResetLink": "Send reset code",
@@ -178,7 +180,7 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "forBusiness": "For salons",
+    "forBusiness": "For professionals",
     "language": "Language",
     "rights": "All rights reserved.",
     "privacy": "Privacy",

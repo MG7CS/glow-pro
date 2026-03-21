@@ -35,10 +35,10 @@ const StepContact = ({ form, update, onNext, onBack }: Props) => {
       </button>
 
       <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-        How should customers reach you?
+        How should clients reach you?
       </h1>
       <p className="text-muted-foreground mb-8">
-        WhatsApp is the #1 way customers connect with salons in Rwanda.
+        WhatsApp is the #1 way clients connect with beauty professionals in Rwanda.
       </p>
 
       <div className="space-y-6">

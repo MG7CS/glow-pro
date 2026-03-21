@@ -24,7 +24,7 @@ const StepSocial = ({ form, update, onNext, onBack }: Props) => {
       <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
         Connect your social media
       </h1>
-      <p className="text-muted-foreground mb-8">Let customers follow you — totally optional.</p>
+      <p className="text-muted-foreground mb-8">Let clients follow you — totally optional.</p>
 
       <div className="space-y-5">
         <SocialInput

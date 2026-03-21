@@ -110,7 +110,7 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
               Suspend listing
             </p>
             <p className="text-sm text-muted-foreground mt-1 max-w-xs">
-              Your salon will be hidden from GlowPro. Your account and data are kept safe — you can reactivate at any time.
+              Your profile will be hidden from GlowPro. Your account and data are kept safe — you can reactivate at any time.
             </p>
           </div>
           <button
@@ -145,7 +145,7 @@ const DashboardAccount = ({ businessId, businessName }: Props) => {
       {dialog === "suspend" && (
         <ConfirmDialog
           title="Suspend your listing?"
-          description="Your salon will be hidden from GlowPro. You can sign back in and reactivate it any time."
+          description="Your profile will be hidden from GlowPro. You can sign back in and reactivate it any time."
           confirmLabel="Yes, suspend"
           confirmClass="bg-amber-500 hover:bg-amber-600 text-white"
           loading={loading}

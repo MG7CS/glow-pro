@@ -606,7 +606,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
         <div className="mb-6 w-full overflow-x-auto scrollbar-hide md:overflow-visible">
           <div className="flex w-fit min-w-max gap-1 rounded-xl border border-border bg-white p-1 shadow-sm">
             {([
-              { key: "shops", label: "Shop listings" },
+              { key: "shops", label: "Profiles" },
               { key: "recruiters", label: "Recruiters" },
               { key: "leaderboard", label: "Leaderboard" },
               { key: "analytics", label: "Analytics" },
@@ -635,7 +635,7 @@ const AdminDashboard = ({ onSignOut }: { onSignOut: () => void }) => {
 
         {panelTab === "shops" && (
           <>
-            <h1 className="text-xl font-bold text-foreground mb-6">Shop listings</h1>
+            <h1 className="text-xl font-bold text-foreground mb-6">Profiles</h1>
 
             <div className="mb-5 w-full overflow-x-auto scrollbar-hide md:w-fit">
               <div className="flex w-fit min-w-max gap-1 rounded-xl border border-border bg-white p-1 shadow-sm">
@@ -1419,10 +1419,10 @@ const AdminAnalyticsSkeleton = () => (
   </div>
 );
 
-/** Shop listings table loading state. */
+/** Profiles table loading state. */
 const ShopListingsTableSkeleton = () => {
   const columns = [
-    "Salon name",
+    "Name",
     "Category",
     "Neighborhood",
     "Submitted",

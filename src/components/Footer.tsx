@@ -35,14 +35,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">For salons</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-3">For professionals</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="https://biz.glowpro.rw"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  List your salon
+                  Join as a professional
                 </a>
               </li>
             </ul>

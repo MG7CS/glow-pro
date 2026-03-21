@@ -111,7 +111,7 @@ const LivePreview = ({ form }: { form: BizFormData }) => {
           </div>
           <div>
             <Skeleton className="h-3 w-20" />
-            <p className="text-[10px] text-muted-foreground mt-0.5">salon owner</p>
+            <p className="text-[10px] text-muted-foreground mt-0.5">Professional</p>
           </div>
         </div>
       </div>

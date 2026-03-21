@@ -29,7 +29,7 @@ const DashboardSidebar = ({ tab, setTab, businessName, isLive, className = "" }:
         <Link to="/" className="block">
           <span className="text-primary text-lg font-bold tracking-tight">Glow</span>
           <span className="text-foreground text-lg font-bold tracking-tight">Pro</span>
-          <p className="text-[11px] text-muted-foreground mt-0.5">for salons</p>
+          <p className="text-[11px] text-muted-foreground mt-0.5">for professionals</p>
         </Link>
       </div>
 

@@ -22,8 +22,8 @@ const StepPhotos = ({ form, update, onNext, onBack }: Props) => {
         Back
       </button>
 
-      <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Show off your salon</h1>
-      <p className="text-muted-foreground mb-8">Great photos help customers trust your salon.</p>
+      <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Show off your work</h1>
+      <p className="text-muted-foreground mb-8">Great photos help clients trust your profile.</p>
 
       <PhotoUpload
         coverPhoto={form.coverPhoto}

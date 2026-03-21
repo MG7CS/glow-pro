@@ -14,7 +14,7 @@ const Navbar = () => {
             href="https://biz.glowpro.rw"
             className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:bg-muted px-4 py-2 rounded-full transition-colors whitespace-nowrap"
           >
-            List your salon
+            Join as a professional
           </a>
         </div>
       </div>

@@ -205,7 +205,7 @@ const DashboardStats = ({ businessName, businessId }: Props) => {
 
       {/* Contact breakdown */}
       <div className="border border-border rounded-xl p-5">
-        <h2 className="text-sm font-semibold text-foreground mb-4">How customers contacted you</h2>
+        <h2 className="text-sm font-semibold text-foreground mb-4">How clients contacted you</h2>
 
         {hasContactData ? (
           <div className="space-y-3">
@@ -267,7 +267,7 @@ const DashboardStats = ({ businessName, businessId }: Props) => {
           <p className="text-sm font-medium text-foreground">
             {hasChartData ? (
               <>
-                <span className="font-semibold">{businessName || "Your salon"}</span> was
+                <span className="font-semibold">{businessName || "Your profile"}</span> was
                 discovered by{" "}
                 <span className="font-semibold text-primary">{totalViews} people</span> this week.
               </>
