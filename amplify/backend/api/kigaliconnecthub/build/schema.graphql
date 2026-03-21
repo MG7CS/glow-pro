@@ -1,0 +1,591 @@
+type Shop @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  name: String!
+  category: String!
+  description: String
+  neighborhood: String!
+  mapLat: Float
+  mapLng: Float
+  whatsapp: String!
+  phone: String
+  coverPhotoKey: String
+  galleryPhotoKeys: [String]
+  instagram: String
+  facebook: String
+  tiktok: String
+  verified: Boolean
+  rating: Float
+  ownerName: String
+  ownerEmail: String
+  referralSource: String
+  recruitedBy: String
+  listedSince: String
+  replyTime: String
+  reviews(id: ModelIDKeyConditionInput, filter: ModelReviewFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelReviewConnection
+  hours(id: ModelIDKeyConditionInput, filter: ModelBusinessHourFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelBusinessHourConnection
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Review {
+  id: ID!
+  shopID: ID!
+  reviewerName: String!
+  rating: Int!
+  comment: String!
+  date: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type BusinessHour @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  shopID: ID!
+  day: String!
+  time: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type ShopEvent {
+  id: ID!
+  shopID: ID!
+  eventType: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelShopConnection @aws_api_key @aws_cognito_user_pools {
+  items: [Shop]!
+  nextToken: String
+}
+
+input ModelShopFilterInput {
+  id: ModelIDInput
+  name: ModelStringInput
+  category: ModelStringInput
+  description: ModelStringInput
+  neighborhood: ModelStringInput
+  mapLat: ModelFloatInput
+  mapLng: ModelFloatInput
+  whatsapp: ModelStringInput
+  phone: ModelStringInput
+  coverPhotoKey: ModelStringInput
+  galleryPhotoKeys: ModelStringInput
+  instagram: ModelStringInput
+  facebook: ModelStringInput
+  tiktok: ModelStringInput
+  verified: ModelBooleanInput
+  rating: ModelFloatInput
+  ownerName: ModelStringInput
+  ownerEmail: ModelStringInput
+  referralSource: ModelStringInput
+  recruitedBy: ModelStringInput
+  listedSince: ModelStringInput
+  replyTime: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelShopFilterInput]
+  or: [ModelShopFilterInput]
+  not: ModelShopFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getReview(id: ID!): Review
+  listReviews(filter: ModelReviewFilterInput, limit: Int, nextToken: String): ModelReviewConnection
+  getShopEvent(id: ID!): ShopEvent
+  listShopEvents(filter: ModelShopEventFilterInput, limit: Int, nextToken: String): ModelShopEventConnection
+  reviewsByShopIDAndId(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelReviewFilterInput, limit: Int, nextToken: String): ModelReviewConnection
+  shopEventsByShopID(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelShopEventFilterInput, limit: Int, nextToken: String): ModelShopEventConnection
+  getShop(id: ID!): Shop @aws_api_key @aws_cognito_user_pools
+  listShops(filter: ModelShopFilterInput, limit: Int, nextToken: String): ModelShopConnection @aws_api_key @aws_cognito_user_pools
+  getBusinessHour(id: ID!): BusinessHour @aws_api_key @aws_cognito_user_pools
+  listBusinessHours(filter: ModelBusinessHourFilterInput, limit: Int, nextToken: String): ModelBusinessHourConnection @aws_api_key @aws_cognito_user_pools
+  businessHoursByShopIDAndId(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelBusinessHourFilterInput, limit: Int, nextToken: String): ModelBusinessHourConnection @aws_api_key @aws_cognito_user_pools
+}
+
+input ModelShopConditionInput {
+  name: ModelStringInput
+  category: ModelStringInput
+  description: ModelStringInput
+  neighborhood: ModelStringInput
+  mapLat: ModelFloatInput
+  mapLng: ModelFloatInput
+  whatsapp: ModelStringInput
+  phone: ModelStringInput
+  coverPhotoKey: ModelStringInput
+  galleryPhotoKeys: ModelStringInput
+  instagram: ModelStringInput
+  facebook: ModelStringInput
+  tiktok: ModelStringInput
+  verified: ModelBooleanInput
+  rating: ModelFloatInput
+  ownerName: ModelStringInput
+  ownerEmail: ModelStringInput
+  referralSource: ModelStringInput
+  recruitedBy: ModelStringInput
+  listedSince: ModelStringInput
+  replyTime: ModelStringInput
+  and: [ModelShopConditionInput]
+  or: [ModelShopConditionInput]
+  not: ModelShopConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateShopInput {
+  id: ID
+  name: String!
+  category: String!
+  description: String
+  neighborhood: String!
+  mapLat: Float
+  mapLng: Float
+  whatsapp: String!
+  phone: String
+  coverPhotoKey: String
+  galleryPhotoKeys: [String]
+  instagram: String
+  facebook: String
+  tiktok: String
+  verified: Boolean
+  rating: Float
+  ownerName: String
+  ownerEmail: String
+  referralSource: String
+  recruitedBy: String
+  listedSince: String
+  replyTime: String
+}
+
+input UpdateShopInput {
+  id: ID!
+  name: String
+  category: String
+  description: String
+  neighborhood: String
+  mapLat: Float
+  mapLng: Float
+  whatsapp: String
+  phone: String
+  coverPhotoKey: String
+  galleryPhotoKeys: [String]
+  instagram: String
+  facebook: String
+  tiktok: String
+  verified: Boolean
+  rating: Float
+  ownerName: String
+  ownerEmail: String
+  referralSource: String
+  recruitedBy: String
+  listedSince: String
+  replyTime: String
+}
+
+input DeleteShopInput {
+  id: ID!
+}
+
+type Mutation {
+  createReview(input: CreateReviewInput!, condition: ModelReviewConditionInput): Review
+  updateReview(input: UpdateReviewInput!, condition: ModelReviewConditionInput): Review
+  deleteReview(input: DeleteReviewInput!, condition: ModelReviewConditionInput): Review
+  createShopEvent(input: CreateShopEventInput!, condition: ModelShopEventConditionInput): ShopEvent
+  updateShopEvent(input: UpdateShopEventInput!, condition: ModelShopEventConditionInput): ShopEvent
+  deleteShopEvent(input: DeleteShopEventInput!, condition: ModelShopEventConditionInput): ShopEvent
+  createShop(input: CreateShopInput!, condition: ModelShopConditionInput): Shop @aws_cognito_user_pools
+  updateShop(input: UpdateShopInput!, condition: ModelShopConditionInput): Shop @aws_cognito_user_pools
+  deleteShop(input: DeleteShopInput!, condition: ModelShopConditionInput): Shop @aws_cognito_user_pools
+  createBusinessHour(input: CreateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
+  updateBusinessHour(input: UpdateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
+  deleteBusinessHour(input: DeleteBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
+}
+
+input ModelSubscriptionShopFilterInput {
+  id: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  neighborhood: ModelSubscriptionStringInput
+  mapLat: ModelSubscriptionFloatInput
+  mapLng: ModelSubscriptionFloatInput
+  whatsapp: ModelSubscriptionStringInput
+  phone: ModelSubscriptionStringInput
+  coverPhotoKey: ModelSubscriptionStringInput
+  galleryPhotoKeys: ModelSubscriptionStringInput
+  instagram: ModelSubscriptionStringInput
+  facebook: ModelSubscriptionStringInput
+  tiktok: ModelSubscriptionStringInput
+  verified: ModelSubscriptionBooleanInput
+  rating: ModelSubscriptionFloatInput
+  ownerName: ModelSubscriptionStringInput
+  ownerEmail: ModelSubscriptionStringInput
+  referralSource: ModelSubscriptionStringInput
+  recruitedBy: ModelSubscriptionStringInput
+  listedSince: ModelSubscriptionStringInput
+  replyTime: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionShopFilterInput]
+  or: [ModelSubscriptionShopFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateReview(filter: ModelSubscriptionReviewFilterInput): Review @aws_subscribe(mutations: ["createReview"])
+  onUpdateReview(filter: ModelSubscriptionReviewFilterInput): Review @aws_subscribe(mutations: ["updateReview"])
+  onDeleteReview(filter: ModelSubscriptionReviewFilterInput): Review @aws_subscribe(mutations: ["deleteReview"])
+  onCreateShopEvent(filter: ModelSubscriptionShopEventFilterInput): ShopEvent @aws_subscribe(mutations: ["createShopEvent"])
+  onUpdateShopEvent(filter: ModelSubscriptionShopEventFilterInput): ShopEvent @aws_subscribe(mutations: ["updateShopEvent"])
+  onDeleteShopEvent(filter: ModelSubscriptionShopEventFilterInput): ShopEvent @aws_subscribe(mutations: ["deleteShopEvent"])
+  onCreateShop(filter: ModelSubscriptionShopFilterInput, owner: String): Shop @aws_subscribe(mutations: ["createShop"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateShop(filter: ModelSubscriptionShopFilterInput, owner: String): Shop @aws_subscribe(mutations: ["updateShop"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteShop(filter: ModelSubscriptionShopFilterInput, owner: String): Shop @aws_subscribe(mutations: ["deleteShop"]) @aws_api_key @aws_cognito_user_pools
+  onCreateBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["createBusinessHour"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["updateBusinessHour"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["deleteBusinessHour"]) @aws_api_key @aws_cognito_user_pools
+}
+
+type ModelReviewConnection @aws_cognito_user_pools @aws_api_key {
+  items: [Review]!
+  nextToken: String
+}
+
+input ModelReviewFilterInput {
+  id: ModelIDInput
+  shopID: ModelIDInput
+  reviewerName: ModelStringInput
+  rating: ModelIntInput
+  comment: ModelStringInput
+  date: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelReviewFilterInput]
+  or: [ModelReviewFilterInput]
+  not: ModelReviewFilterInput
+}
+
+input ModelReviewConditionInput {
+  shopID: ModelIDInput
+  reviewerName: ModelStringInput
+  rating: ModelIntInput
+  comment: ModelStringInput
+  date: ModelStringInput
+  and: [ModelReviewConditionInput]
+  or: [ModelReviewConditionInput]
+  not: ModelReviewConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateReviewInput {
+  id: ID
+  shopID: ID!
+  reviewerName: String!
+  rating: Int!
+  comment: String!
+  date: String!
+}
+
+input UpdateReviewInput {
+  id: ID!
+  shopID: ID
+  reviewerName: String
+  rating: Int
+  comment: String
+  date: String
+}
+
+input DeleteReviewInput {
+  id: ID!
+}
+
+input ModelSubscriptionReviewFilterInput {
+  id: ModelSubscriptionIDInput
+  shopID: ModelSubscriptionIDInput
+  reviewerName: ModelSubscriptionStringInput
+  rating: ModelSubscriptionIntInput
+  comment: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionReviewFilterInput]
+  or: [ModelSubscriptionReviewFilterInput]
+}
+
+type ModelBusinessHourConnection @aws_cognito_user_pools @aws_api_key {
+  items: [BusinessHour]!
+  nextToken: String
+}
+
+input ModelBusinessHourFilterInput {
+  id: ModelIDInput
+  shopID: ModelIDInput
+  day: ModelStringInput
+  time: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBusinessHourFilterInput]
+  or: [ModelBusinessHourFilterInput]
+  not: ModelBusinessHourFilterInput
+  owner: ModelStringInput
+}
+
+input ModelBusinessHourConditionInput {
+  shopID: ModelIDInput
+  day: ModelStringInput
+  time: ModelStringInput
+  and: [ModelBusinessHourConditionInput]
+  or: [ModelBusinessHourConditionInput]
+  not: ModelBusinessHourConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateBusinessHourInput {
+  id: ID
+  shopID: ID!
+  day: String!
+  time: String!
+}
+
+input UpdateBusinessHourInput {
+  id: ID!
+  shopID: ID
+  day: String
+  time: String
+}
+
+input DeleteBusinessHourInput {
+  id: ID!
+}
+
+input ModelSubscriptionBusinessHourFilterInput {
+  id: ModelSubscriptionIDInput
+  shopID: ModelSubscriptionIDInput
+  day: ModelSubscriptionStringInput
+  time: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionBusinessHourFilterInput]
+  or: [ModelSubscriptionBusinessHourFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelShopEventConnection {
+  items: [ShopEvent]!
+  nextToken: String
+}
+
+input ModelShopEventFilterInput {
+  id: ModelIDInput
+  shopID: ModelIDInput
+  eventType: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelShopEventFilterInput]
+  or: [ModelShopEventFilterInput]
+  not: ModelShopEventFilterInput
+}
+
+input ModelShopEventConditionInput {
+  shopID: ModelIDInput
+  eventType: ModelStringInput
+  and: [ModelShopEventConditionInput]
+  or: [ModelShopEventConditionInput]
+  not: ModelShopEventConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateShopEventInput {
+  id: ID
+  shopID: ID!
+  eventType: String!
+}
+
+input UpdateShopEventInput {
+  id: ID!
+  shopID: ID
+  eventType: String
+}
+
+input DeleteShopEventInput {
+  id: ID!
+}
+
+input ModelSubscriptionShopEventFilterInput {
+  id: ModelSubscriptionIDInput
+  shopID: ModelSubscriptionIDInput
+  eventType: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionShopEventFilterInput]
+  or: [ModelSubscriptionShopEventFilterInput]
+}
+
+input ModelIDKeyConditionInput {
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  between: [ID]
+  beginsWith: ID
+}

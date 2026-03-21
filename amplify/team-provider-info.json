@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kigaliconnecthub-dev-d0008-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-dev-d0008-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-dev-d0008-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-kigaliconnecthub-dev-d0008-deployment",
+      "UnauthRoleName": "amplify-kigaliconnecthub-dev-d0008-unauthRole",
+      "StackName": "amplify-kigaliconnecthub-dev-d0008",
+      "StackId": "arn:aws:cloudformation:us-east-1:190035266075:stack/amplify-kigaliconnecthub-dev-d0008/c392c990-2249-11f1-91b7-0afff9d356c5",
+      "AmplifyAppId": "d4egpw4z3cdia"
+    },
+    "categories": {
+      "auth": {
+        "kigaliconnecthubfb0de517": {}
+      },
+      "api": {
+        "kigaliconnecthub": {}
+      },
+      "storage": {
+        "businesshotos": {}
+      }
+    }
+  }
+}

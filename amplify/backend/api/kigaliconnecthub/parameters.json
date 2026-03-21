@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "kigaliconnecthub",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authkigaliconnecthubfb0de517",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

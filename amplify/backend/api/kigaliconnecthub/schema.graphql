@@ -1,0 +1,66 @@
+type Shop @model
+  @auth(rules: [
+    { allow: owner },
+    { allow: groups, groups: ["Admins"] },
+    { allow: public, provider: apiKey, operations: [read] }
+  ]) {
+  id: ID!
+  name: String!
+  category: String!
+  description: String
+  neighborhood: String!
+  mapLat: Float
+  mapLng: Float
+  whatsapp: String!
+  phone: String
+  coverPhotoKey: String
+  galleryPhotoKeys: [String]
+  instagram: String
+  facebook: String
+  tiktok: String
+  verified: Boolean
+  rating: Float
+  ownerName: String
+  ownerEmail: String
+  referralSource: String
+  recruitedBy: String
+  listedSince: String
+  replyTime: String
+  reviews: [Review] @hasMany(indexName: "byShop", fields: ["id"])
+  hours: [BusinessHour] @hasMany(indexName: "byShop", fields: ["id"])
+}
+
+# After updating schema fields, run:
+# nvm use 20 && amplify push
+
+type Review @model
+  @auth(rules: [
+    { allow: public, provider: apiKey, operations: [read, create] }
+  ]) {
+  id: ID!
+  shopID: ID! @index(name: "byShop", sortKeyFields: ["id"])
+  reviewerName: String!
+  rating: Int!
+  comment: String!
+  date: String!
+}
+
+type BusinessHour @model
+  @auth(rules: [
+    { allow: owner },
+    { allow: public, provider: apiKey, operations: [read] }
+  ]) {
+  id: ID!
+  shopID: ID! @index(name: "byShop", sortKeyFields: ["id"])
+  day: String!
+  time: String!
+}
+
+type ShopEvent @model
+  @auth(rules: [
+    { allow: public, provider: apiKey, operations: [create, read] }
+  ]) {
+  id: ID!
+  shopID: ID! @index(name: "byShopID", sortKeyFields: ["id"], queryField: "shopEventsByShopID")
+  eventType: String!
+}

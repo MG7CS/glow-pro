@@ -1,0 +1,187 @@
+{
+  "common": {
+    "back": "Subira",
+    "continue": "Komeza",
+    "save": "Bika",
+    "cancel": "Kureka",
+    "edit": "Hindura",
+    "loading": "Gutegereza...",
+    "optional": "si ngombwa",
+    "skipForNow": "Reka ubu",
+    "whatsapp": "WhatsApp",
+    "away": "uvuye hano",
+    "verified": "Byemejwe",
+    "newListing": "Ishyirwaho rishya",
+    "seeAllPhotos": "Reba amafoto yose"
+  },
+  "nav": {
+    "listYourBusiness": "Andika ubucuruzi bwawe",
+    "forBusiness": "ku bucuruzi",
+    "dashboard": "Ikibaho"
+  },
+  "search": {
+    "what": "Iki",
+    "whatPlaceholder": "Ushaka iki?",
+    "whatPlaceholderShort": "Shakisha...",
+    "where": "Hehe",
+    "wherePlaceholder": "Iki cyaro?",
+    "wherePlaceholderShort": "Cyaro"
+  },
+  "home": {
+    "popularBusinesses": "Ubucuruzi buzwi",
+    "trendingThisWeek": "Azwi iyi cyumweru",
+    "newlyListed": "Mashya yanditswe",
+    "emptyTitle": "Nta bucuruzi arahari — ba wa mbere!",
+    "emptySubtitle": "ConnectKigali itangiye. Andika ubucuruzi bwawe kugira ngo ubone abakiriya ibihumbi i Kigali.",
+    "noBusinessesInCategory": "Nta {{category}} arahari",
+    "beFirstInCategory": "Ba wa mbere mu gushyiraho ubucuruzi muri iki cyiciro.",
+    "showAllBusinesses": "Erekana ubucuruzi bwose",
+    "showMore": "Erekana byinshi",
+    "noResults": "Nta bucuruzi buhuye n'ibyo ushakisha",
+    "tryDifferentSearch": "Gerageza amagambo atandukanye cyangwa usibe ibihujwe.",
+    "clearFilters": "Siba ibihujwe byose"
+  },
+  "business": {
+    "notFound": "Ubucuruzi ntibubonetse",
+    "notFoundDesc": "Ubu bucuruzi ntiburiho cyangwa bukuweho.",
+    "backToHome": "← Subira ahabanza",
+    "open": "Bufunguye ubu",
+    "closed": "Bufunze",
+    "about": "Ibyerekeye",
+    "hours": "Amasaha",
+    "location": "Aho buherereye",
+    "directions": "Inzira",
+    "share": "Sangira",
+    "save": "Bika",
+    "saved": "Byabitswe",
+    "overview": "Incamake",
+    "social": "Imikorere kuri internet",
+    "reviews": "Ibitekerezo",
+    "recentOnInstagram": "Ibyashyizwe kuri Instagram vuba",
+    "listedSince": "Yanditswe kuva",
+    "moreBusinessesIn": "Ubundi bucuruzi i"
+  },
+  "categories": {
+    "shoes": "Ingata",
+    "groceries": "Ibiribwa",
+    "electronics": "Ikoranabuhanga",
+    "fashion": "Imyenda",
+    "food": "Ibiryo",
+    "beauty": "Ubwiza",
+    "salons": "Salon",
+    "services": "Serivisi"
+  },
+  "onboarding": {
+    "preview": "Igaragaza ryihuse",
+    "welcome": {
+      "nameQuestion": "Iduka ryawe ryitwa iki?",
+      "nameHint": "Urashobora guhindura nyuma.",
+      "hint": "Ni ubuntu • Bisaba nko iminota 5",
+      "trustBadge": "Injira mu ndango y'ubucuruzi i Kigali"
+    },
+    "auth": {
+      "title": "Hafi ya hose — fungura konti",
+      "subtitle": "Irangwa ryawe riri hafi. Fungura konti kugira ngo ushyire hanze kandi ubigenzure.",
+      "privacy": "Numero ya telefoni yawe ikoreshwa mu kwinjira. Ntizigaragarira rubanda."
+    },
+    "basics": {
+      "title": "Ni byiza, {{name}}!",
+      "titleShort": "Ni byiza, {{name}}!",
+      "subtitle": "Tubwire ibindi bibyerekeye iduka ryawe.",
+      "businessName": "Izina ry'iduka",
+      "businessNamePlaceholder": "urugero. Iduka rya Mama Grace",
+      "category": "Icyiciro",
+      "categoryPlaceholder": "Hitamo icyiciro",
+      "description": "Isobanuro ngufi",
+      "descriptionPlaceholder": "Ni iki gitera iduka ryawe kuba ryihariye? (si ngombwa)"
+    },
+    "location": {
+      "title": "Abakiriya barokora hehe?",
+      "subtitle": "Fasha abakiriya kubona iduka ryawe mu cyaro cyabo.",
+      "dropPin": "Shyira ikimenyetso ku karita",
+      "tapToDrop": "Kanda ugire ikimenyetso",
+      "tapToUpdate": "Kanda uhindure ikimenyetso",
+      "neighborhood": "Cyaro",
+      "neighborhoodPlaceholder": "Hitamo cyaro cyawe"
+    },
+    "contact": {
+      "title": "Abakiriya bakugera bate?",
+      "subtitle": "WhatsApp ni uburyo bwa mbere abakiriya babasha kuvugana n'amaduka i Kigali.",
+      "whatsapp": "Numero ya WhatsApp",
+      "phone": "Numero ya telefoni"
+    },
+    "photos": {
+      "title": "Erekana iduka ryawe neza",
+      "subtitle": "Amafoto meza afasha abakiriya kwizera ubucuruzi bwawe.",
+      "cover": "Ifoto nyamukuru"
+    },
+    "social": {
+      "title": "Huza n'imikorere yawe kuri internet",
+      "subtitle": "Abakiriya bakubone — si ngombwa."
+    },
+    "review": {
+      "title": "Neza! Witeguye gushyira hanze?",
+      "subtitle": "Reba irangwa ryawe hepfo. Urashobora guhindura nyuma.",
+      "publish": "Shyira hanze iduka ryawe",
+      "publishing": "Gushyira hanze..."
+    }
+  },
+  "dashboard": {
+    "listingLive": "Irangwa ryawe riri kuri interineti",
+    "listingLiveDesc": "Abakiriya barashobora kukubona kuri ConnectKigali",
+    "completeProfile": "Uzuza umwirondoro wawe",
+    "completeProfileDesc": "Ibintu bimwe ntibibujijwe",
+    "overview": "Incamake",
+    "editListing": "Hindura irangwa",
+    "stats": "Imibare",
+    "viewPublicListing": "Reba irangwa rusange",
+    "thingsToDo": "Ibintu urashobora gukora",
+    "addMorePhotos": "Ongeraho amafoto",
+    "addMorePhotosDesc": "Amaduka afite amafoto abona abantu 3× benshi",
+    "connectInstagram": "Huza Instagram",
+    "connectInstagramDesc": "Erekana inyandiko zawe ku irangwa ryawe",
+    "shareListing": "Sangira irangwa ryawe",
+    "shareListingDesc": "Ohereza abakiriya bawe link ya ConnectKigali",
+    "getFirstReview": "Bona igitekerezo cya mbere",
+    "getFirstReviewDesc": "Saba umukiriya gutanga igitekerezo",
+    "listingPreview": "Igaragaza ry'irangwa ryawe"
+  },
+  "auth": {
+    "signIn": "Injira",
+    "signInSubtitle": "Injira mu ikibaho cyawe",
+    "signOut": "Sohoka",
+    "createAccount": "Fungura konti",
+    "createAccountSubtitle": "Andika iduka ryawe kuri ConnectKigali",
+    "register": "Iyandikishe",
+    "phone": "Numero ya telefoni",
+    "email": "Imeyili",
+    "password": "Ijambobanga",
+    "confirmPassword": "Emeza ijambobanga",
+    "businessName": "Izina ry'iduka",
+    "businessNamePlaceholder": "urugero. Iduka rya Mama Grace",
+    "forgotPassword": "Wibagiwe ijambobanga?",
+    "forgotPasswordSubtitle": "Injiza numero ya telefoni kandi tuzooherereza code.",
+    "sendResetLink": "Ohereza code",
+    "backToSignIn": "Subira aho winjira",
+    "resetSent": "Code yoherejwe",
+    "resetSentDesc": "Twoherejwe code kuri",
+    "resetFailed": "Ntibishoboye. Ongera ugerageze.",
+    "noAccount": "Nta konti ufite?",
+    "haveAccount": "Usanzwe ufite konti?",
+    "invalidCredentials": "Numero cyangwa ijambobanga ntabwo ari ryiza. Ongera ugerageze.",
+    "signUpFailed": "Gufungura konti ntibyakunze. Ongera ugerageze.",
+    "passwordMismatch": "Amajambobanga ntabwo ahuye."
+  },
+  "footer": {
+    "tagline": "Bona iduka iryo ariryo ryose i Kigali",
+    "explore": "Shakisha",
+    "home": "Ahabanza",
+    "about": "Ibyerekeye",
+    "contact": "Twandikire",
+    "forBusiness": "Ku bucuruzi",
+    "language": "Ururimi",
+    "rights": "Uburenganzira bwose bwabitswe.",
+    "privacy": "Ibanga",
+    "terms": "Amategeko"
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "Resources": {
+    "Shopreviewsauth0FunctionShopreviewsauth0FunctionAppSyncFunctionA3D9C4A5": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "Shopreviewsauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.reviews.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
+      }
+    },
+    "ShopReviewsDataResolverFnShopReviewsDataResolverFnAppSyncFunction766B5FCB": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackReviewNestedStackReviewNestedStackResource73D7177DOutputstransformerrootstackReviewReviewDataSource924E2306Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "ShopReviewsDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.reviews.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.reviews.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "ShopreviewsResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "reviews",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "Shopreviewsauth0FunctionShopreviewsauth0FunctionAppSyncFunctionA3D9C4A5",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "ShopReviewsDataResolverFnShopReviewsDataResolverFnAppSyncFunction766B5FCB",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Shop\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"reviews\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackReviewNestedStackReviewNestedStackResource73D7177DOutputstransformerrootstackReviewReviewTableEAC51F2ARef"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:14ee4a58-fab0-404a-99c4-fcbc67d79348\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Shop"
+      }
+    },
+    "Shophoursauth0FunctionShophoursauth0FunctionAppSyncFunctionBC7B7432": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "Shophoursauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.hours.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
+      }
+    },
+    "ShopHoursDataResolverFnShopHoursDataResolverFnAppSyncFunctionE3DBC6DF": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourDataSource5F4B7A42Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "ShopHoursDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.hours.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.hours.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "ShophoursResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "hours",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "Shophoursauth0FunctionShophoursauth0FunctionAppSyncFunctionBC7B7432",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "ShopHoursDataResolverFnShopHoursDataResolverFnAppSyncFunctionE3DBC6DF",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Shop\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"hours\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourTableDA22B697Ref"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:14ee4a58-fab0-404a-99c4-fcbc67d79348\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Shop"
+      }
+    }
+  },
+  "Parameters": {
+    "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackReviewNestedStackReviewNestedStackResource73D7177DOutputstransformerrootstackReviewReviewDataSource924E2306Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackReviewNestedStackReviewNestedStackResource73D7177DOutputstransformerrootstackReviewReviewTableEAC51F2ARef": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourDataSource5F4B7A42Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourTableDA22B697Ref": {
+      "Type": "String"
+    }
+  }
+}

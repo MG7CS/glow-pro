@@ -1,0 +1,53 @@
+# Paste this into amplify/backend/api/<your-api-name>/schema.graphql
+# after running: amplify add api
+
+type business @model
+  @auth(rules: [
+    { allow: owner },
+    { allow: public, provider: apiKey, operations: [read] }
+  ]) {
+  id: ID!
+  name: String!
+  category: String!
+  description: String
+  neighborhood: String!
+  mapLat: Float
+  mapLng: Float
+  whatsapp: String!
+  phone: String
+  coverPhotoKey: String
+  galleryPhotoKeys: [String]
+  instagram: String
+  facebook: String
+  tiktok: String
+  verified: Boolean
+  rating: Float
+  ownerName: String
+  listedSince: String
+  replyTime: String
+  reviews: [Review] @hasMany(indexName: "bybusiness", fields: ["id"])
+  hours: [BusinessHour] @hasMany(indexName: "bybusiness", fields: ["id"])
+}
+
+type Review @model
+  @auth(rules: [
+    { allow: public, provider: apiKey, operations: [read, create] }
+  ]) {
+  id: ID!
+  businessID: ID! @index(name: "bybusiness", sortKeyFields: ["id"])
+  reviewerName: String!
+  rating: Int!
+  comment: String!
+  date: String!
+}
+
+type BusinessHour @model
+  @auth(rules: [
+    { allow: owner },
+    { allow: public, provider: apiKey, operations: [read] }
+  ]) {
+  id: ID!
+  businessID: ID! @index(name: "bybusiness", sortKeyFields: ["id"])
+  day: String!
+  time: String!
+}

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13.3%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13.3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13.3%;
+    --primary: 160 81% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.9%;
+    --secondary-foreground: 0 0% 13.3%;
+    --muted: 0 0% 96.9%;
+    --muted-foreground: 0 0% 44.3%;
+    --accent: 0 0% 96.9%;
+    --accent-foreground: 0 0% 13.3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 86.7%;
+    --input: 0 0% 86.7%;
+    --ring: 160 81% 40%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 160 81% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 160 81% 40%;
+    --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 8px 28px rgba(0, 0, 0, 0.12);
+    --shadow-search: 0 3px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Hide scrollbar for category ribbon */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes hero-slide-text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slide-text-reveal {
+  animation: hero-slide-text-reveal 0.4s ease 0.3s both;
+}
+
+@keyframes mobile-nav-link-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link-stagger {
+  opacity: 0;
+  animation: mobile-nav-link-in 0.5s ease forwards;
+}
+
+/* ── Biz portal (onboarding, login, forgot password on biz.*) ── */
+.biz-portal .biz-field {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.biz-portal .biz-field:focus,
+.biz-portal .biz-field:focus-visible {
+  outline: none;
+  border: 2px solid #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+}
+
+.biz-portal .biz-field.biz-field--error:not(:focus):not(:focus-visible) {
+  border: 1px solid hsl(var(--destructive) / 0.9);
+}
+
+.biz-portal .biz-field.biz-field--error:focus,
+.biz-portal .biz-field.biz-field--error:focus-visible {
+  border: 2px solid hsl(var(--destructive));
+  box-shadow: 0 0 0 4px hsl(var(--destructive) / 0.12);
+}
+
+.biz-portal .biz-field.biz-field--success:not(:focus):not(:focus-visible) {
+  border: 1px solid #10b981;
+}
+
+.biz-portal .biz-field.biz-field--success:focus,
+.biz-portal .biz-field.biz-field--success:focus-visible {
+  border: 2px solid #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+}
+
+.biz-portal .biz-continue-btn {
+  background-color: #10b981;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+}
+
+.biz-portal .biz-continue-btn:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+.biz-portal .biz-preview-panel {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+@layer components {
+  .glass-panel {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .glass-panel--interactive {
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-panel--interactive:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+}

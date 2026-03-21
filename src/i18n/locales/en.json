@@ -1,0 +1,187 @@
+{
+  "common": {
+    "back": "Back",
+    "continue": "Continue",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "optional": "optional",
+    "skipForNow": "Skip for now",
+    "whatsapp": "WhatsApp",
+    "away": "away",
+    "verified": "Verified",
+    "newListing": "New listing",
+    "seeAllPhotos": "See all photos"
+  },
+  "nav": {
+    "listYourBusiness": "List your business",
+    "forBusiness": "for Business",
+    "dashboard": "Dashboard"
+  },
+  "search": {
+    "what": "What",
+    "whatPlaceholder": "What are you looking for?",
+    "whatPlaceholderShort": "Search businesses...",
+    "where": "Where",
+    "wherePlaceholder": "Which neighborhood?",
+    "wherePlaceholderShort": "Neighborhood"
+  },
+  "home": {
+    "popularBusinesses": "Popular businesses",
+    "trendingThisWeek": "Trending this week",
+    "newlyListed": "Newly listed",
+    "emptyTitle": "No businesses yet — be the first!",
+    "emptySubtitle": "ConnectKigali is just getting started. List your business and reach thousands of customers in Kigali.",
+    "noBusinessesInCategory": "No {{category}} businesses yet",
+    "beFirstInCategory": "Be the first to list your business in this category.",
+    "showAllBusinesses": "Show all businesses",
+    "showMore": "Show more",
+    "noResults": "No businesses match your search",
+    "tryDifferentSearch": "Try different keywords or clear your filters.",
+    "clearFilters": "Clear all filters"
+  },
+  "business": {
+    "notFound": "Business not found",
+    "notFoundDesc": "This business doesn't exist or has been removed.",
+    "backToHome": "← Back to home",
+    "open": "Open now",
+    "closed": "Closed",
+    "about": "About",
+    "hours": "Hours",
+    "location": "Location",
+    "directions": "Directions",
+    "share": "Share",
+    "save": "Save",
+    "saved": "Saved",
+    "overview": "Overview",
+    "social": "Social",
+    "reviews": "Reviews",
+    "recentOnInstagram": "Recent on Instagram",
+    "listedSince": "Listed since",
+    "moreBusinessesIn": "More businesses in"
+  },
+  "categories": {
+    "shoes": "Shoes",
+    "groceries": "Groceries",
+    "electronics": "Electronics",
+    "fashion": "Fashion",
+    "food": "Food",
+    "beauty": "Beauty",
+    "salons": "Salons",
+    "services": "Services"
+  },
+  "onboarding": {
+    "preview": "Live preview",
+    "welcome": {
+      "nameQuestion": "What's your business called?",
+      "nameHint": "You can always change this later.",
+      "hint": "Free • Takes about 5 minutes",
+      "trustBadge": "Join Kigali's growing business directory"
+    },
+    "auth": {
+      "title": "Almost there — create your account",
+      "subtitle": "Your listing is ready. Create an account to publish it and manage it from your dashboard.",
+      "privacy": "Your phone number is used to log in. It will never be shown publicly."
+    },
+    "basics": {
+      "title": "Great, {{name}}!",
+      "titleShort": "Great, {{name}}!",
+      "subtitle": "Now tell us a bit more about your business.",
+      "businessName": "business name",
+      "businessNamePlaceholder": "e.g. Mama Grace's Boutique",
+      "category": "Category",
+      "categoryPlaceholder": "Select a category",
+      "description": "Short description",
+      "descriptionPlaceholder": "What makes your business special? (optional)"
+    },
+    "location": {
+      "title": "Where can people find you?",
+      "subtitle": "Help customers discover your business in their neighborhood.",
+      "dropPin": "Drop a pin on the map",
+      "tapToDrop": "Tap to drop a pin",
+      "tapToUpdate": "Tap to update pin",
+      "neighborhood": "Neighborhood",
+      "neighborhoodPlaceholder": "Select your neighborhood"
+    },
+    "contact": {
+      "title": "How should customers reach you?",
+      "subtitle": "WhatsApp is the #1 way customers connect with businesses in Kigali.",
+      "whatsapp": "WhatsApp number",
+      "phone": "Phone number"
+    },
+    "photos": {
+      "title": "Show off your business",
+      "subtitle": "Great photos help customers trust your business.",
+      "cover": "Cover photo"
+    },
+    "social": {
+      "title": "Connect your social media",
+      "subtitle": "Let customers follow you — totally optional."
+    },
+    "review": {
+      "title": "Looking good! Ready to publish?",
+      "subtitle": "Review your listing below. You can always edit it later.",
+      "publish": "Publish your business",
+      "publishing": "Publishing..."
+    }
+  },
+  "dashboard": {
+    "listingLive": "Your business is live",
+    "listingLiveDesc": "Customers can find you on ConnectKigali",
+    "completeProfile": "Complete your profile",
+    "completeProfileDesc": "Some fields are missing",
+    "overview": "Overview",
+      "editListing": "Edit business",
+    "stats": "Stats",
+    "viewPublicBusiness": "View public business",
+    "thingsToDo": "Things you can do",
+    "addMorePhotos": "Add more photos",
+    "addMorePhotosDesc": "Businesses with photos get 3× more views",
+    "connectInstagram": "Connect Instagram",
+    "connectInstagramDesc": "Show your latest posts on your listing",
+    "shareBusiness": "Share your business",
+    "shareListingDesc": "Send your ConnectKigali link to customers",
+    "getFirstReview": "Get your first review",
+    "getFirstReviewDesc": "Ask a customer to leave a review",
+    "businessPreview": "Your business preview"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signInSubtitle": "Access your business dashboard",
+    "signOut": "Sign out",
+    "createAccount": "Create account",
+    "createAccountSubtitle": "List your business on ConnectKigali",
+    "register": "Register",
+    "phone": "Phone number",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "businessName": "Business name",
+    "businessNamePlaceholder": "e.g. Mama Grace's Boutique",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordSubtitle": "Enter your phone number and we'll send a reset code.",
+    "sendResetLink": "Send reset code",
+    "backToSignIn": "Back to sign in",
+    "resetSent": "Reset code sent",
+    "resetSentDesc": "We sent a code to",
+    "resetFailed": "Could not send reset code. Please try again.",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "invalidCredentials": "Invalid phone number or password. Please try again.",
+    "signUpFailed": "Sign up failed. Please try again.",
+    "passwordMismatch": "Passwords do not match."
+  },
+  "footer": {
+    "tagline": "Find any business in Kigali",
+    "explore": "Explore",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "forBusiness": "For Business",
+    "language": "Language",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
