@@ -31,4 +31,7 @@ export interface Business {
   };
   reviews?: { name: string; rating: number; comment: string; date: string }[];
   images?: string[];
+  /** Salon service menu — from Shop.services */
+  services?: string[];
+  bookingEnabled?: boolean | null;
 }

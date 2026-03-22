@@ -5,18 +5,20 @@ import DashboardOverview from "@/components/biz/DashboardOverview";
 import DashboardEditListing from "@/components/biz/DashboardEditListing";
 import DashboardStats from "@/components/biz/DashboardStats";
 import DashboardAccount from "@/components/biz/DashboardAccount";
+import DashboardBookings from "@/components/biz/DashboardBookings";
 import LivePreview from "@/components/biz/LivePreview";
 import type { BizFormData } from "@/types/biz";
 import { BIZ_FORM_INITIAL } from "@/types/biz";
 import { useMybusiness } from "@/hooks/useMyShop";
 import { useAuthState } from "@/hooks/useAuthState";
 
-export type DashboardTab = "overview" | "edit" | "stats" | "account";
+export type DashboardTab = "overview" | "edit" | "stats" | "bookings" | "account";
 
 const TAB_LABELS: Record<DashboardTab, string> = {
   overview: "Dashboard",
   edit: "Edit listing",
   stats: "Stats",
+  bookings: "Bookings",
   account: "Account",
 };
 
@@ -189,6 +191,7 @@ const BusinessDashboard = () => {
             {tab === "stats" && (
               <DashboardStats businessName={form.businessName} businessId={businessId} />
             )}
+            {tab === "bookings" && <DashboardBookings shopId={businessId} />}
             {tab === "account" && (
               <DashboardAccount businessId={businessId} businessName={form.businessName} />
             )}

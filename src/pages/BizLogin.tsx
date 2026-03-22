@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { bizContinueBtn, bizField } from "@/lib/bizUi";
 import { checkBizOwnerShopAccess } from "@/lib/bizShopApproval";
 import { getBizDashboardUrl } from "@/lib/bizUrl";
+import { isBizPortalHost } from "@/lib/portalEnv";
 
 /** Phone → E.164 (+250…); email unchanged (trimmed). */
 const normalizePhone = (input: string) => {
@@ -20,7 +21,7 @@ const normalizePhone = (input: string) => {
 const WHATSAPP_HREF = "https://wa.me/250788000000";
 
 const BizLogin = () => {
-  const isBizSubdomain = window.location.hostname.startsWith("biz.");
+  const isBizSubdomain = isBizPortalHost();
   const bizBase = isBizSubdomain ? "" : "/biz";
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");

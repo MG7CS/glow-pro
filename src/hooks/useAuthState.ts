@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { signOut as amplifySignOut } from "aws-amplify/auth";
+import { isBizPortalHost } from "@/lib/portalEnv";
 
 export type AuthState = {
   isLoggedIn: boolean;
@@ -33,8 +34,7 @@ export const useAuthState = (): AuthState => {
     LS_KEYS.forEach((k) => localStorage.removeItem(k));
     setIdentifier(null);
     window.dispatchEvent(new Event("biz_auth_change"));
-    const isBizSubdomain = window.location.hostname.startsWith("biz.");
-    window.location.href = isBizSubdomain ? "/" : "/biz";
+    window.location.href = isBizPortalHost() ? "/" : "/biz";
   };
 
   return { isLoggedIn: !!identifier, identifier, signOut };

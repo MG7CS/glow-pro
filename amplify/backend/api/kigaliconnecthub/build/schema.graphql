@@ -458,10 +458,10 @@ type Mutation {
   createBusinessHour(input: CreateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
   updateBusinessHour(input: UpdateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
   deleteBusinessHour(input: DeleteBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
-  createAppointment(input: CreateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
+  createAppointment(input: CreateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_api_key @aws_cognito_user_pools
   updateAppointment(input: UpdateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
   deleteAppointment(input: DeleteAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
-  createVouch(input: CreateVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
+  createVouch(input: CreateVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_api_key @aws_cognito_user_pools
   updateVouch(input: UpdateVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
   deleteVouch(input: DeleteVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
 }

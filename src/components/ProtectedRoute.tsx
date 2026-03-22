@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { isBizPortalHost } from "@/lib/portalEnv";
 
 type AuthState = "loading" | "authenticated" | "unauthenticated";
 
@@ -34,8 +35,7 @@ const ProtectedRoute = () => {
   }
 
   if (authState === "unauthenticated") {
-    const isBizSubdomain = window.location.hostname.startsWith("biz.");
-    return <Navigate to={isBizSubdomain ? "/" : "/biz/login"} replace />;
+    return <Navigate to={isBizPortalHost() ? "/" : "/biz/login"} replace />;
   }
 
   return <Outlet />;

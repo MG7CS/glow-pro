@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "@/hooks/useAuthState";
+import { isBizPortalHost } from "@/lib/portalEnv";
 import { LayoutDashboard, LogOut } from "lucide-react";
 import type { CSSProperties } from "react";
 
@@ -13,7 +14,7 @@ const headerGlassStyle: CSSProperties = {
 const BizNavbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn, signOut } = useAuthState();
-  const bizBase = window.location.hostname.startsWith("biz.") ? "" : "/biz";
+  const bizBase = isBizPortalHost() ? "" : "/biz";
 
   const handleSignOut = () => {
     signOut();

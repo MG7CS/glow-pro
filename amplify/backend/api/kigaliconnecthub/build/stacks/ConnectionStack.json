@@ -111,7 +111,7 @@
               {
                 "Ref": "referencetotransformerrootstackReviewNestedStackReviewNestedStackResource73D7177DOutputstransformerrootstackReviewReviewTableEAC51F2ARef"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -230,12 +230,42 @@
               {
                 "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourTableDA22B697Ref"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
         "TypeName": "Shop"
+      }
+    },
+    "Shopappointmentsauth0FunctionShopappointmentsauth0FunctionAppSyncFunction7FAD21DE": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "Shopappointmentsauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.appointments.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
       }
     },
     "ShopAppointmentsDataResolverFnShopAppointmentsDataResolverFnAppSyncFunctionF495C536": {
@@ -295,7 +325,7 @@
           "Functions": [
             {
               "Fn::GetAtt": [
-                "Shophoursauth0FunctionShophoursauth0FunctionAppSyncFunctionBC7B7432",
+                "Shopappointmentsauth0FunctionShopappointmentsauth0FunctionAppSyncFunction7FAD21DE",
                 "FunctionId"
               ]
             },
@@ -319,7 +349,7 @@
               {
                 "Ref": "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentTable0F838664Ref"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -408,7 +438,7 @@
               {
                 "Ref": "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchTable4A5E12ABRef"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },

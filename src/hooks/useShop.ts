@@ -75,6 +75,8 @@ function mapShopToBusiness(
     hours: (b.hours?.items ?? []).map((h: any) => ({ day: h.day, time: h.time })),
     reviews,
     images: galleryImages.filter(Boolean),
+    services: Array.isArray(b.services) ? b.services : undefined,
+    bookingEnabled: b.bookingEnabled ?? null,
   };
 }
 
@@ -150,3 +152,6 @@ export const useBusiness = (id: string | undefined) =>
     enabled: !!id,
     staleTime: 5 * 60 * 1000,
   });
+
+/** Alias — same as `useBusiness` (shop details for booking, profile, etc.). */
+export const useShop = useBusiness;

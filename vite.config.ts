@@ -6,9 +6,8 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   server: {
     host: "::",
-    port: 8080,
-    // Consumer app (this repo). Run the biz portal as a separate Vite app on http://localhost:5174;
-    // links use `getBizUrl()` in src/lib/bizUrl.ts. Override with env `VITE_BIZ_PORTAL_URL` for staging.
+    /** Default consumer homepage. Use `npm run dev:biz` (5174), `dev:admin` (5175), `dev:recruiter` (5176) for other portals — same app, port selects portal in App.tsx. */
+    port: 5173,
     hmr: {
       overlay: false,
     },

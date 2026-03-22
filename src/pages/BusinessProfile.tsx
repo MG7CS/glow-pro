@@ -152,6 +152,9 @@ const BusinessProfile = () => {
   const todayHours = business.hours?.find((h) => h.isToday);
   const isOpen = todayHours?.time !== "Closed";
 
+  /** Show Book unless explicitly disabled (null/undefined = show). */
+  const showBookCTA = business.bookingEnabled !== false;
+
   const nearbyBusinesses = (allData?.popular ?? [])
     .filter((b) => b.id !== business.id)
     .slice(0, 6);
@@ -242,11 +245,21 @@ const BusinessProfile = () => {
 
         {/* Action buttons row — no raw contact info shown, events logged */}
         <div className="flex gap-3 mt-5 overflow-x-auto scrollbar-hide pb-1">
+          {showBookCTA && (
+            <button
+              type="button"
+              onClick={() => navigate(`/book/${business.id}`)}
+              style={{ background: "#D97706" }}
+              className="flex shrink-0 items-center gap-2 px-5 py-2 rounded-full text-white font-semibold transition-colors hover:!bg-amber-700"
+            >
+              Book appointment
+            </button>
+          )}
           {business.social?.whatsapp && (
             <ActionPill
               icon={<MessageCircle className="w-4 h-4" />}
               label="WhatsApp"
-              primary
+              primary={!showBookCTA}
               href={getWhatsAppUrl(business.social.whatsapp)}
               onClick={() => {
                 void logShopEvent(business.id, "whatsapp").catch(() => {});
@@ -336,7 +349,17 @@ const BusinessProfile = () => {
             <span className="text-xs text-muted-foreground">{business.rating.toFixed(2)}</span>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center justify-end gap-2">
+          {showBookCTA && (
+            <button
+              type="button"
+              onClick={() => navigate(`/book/${business.id}`)}
+              style={{ background: "#D97706" }}
+              className="flex shrink-0 items-center gap-2 px-5 py-2 rounded-full text-sm text-white font-semibold transition-colors hover:!bg-amber-700"
+            >
+              Book appointment
+            </button>
+          )}
           {business.phone && (
             <a
               href={`tel:${business.phone}`}
@@ -359,7 +382,11 @@ const BusinessProfile = () => {
               onClick={() => {
                 void logShopEvent(business.id, "whatsapp").catch(() => {});
               }}
-              className="bg-primary text-primary-foreground px-4 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition-colors"
+              className={
+                showBookCTA
+                  ? "border border-border text-foreground px-4 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-muted transition-colors"
+                  : "bg-primary text-primary-foreground px-4 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition-colors"
+              }
             >
               <MessageCircle className="w-4 h-4" />
               WhatsApp

@@ -6,7 +6,7 @@ const BIZ_LOCAL = "http://localhost:5174";
 
 /**
  * Base URL for the biz portal (onboarding, dashboard, /join).
- * - Local dev: `http://localhost:5174` when the consumer app is on localhost/127.0.0.1 or `import.meta.env.DEV` is true.
+ * - Local dev: `http://localhost:5174` when the consumer app is on localhost/127.0.0.1 (e.g. port 5173) or `import.meta.env.DEV` is true.
  * - Override: set `VITE_BIZ_PORTAL_URL` (e.g. staging).
  * - Production: `https://biz.glowpro.rw`
  */

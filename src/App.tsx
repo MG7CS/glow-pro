@@ -8,6 +8,7 @@ import BizLayout from "@/layouts/BizLayout";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import BusinessProfile from "./pages/BusinessProfile";
+import BookingPage from "@/pages/BookingPage";
 import BusinessOnboarding from "./pages/BusinessOnboarding";
 import BusinessDashboard from "./pages/BusinessDashboard";
 import BizLogin from "./pages/BizLogin";
@@ -23,9 +24,11 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const hostname = window.location.hostname;
-  const isBiz = hostname.startsWith("biz.");
-  const isAdmin = hostname.startsWith("admin.");
-  const isRecruiter = hostname.startsWith("recruiter.");
+  const port = window.location.port;
+
+  const isBiz = hostname.startsWith("biz.") || port === "5174";
+  const isAdmin = hostname.startsWith("admin.") || port === "5175";
+  const isRecruiter = hostname.startsWith("recruiter.") || port === "5176";
 
   if (isAdmin) {
     return (
@@ -96,6 +99,7 @@ const App = () => {
             <Route element={<UserLayout />}>
               <Route path="/" element={<Index />} />
               <Route path="/business/:id" element={<BusinessProfile />} />
+              <Route path="/book/:shopId" element={<BookingPage />} />
             </Route>
 
             {/* Business routes — wrapped with BizNavbar */}

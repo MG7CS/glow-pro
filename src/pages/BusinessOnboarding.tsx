@@ -18,13 +18,13 @@ import { normalizePhone } from "@/lib/bizOwnerAuth";
 import { RECRUITER_REF_STORAGE_KEY } from "@/lib/recruiterRef";
 import type { BizFormData } from "@/types/biz";
 import { BIZ_FORM_INITIAL } from "@/types/biz";
+import { isRecruiterPortalHost } from "@/lib/portalEnv";
 // Step 0: business name only (no progress bar shown)
 // Biz: 1–6 form, 7 auth, 8 referral, 9 review — max step 9
 // Recruiter: 1–6 form, 7 review — max step 7
 
 const BusinessOnboarding = () => {
-  const isRecruiter =
-    typeof window !== "undefined" && window.location.hostname.startsWith("recruiter.");
+  const isRecruiter = typeof window !== "undefined" && isRecruiterPortalHost();
   const maxStep = isRecruiter ? 7 : 9;
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<BizFormData>(BIZ_FORM_INITIAL);

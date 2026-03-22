@@ -43,28 +43,22 @@
     "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
       "Type": "String"
     },
+    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+      "Type": "String"
+    },
     "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
       "Type": "String"
     },
     "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
       "Type": "String"
     },
-    "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId": {
-      "Type": "String"
-    },
     "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId": {
-      "Type": "String"
-    },
-    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
       "Type": "String"
     },
     "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationcreateShopinit0FunctionMutationcreateShopinit0FunctionAppSyncFunction0AAABB9FFunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationupdateShopinit0FunctionMutationupdateShopinit0FunctionAppSyncFunction184BEA30FunctionId": {
-      "Type": "String"
-    },
-    "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId": {
       "Type": "String"
     },
     "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopSubscriptionOnCreateShopDataResolverFnSubscriptionOnCreateShopDataResolverFnAppSyncFunctionDFC345B8FunctionId": {
@@ -420,6 +414,36 @@
         "AppointmentIAMRoleC35F7722"
       ]
     },
+    "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "QuerygetAppointmentauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Query.getAppointment.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
+      }
+    },
     "QueryGetAppointmentDataResolverFnQueryGetAppointmentDataResolverFnAppSyncFunction0BA0960B": {
       "Type": "AWS::AppSync::FunctionConfiguration",
       "Properties": {
@@ -482,7 +506,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId"
+              "Fn::GetAtt": [
+                "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -507,7 +534,7 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -577,7 +604,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId"
+              "Fn::GetAtt": [
+                "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -602,7 +632,7 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -733,7 +763,7 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -885,7 +915,7 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -1034,12 +1064,42 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
         "TypeName": "Mutation"
+      }
+    },
+    "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "SubscriptiononCreateAppointmentauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Subscription.onCreateAppointment.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
       }
     },
     "SubscriptiononCreateAppointmentResolver": {
@@ -1053,7 +1113,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId"
+              "Fn::GetAtt": [
+                "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -1071,7 +1134,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -1090,7 +1153,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId"
+              "Fn::GetAtt": [
+                "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -1108,7 +1174,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -1127,7 +1193,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId"
+              "Fn::GetAtt": [
+                "SubscriptiononCreateAppointmentauth0FunctionSubscriptiononCreateAppointmentauth0FunctionAppSyncFunction61B57CBB",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -1145,7 +1214,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -1215,7 +1284,10 @@
         "PipelineConfig": {
           "Functions": [
             {
-              "Ref": "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId"
+              "Fn::GetAtt": [
+                "QuerygetAppointmentauth0FunctionQuerygetAppointmentauth0FunctionAppSyncFunctionCA69404A",
+                "FunctionId"
+              ]
             },
             {
               "Ref": "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
@@ -1240,7 +1312,7 @@
               {
                 "Ref": "AppointmentTable"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },
@@ -1271,7 +1343,7 @@
               {
                 "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
               },
-              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"identityPoolId\", \"us-east-1:7dbf60a0-4a53-42f9-93f1-5c570749ca6d\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
             ]
           ]
         },

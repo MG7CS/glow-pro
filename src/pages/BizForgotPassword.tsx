@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { bizContinueBtn, bizField } from "@/lib/bizUi";
+import { isBizPortalHost } from "@/lib/portalEnv";
 type Step = "request" | "sent";
 
 const BizForgotPassword = () => {
-  const bizBase = window.location.hostname.startsWith("biz.") ? "" : "/biz";
+  const bizBase = isBizPortalHost() ? "" : "/biz";
   const [phone, setPhone] = useState("");
   const [step, setStep] = useState<Step>("request");
   const [isLoading, setIsLoading] = useState(false);

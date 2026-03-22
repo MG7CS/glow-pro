@@ -9,6 +9,7 @@ import { formatAppSyncError } from "@/lib/graphqlErrors";
 import { useToast } from "@/hooks/use-toast";
 import { RECRUITER_REF_STORAGE_KEY } from "@/lib/recruiterRef";
 import { getBizDashboardUrl } from "@/lib/bizUrl";
+import { isRecruiterPortalHost } from "@/lib/portalEnv";
 
 let _client: ReturnType<typeof generateClient> | null = null;
 const getClient = () => (_client ??= generateClient());
@@ -29,7 +30,7 @@ async function createShopFn(form: BizFormData): Promise<string> {
   const { username: cognitoUsername } = await getCurrentUser().catch(() => {
     throw new Error("You must be signed in to create a listing.");
   });
-  const isRecruiter = window.location.hostname.startsWith("recruiter.");
+  const isRecruiter = isRecruiterPortalHost();
   try {
     await fetchAuthSession({ forceRefresh: false });
   } catch {
@@ -194,7 +195,7 @@ export const useCreatebusiness = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["shops"] });
       queryClient.invalidateQueries({ queryKey: ["myshop"] });
-      const recruiterHost = window.location.hostname.startsWith("recruiter.");
+      const recruiterHost = isRecruiterPortalHost();
       window.location.href = recruiterHost
         ? `${window.location.origin}/dashboard`
         : getBizDashboardUrl();

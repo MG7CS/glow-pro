@@ -1,4 +1,4 @@
-import { LayoutDashboard, Pencil, BarChart3, LogOut, Settings } from "lucide-react";
+import { LayoutDashboard, Pencil, BarChart3, LogOut, Settings, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuthState } from "@/hooks/useAuthState";
 import { cn } from "@/lib/utils";
@@ -16,6 +16,7 @@ const navItems: { key: DashboardTab; label: string; icon: React.ReactNode }[] = 
   { key: "overview", label: "Dashboard", icon: <LayoutDashboard className="w-4 h-4" /> },
   { key: "edit", label: "Edit listing", icon: <Pencil className="w-4 h-4" /> },
   { key: "stats", label: "Stats", icon: <BarChart3 className="w-4 h-4" /> },
+  { key: "bookings", label: "Bookings", icon: <Calendar className="w-4 h-4" /> },
   { key: "account", label: "Account", icon: <Settings className="w-4 h-4" /> },
 ];
 

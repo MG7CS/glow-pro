@@ -6,6 +6,16 @@ $util.unauthorized()
 #end
 #if( $util.authType() == "User Pool Authorization" )
   #if( !$isAuthorized )
+    #set( $staticGroupRoles = [{"claim":"cognito:groups","entity":"Admins"}] )
+    #foreach( $groupRole in $staticGroupRoles )
+      #set( $groupsInToken = $util.defaultIfNull($ctx.identity.claims.get($groupRole.claim), []) )
+      #if( $groupsInToken.contains($groupRole.entity) )
+        #set( $isAuthorized = true )
+        #break
+      #end
+    #end
+  #end
+  #if( !$isAuthorized )
     #set( $ownerEntity0 = $util.defaultIfNull($ctx.result.owner, null) )
     #set( $ownerClaim0 = $util.defaultIfNull($ctx.identity.claims.get("sub"), null) )
     #set( $currentClaim1 = $util.defaultIfNull($ctx.identity.claims.get("username"), $util.defaultIfNull($ctx.identity.claims.get("cognito:username"), null)) )
