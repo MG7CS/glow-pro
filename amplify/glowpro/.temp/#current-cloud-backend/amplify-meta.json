@@ -1,0 +1,110 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kigaliconnecthub-glowpro-773ac-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-glowpro-773ac-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-glowpro-773ac-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-kigaliconnecthub-glowpro-773ac-deployment",
+      "UnauthRoleName": "amplify-kigaliconnecthub-glowpro-773ac-unauthRole",
+      "StackName": "amplify-kigaliconnecthub-glowpro-773ac",
+      "StackId": "arn:aws:cloudformation:us-east-1:190035266075:stack/amplify-kigaliconnecthub-glowpro-773ac/0b9ce190-2578-11f1-9c20-0affe713b1d9",
+      "AmplifyAppId": "d4egpw4z3cdia"
+    }
+  },
+  "api": {
+    "kigaliconnecthub": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "kigaliconnecthubfb0de517"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authkigaliconnecthubfb0de517"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "u4dty6uf3fazdlmmidoaar7kua",
+        "GraphQLAPIEndpointOutput": "https://fgq2zl7lvneijmcd3dftafh2sa.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-44xl4xrwqra43nzndzpjmtpk3a"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-kigaliconnecthub-glowpro-773ac-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apikigaliconnecthub"
+      },
+      "lastPushTimeStamp": "2026-03-21T23:18:15.341Z",
+      "lastPushDirHash": "F/Kxv7OPKWfMOweXV/5EeEn9LuY="
+    }
+  },
+  "auth": {
+    "kigaliconnecthubfb0de517": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-kigaliconnecthub-glowpro-773ac-deployment/amplify-cfn-templates/auth/kigaliconnecthubfb0de517-cloudformation-template.json",
+        "logicalId": "authkigaliconnecthubfb0de517"
+      },
+      "lastPushTimeStamp": "2026-03-21T23:18:05.208Z",
+      "output": {
+        "UserPoolId": "us-east-1_1vuxHYyx3",
+        "AppClientIDWeb": "4ujbk3lcs9jmieqpi98du3b10p",
+        "AppClientID": "7e5r87672ag4v653hf7kdp9he4",
+        "IdentityPoolId": "us-east-1:a9800289-a68d-43e3-b869-6e8b62b0c146",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:190035266075:userpool/us-east-1_1vuxHYyx3",
+        "IdentityPoolName": "kigaliconnecthubfb0de517_identitypool_fb0de517__glowpro",
+        "UserPoolName": "kigaliconnecthubfb0de517_userpool_fb0de517"
+      },
+      "lastPushDirHash": "z/22PDr602I0D7RAWqDRN9dga7c="
+    }
+  },
+  "storage": {
+    "businesshotos": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "lastPushDirHash": "q3E0bsG9WZ2wdzxT8vHB4uW4AVw=",
+      "lastPushTimeStamp": "2026-03-21T23:02:39.079Z"
+    }
+  }
+}

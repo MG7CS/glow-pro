@@ -8,6 +8,7 @@ import {
 } from "aws-amplify/auth";
 import { ArrowRight, Copy } from "lucide-react";
 import { toast } from "sonner";
+import { getBizJoinUrl } from "@/lib/bizUrl";
 
 type RecruiterStatus = "pending" | "approved" | "rejected";
 
@@ -38,8 +39,6 @@ const listRecruiterShops = /* GraphQL */ `
 
 let _client: ReturnType<typeof generateClient> | null = null;
 const getClient = () => (_client ??= generateClient());
-
-const BIZ_JOIN_BASE = "https://biz.glowpro.rw/join";
 
 /** Matches biz onboarding `recruitedBy` when owners use /join?ref=CK-… */
 function recruiterDisplayIdFromUsername(u: string): string {
@@ -131,7 +130,7 @@ const RecruiterDashboard = () => {
     : "CK-??????";
 
   const referralLink = username
-    ? `${BIZ_JOIN_BASE}?ref=${encodeURIComponent(recruiterDisplayId)}`
+    ? `${getBizJoinUrl()}?ref=${encodeURIComponent(recruiterDisplayId)}`
     : "";
 
   const copyText = async (text: string, success: string) => {
@@ -221,7 +220,7 @@ const RecruiterDashboard = () => {
         </div>
 
         <a
-          href={`${BIZ_JOIN_BASE}?ref=${encodeURIComponent(recruiterDisplayId)}`}
+          href={`${getBizJoinUrl()}?ref=${encodeURIComponent(recruiterDisplayId)}`}
           className="w-full sm:w-auto mb-6 inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors"
         >
           Add a professional <ArrowRight className="w-4 h-4" />

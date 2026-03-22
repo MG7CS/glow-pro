@@ -5,6 +5,7 @@ import { signIn, signOut } from "aws-amplify/auth";
 import { cn } from "@/lib/utils";
 import { bizContinueBtn, bizField } from "@/lib/bizUi";
 import { checkBizOwnerShopAccess } from "@/lib/bizShopApproval";
+import { getBizDashboardUrl } from "@/lib/bizUrl";
 
 /** Phone → E.164 (+250…); email unchanged (trimmed). */
 const normalizePhone = (input: string) => {
@@ -52,7 +53,7 @@ const BizLogin = () => {
       if (!isBizSubdomain) {
         localStorage.setItem("biz_session", identifier);
         window.dispatchEvent(new Event("biz_auth_change"));
-        window.location.href = "https://biz.glowpro.rw/dashboard";
+        window.location.href = getBizDashboardUrl();
         return;
       }
 
@@ -69,7 +70,7 @@ const BizLogin = () => {
       if (outcome === "approved") {
         localStorage.setItem("biz_session", identifier);
         window.dispatchEvent(new Event("biz_auth_change"));
-        window.location.href = "https://biz.glowpro.rw/dashboard";
+        window.location.href = `${window.location.origin}/dashboard`;
         return;
       }
 

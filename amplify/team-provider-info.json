@@ -46,5 +46,29 @@
         "businesshotos": {}
       }
     }
+  },
+  "glow": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kigaliconnecthub-glow-5993e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-glow-5993e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190035266075:role/amplify-kigaliconnecthub-glow-5993e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-kigaliconnecthub-glow-5993e-deployment",
+      "UnauthRoleName": "amplify-kigaliconnecthub-glow-5993e-unauthRole",
+      "StackName": "amplify-kigaliconnecthub-glow-5993e",
+      "StackId": "arn:aws:cloudformation:us-east-1:190035266075:stack/amplify-kigaliconnecthub-glow-5993e/04e6ab70-25f4-11f1-8b8b-0e36179fac3f",
+      "AmplifyAppId": "d4egpw4z3cdia"
+    },
+    "categories": {
+      "auth": {
+        "kigaliconnecthubfb0de517": {}
+      },
+      "api": {
+        "kigaliconnecthub": {}
+      },
+      "storage": {
+        "businesshotos": {}
+      }
+    }
   }
 }

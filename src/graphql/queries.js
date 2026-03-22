@@ -159,11 +159,32 @@ export const getShop = /* GraphQL */ `
       recruitedBy
       listedSince
       replyTime
+      professionalType
+      isIndependent
+      services
+      priceRange
+      bookingEnabled
+      depositRequired
+      depositAmount
+      yearsExperience
+      specialties
+      languages
+      portfolioPhotos
+      servesAtHome
+      servesInSalon
       reviews {
         nextToken
         __typename
       }
       hours {
+        nextToken
+        __typename
+      }
+      appointments {
+        nextToken
+        __typename
+      }
+      vouches {
         nextToken
         __typename
       }
@@ -204,6 +225,19 @@ export const listShops = /* GraphQL */ `
         recruitedBy
         listedSince
         replyTime
+        professionalType
+        isIndependent
+        services
+        priceRange
+        bookingEnabled
+        depositRequired
+        depositAmount
+        yearsExperience
+        specialties
+        languages
+        portfolioPhotos
+        servesAtHome
+        servesInSalon
         createdAt
         updatedAt
         owner
@@ -272,6 +306,175 @@ export const businessHoursByShopIDAndId = /* GraphQL */ `
         shopID
         day
         time
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getAppointment = /* GraphQL */ `
+  query GetAppointment($id: ID!) {
+    getAppointment(id: $id) {
+      id
+      shopID
+      customerName
+      customerPhone
+      service
+      date
+      time
+      status
+      notes
+      depositPaid
+      totalPrice
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const listAppointments = /* GraphQL */ `
+  query ListAppointments(
+    $filter: ModelAppointmentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAppointments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        shopID
+        customerName
+        customerPhone
+        service
+        date
+        time
+        status
+        notes
+        depositPaid
+        totalPrice
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const appointmentsByShopIDAndId = /* GraphQL */ `
+  query AppointmentsByShopIDAndId(
+    $shopID: ID!
+    $id: ModelIDKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelAppointmentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    appointmentsByShopIDAndId(
+      shopID: $shopID
+      id: $id
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        shopID
+        customerName
+        customerPhone
+        service
+        date
+        time
+        status
+        notes
+        depositPaid
+        totalPrice
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const getVouch = /* GraphQL */ `
+  query GetVouch($id: ID!) {
+    getVouch(id: $id) {
+      id
+      shopID
+      authorName
+      authorPhone
+      rating
+      comment
+      category
+      verified
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const listVouches = /* GraphQL */ `
+  query ListVouches(
+    $filter: ModelVouchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listVouches(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        shopID
+        authorName
+        authorPhone
+        rating
+        comment
+        category
+        verified
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+  }
+`;
+export const vouchesByShopIDAndId = /* GraphQL */ `
+  query VouchesByShopIDAndId(
+    $shopID: ID!
+    $id: ModelIDKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelVouchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    vouchesByShopIDAndId(
+      shopID: $shopID
+      id: $id
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        shopID
+        authorName
+        authorPhone
+        rating
+        comment
+        category
+        verified
         createdAt
         updatedAt
         owner

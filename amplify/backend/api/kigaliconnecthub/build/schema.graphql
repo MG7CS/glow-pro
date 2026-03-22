@@ -21,8 +21,23 @@ type Shop @aws_cognito_user_pools @aws_api_key {
   recruitedBy: String
   listedSince: String
   replyTime: String
+  professionalType: String
+  isIndependent: Boolean
+  services: [String]
+  priceRange: String
+  bookingEnabled: Boolean
+  depositRequired: Boolean
+  depositAmount: Float
+  yearsExperience: Int
+  specialties: [String]
+  languages: [String]
+  portfolioPhotos: [String]
+  servesAtHome: Boolean
+  servesInSalon: Boolean
   reviews(id: ModelIDKeyConditionInput, filter: ModelReviewFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelReviewConnection
   hours(id: ModelIDKeyConditionInput, filter: ModelBusinessHourFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelBusinessHourConnection
+  appointments(id: ModelIDKeyConditionInput, filter: ModelAppointmentFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelAppointmentConnection
+  vouches(id: ModelIDKeyConditionInput, filter: ModelVouchFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelVouchConnection
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   owner: String
@@ -55,6 +70,37 @@ type ShopEvent {
   eventType: String!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+}
+
+type Appointment @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  shopID: ID!
+  customerName: String!
+  customerPhone: String!
+  service: String!
+  date: String!
+  time: String!
+  status: String!
+  notes: String
+  depositPaid: Boolean
+  totalPrice: Float
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Vouch @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  shopID: ID!
+  authorName: String!
+  authorPhone: String
+  rating: Int!
+  comment: String
+  category: String
+  verified: Boolean
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
 }
 
 input ModelStringInput {
@@ -235,6 +281,19 @@ input ModelShopFilterInput {
   recruitedBy: ModelStringInput
   listedSince: ModelStringInput
   replyTime: ModelStringInput
+  professionalType: ModelStringInput
+  isIndependent: ModelBooleanInput
+  services: ModelStringInput
+  priceRange: ModelStringInput
+  bookingEnabled: ModelBooleanInput
+  depositRequired: ModelBooleanInput
+  depositAmount: ModelFloatInput
+  yearsExperience: ModelIntInput
+  specialties: ModelStringInput
+  languages: ModelStringInput
+  portfolioPhotos: ModelStringInput
+  servesAtHome: ModelBooleanInput
+  servesInSalon: ModelBooleanInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelShopFilterInput]
@@ -255,6 +314,12 @@ type Query {
   getBusinessHour(id: ID!): BusinessHour @aws_api_key @aws_cognito_user_pools
   listBusinessHours(filter: ModelBusinessHourFilterInput, limit: Int, nextToken: String): ModelBusinessHourConnection @aws_api_key @aws_cognito_user_pools
   businessHoursByShopIDAndId(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelBusinessHourFilterInput, limit: Int, nextToken: String): ModelBusinessHourConnection @aws_api_key @aws_cognito_user_pools
+  getAppointment(id: ID!): Appointment @aws_api_key @aws_cognito_user_pools
+  listAppointments(filter: ModelAppointmentFilterInput, limit: Int, nextToken: String): ModelAppointmentConnection @aws_api_key @aws_cognito_user_pools
+  appointmentsByShopIDAndId(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelAppointmentFilterInput, limit: Int, nextToken: String): ModelAppointmentConnection @aws_api_key @aws_cognito_user_pools
+  getVouch(id: ID!): Vouch @aws_api_key @aws_cognito_user_pools
+  listVouches(filter: ModelVouchFilterInput, limit: Int, nextToken: String): ModelVouchConnection @aws_api_key @aws_cognito_user_pools
+  vouchesByShopIDAndId(shopID: ID!, id: ModelIDKeyConditionInput, sortDirection: ModelSortDirection, filter: ModelVouchFilterInput, limit: Int, nextToken: String): ModelVouchConnection @aws_api_key @aws_cognito_user_pools
 }
 
 input ModelShopConditionInput {
@@ -279,6 +344,19 @@ input ModelShopConditionInput {
   recruitedBy: ModelStringInput
   listedSince: ModelStringInput
   replyTime: ModelStringInput
+  professionalType: ModelStringInput
+  isIndependent: ModelBooleanInput
+  services: ModelStringInput
+  priceRange: ModelStringInput
+  bookingEnabled: ModelBooleanInput
+  depositRequired: ModelBooleanInput
+  depositAmount: ModelFloatInput
+  yearsExperience: ModelIntInput
+  specialties: ModelStringInput
+  languages: ModelStringInput
+  portfolioPhotos: ModelStringInput
+  servesAtHome: ModelBooleanInput
+  servesInSalon: ModelBooleanInput
   and: [ModelShopConditionInput]
   or: [ModelShopConditionInput]
   not: ModelShopConditionInput
@@ -310,6 +388,19 @@ input CreateShopInput {
   recruitedBy: String
   listedSince: String
   replyTime: String
+  professionalType: String
+  isIndependent: Boolean
+  services: [String]
+  priceRange: String
+  bookingEnabled: Boolean
+  depositRequired: Boolean
+  depositAmount: Float
+  yearsExperience: Int
+  specialties: [String]
+  languages: [String]
+  portfolioPhotos: [String]
+  servesAtHome: Boolean
+  servesInSalon: Boolean
 }
 
 input UpdateShopInput {
@@ -335,6 +426,19 @@ input UpdateShopInput {
   recruitedBy: String
   listedSince: String
   replyTime: String
+  professionalType: String
+  isIndependent: Boolean
+  services: [String]
+  priceRange: String
+  bookingEnabled: Boolean
+  depositRequired: Boolean
+  depositAmount: Float
+  yearsExperience: Int
+  specialties: [String]
+  languages: [String]
+  portfolioPhotos: [String]
+  servesAtHome: Boolean
+  servesInSalon: Boolean
 }
 
 input DeleteShopInput {
@@ -354,6 +458,12 @@ type Mutation {
   createBusinessHour(input: CreateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
   updateBusinessHour(input: UpdateBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
   deleteBusinessHour(input: DeleteBusinessHourInput!, condition: ModelBusinessHourConditionInput): BusinessHour @aws_cognito_user_pools
+  createAppointment(input: CreateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
+  updateAppointment(input: UpdateAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
+  deleteAppointment(input: DeleteAppointmentInput!, condition: ModelAppointmentConditionInput): Appointment @aws_cognito_user_pools
+  createVouch(input: CreateVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
+  updateVouch(input: UpdateVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
+  deleteVouch(input: DeleteVouchInput!, condition: ModelVouchConditionInput): Vouch @aws_cognito_user_pools
 }
 
 input ModelSubscriptionShopFilterInput {
@@ -379,6 +489,19 @@ input ModelSubscriptionShopFilterInput {
   recruitedBy: ModelSubscriptionStringInput
   listedSince: ModelSubscriptionStringInput
   replyTime: ModelSubscriptionStringInput
+  professionalType: ModelSubscriptionStringInput
+  isIndependent: ModelSubscriptionBooleanInput
+  services: ModelSubscriptionStringInput
+  priceRange: ModelSubscriptionStringInput
+  bookingEnabled: ModelSubscriptionBooleanInput
+  depositRequired: ModelSubscriptionBooleanInput
+  depositAmount: ModelSubscriptionFloatInput
+  yearsExperience: ModelSubscriptionIntInput
+  specialties: ModelSubscriptionStringInput
+  languages: ModelSubscriptionStringInput
+  portfolioPhotos: ModelSubscriptionStringInput
+  servesAtHome: ModelSubscriptionBooleanInput
+  servesInSalon: ModelSubscriptionBooleanInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionShopFilterInput]
@@ -399,6 +522,12 @@ type Subscription {
   onCreateBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["createBusinessHour"]) @aws_api_key @aws_cognito_user_pools
   onUpdateBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["updateBusinessHour"]) @aws_api_key @aws_cognito_user_pools
   onDeleteBusinessHour(filter: ModelSubscriptionBusinessHourFilterInput, owner: String): BusinessHour @aws_subscribe(mutations: ["deleteBusinessHour"]) @aws_api_key @aws_cognito_user_pools
+  onCreateAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["createAppointment"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["updateAppointment"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteAppointment(filter: ModelSubscriptionAppointmentFilterInput, owner: String): Appointment @aws_subscribe(mutations: ["deleteAppointment"]) @aws_api_key @aws_cognito_user_pools
+  onCreateVouch(filter: ModelSubscriptionVouchFilterInput, owner: String): Vouch @aws_subscribe(mutations: ["createVouch"]) @aws_api_key @aws_cognito_user_pools
+  onUpdateVouch(filter: ModelSubscriptionVouchFilterInput, owner: String): Vouch @aws_subscribe(mutations: ["updateVouch"]) @aws_api_key @aws_cognito_user_pools
+  onDeleteVouch(filter: ModelSubscriptionVouchFilterInput, owner: String): Vouch @aws_subscribe(mutations: ["deleteVouch"]) @aws_api_key @aws_cognito_user_pools
 }
 
 type ModelReviewConnection @aws_cognito_user_pools @aws_api_key {
@@ -578,6 +707,181 @@ input ModelSubscriptionShopEventFilterInput {
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionShopEventFilterInput]
   or: [ModelSubscriptionShopEventFilterInput]
+}
+
+type ModelAppointmentConnection @aws_cognito_user_pools @aws_api_key {
+  items: [Appointment]!
+  nextToken: String
+}
+
+input ModelAppointmentFilterInput {
+  id: ModelIDInput
+  shopID: ModelIDInput
+  customerName: ModelStringInput
+  customerPhone: ModelStringInput
+  service: ModelStringInput
+  date: ModelStringInput
+  time: ModelStringInput
+  status: ModelStringInput
+  notes: ModelStringInput
+  depositPaid: ModelBooleanInput
+  totalPrice: ModelFloatInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAppointmentFilterInput]
+  or: [ModelAppointmentFilterInput]
+  not: ModelAppointmentFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAppointmentConditionInput {
+  shopID: ModelIDInput
+  customerName: ModelStringInput
+  customerPhone: ModelStringInput
+  service: ModelStringInput
+  date: ModelStringInput
+  time: ModelStringInput
+  status: ModelStringInput
+  notes: ModelStringInput
+  depositPaid: ModelBooleanInput
+  totalPrice: ModelFloatInput
+  and: [ModelAppointmentConditionInput]
+  or: [ModelAppointmentConditionInput]
+  not: ModelAppointmentConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAppointmentInput {
+  id: ID
+  shopID: ID!
+  customerName: String!
+  customerPhone: String!
+  service: String!
+  date: String!
+  time: String!
+  status: String!
+  notes: String
+  depositPaid: Boolean
+  totalPrice: Float
+}
+
+input UpdateAppointmentInput {
+  id: ID!
+  shopID: ID
+  customerName: String
+  customerPhone: String
+  service: String
+  date: String
+  time: String
+  status: String
+  notes: String
+  depositPaid: Boolean
+  totalPrice: Float
+}
+
+input DeleteAppointmentInput {
+  id: ID!
+}
+
+input ModelSubscriptionAppointmentFilterInput {
+  id: ModelSubscriptionIDInput
+  shopID: ModelSubscriptionIDInput
+  customerName: ModelSubscriptionStringInput
+  customerPhone: ModelSubscriptionStringInput
+  service: ModelSubscriptionStringInput
+  date: ModelSubscriptionStringInput
+  time: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  depositPaid: ModelSubscriptionBooleanInput
+  totalPrice: ModelSubscriptionFloatInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAppointmentFilterInput]
+  or: [ModelSubscriptionAppointmentFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelVouchConnection @aws_cognito_user_pools @aws_api_key {
+  items: [Vouch]!
+  nextToken: String
+}
+
+input ModelVouchFilterInput {
+  id: ModelIDInput
+  shopID: ModelIDInput
+  authorName: ModelStringInput
+  authorPhone: ModelStringInput
+  rating: ModelIntInput
+  comment: ModelStringInput
+  category: ModelStringInput
+  verified: ModelBooleanInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelVouchFilterInput]
+  or: [ModelVouchFilterInput]
+  not: ModelVouchFilterInput
+  owner: ModelStringInput
+}
+
+input ModelVouchConditionInput {
+  shopID: ModelIDInput
+  authorName: ModelStringInput
+  authorPhone: ModelStringInput
+  rating: ModelIntInput
+  comment: ModelStringInput
+  category: ModelStringInput
+  verified: ModelBooleanInput
+  and: [ModelVouchConditionInput]
+  or: [ModelVouchConditionInput]
+  not: ModelVouchConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateVouchInput {
+  id: ID
+  shopID: ID!
+  authorName: String!
+  authorPhone: String
+  rating: Int!
+  comment: String
+  category: String
+  verified: Boolean
+}
+
+input UpdateVouchInput {
+  id: ID!
+  shopID: ID
+  authorName: String
+  authorPhone: String
+  rating: Int
+  comment: String
+  category: String
+  verified: Boolean
+}
+
+input DeleteVouchInput {
+  id: ID!
+}
+
+input ModelSubscriptionVouchFilterInput {
+  id: ModelSubscriptionIDInput
+  shopID: ModelSubscriptionIDInput
+  authorName: ModelSubscriptionStringInput
+  authorPhone: ModelSubscriptionStringInput
+  rating: ModelSubscriptionIntInput
+  comment: ModelSubscriptionStringInput
+  category: ModelSubscriptionStringInput
+  verified: ModelSubscriptionBooleanInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionVouchFilterInput]
+  or: [ModelSubscriptionVouchFilterInput]
+  owner: ModelStringInput
 }
 
 input ModelIDKeyConditionInput {

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getBizUrl } from "@/lib/bizUrl";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://biz.glowpro.rw"
+            href={getBizUrl()}
             className="text-sm font-semibold text-foreground/80 hover:text-foreground hover:bg-muted px-4 py-2 rounded-full transition-colors whitespace-nowrap"
           >
             Join as a professional

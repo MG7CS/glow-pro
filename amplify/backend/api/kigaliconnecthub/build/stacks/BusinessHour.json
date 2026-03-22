@@ -1416,6 +1416,22 @@
         }
       }
     },
+    "transformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "QuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunction59E2C83B",
+          "FunctionId"
+        ]
+      }
+    },
+    "transformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId": {
+      "Value": {
+        "Fn::GetAtt": [
+          "SubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunctionD2C8449A",
+          "FunctionId"
+        ]
+      }
+    },
     "transformerrootstackBusinessHourBusinessHourDataSource5F4B7A42Name": {
       "Value": {
         "Fn::GetAtt": [

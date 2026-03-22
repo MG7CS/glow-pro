@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getBizUrl } from "@/lib/bizUrl";
 
 const Footer = () => {
   return (
@@ -39,7 +40,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://biz.glowpro.rw"
+                  href={getBizUrl()}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Join as a professional

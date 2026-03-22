@@ -8,6 +8,7 @@ import { uploadPhoto, uploadGallery } from "@/lib/uploadPhoto";
 import { formatAppSyncError } from "@/lib/graphqlErrors";
 import { useToast } from "@/hooks/use-toast";
 import { RECRUITER_REF_STORAGE_KEY } from "@/lib/recruiterRef";
+import { getBizDashboardUrl } from "@/lib/bizUrl";
 
 let _client: ReturnType<typeof generateClient> | null = null;
 const getClient = () => (_client ??= generateClient());
@@ -196,7 +197,7 @@ export const useCreatebusiness = () => {
       const recruiterHost = window.location.hostname.startsWith("recruiter.");
       window.location.href = recruiterHost
         ? `${window.location.origin}/dashboard`
-        : "https://biz.glowpro.rw/dashboard";
+        : getBizDashboardUrl();
     },
     onError: (err) => {
       console.error("Failed to create shop:", err);

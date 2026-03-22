@@ -237,6 +237,184 @@
         "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
         "TypeName": "Shop"
       }
+    },
+    "ShopAppointmentsDataResolverFnShopAppointmentsDataResolverFnAppSyncFunctionF495C536": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentDataSource0C2DCDC3Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "ShopAppointmentsDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.appointments.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.appointments.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "ShopappointmentsResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "appointments",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "Shophoursauth0FunctionShophoursauth0FunctionAppSyncFunctionBC7B7432",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "ShopAppointmentsDataResolverFnShopAppointmentsDataResolverFnAppSyncFunctionF495C536",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Shop\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"appointments\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentTable0F838664Ref"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Shop"
+      }
+    },
+    "ShopVouchesDataResolverFnShopVouchesDataResolverFnAppSyncFunction4D92313E": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchDataSourceB2D940F9Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "ShopVouchesDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.vouches.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Shop.vouches.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "ShopvouchesResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "vouches",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "Shophoursauth0FunctionShophoursauth0FunctionAppSyncFunctionBC7B7432",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "ShopVouchesDataResolverFnShopVouchesDataResolverFnAppSyncFunction4D92313E",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Shop\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"vouches\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchTable4A5E12ABRef"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+        "TypeName": "Shop"
+      }
     }
   },
   "Parameters": {
@@ -262,6 +440,18 @@
       "Type": "String"
     },
     "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourBusinessHourTableDA22B697Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentDataSource0C2DCDC3Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentTable0F838664Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchDataSourceB2D940F9Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchTable4A5E12ABRef": {
       "Type": "String"
     }
   }

@@ -116,11 +116,32 @@ export const onCreateShop = /* GraphQL */ `
       recruitedBy
       listedSince
       replyTime
+      professionalType
+      isIndependent
+      services
+      priceRange
+      bookingEnabled
+      depositRequired
+      depositAmount
+      yearsExperience
+      specialties
+      languages
+      portfolioPhotos
+      servesAtHome
+      servesInSalon
       reviews {
         nextToken
         __typename
       }
       hours {
+        nextToken
+        __typename
+      }
+      appointments {
+        nextToken
+        __typename
+      }
+      vouches {
         nextToken
         __typename
       }
@@ -159,11 +180,32 @@ export const onUpdateShop = /* GraphQL */ `
       recruitedBy
       listedSince
       replyTime
+      professionalType
+      isIndependent
+      services
+      priceRange
+      bookingEnabled
+      depositRequired
+      depositAmount
+      yearsExperience
+      specialties
+      languages
+      portfolioPhotos
+      servesAtHome
+      servesInSalon
       reviews {
         nextToken
         __typename
       }
       hours {
+        nextToken
+        __typename
+      }
+      appointments {
+        nextToken
+        __typename
+      }
+      vouches {
         nextToken
         __typename
       }
@@ -202,11 +244,32 @@ export const onDeleteShop = /* GraphQL */ `
       recruitedBy
       listedSince
       replyTime
+      professionalType
+      isIndependent
+      services
+      priceRange
+      bookingEnabled
+      depositRequired
+      depositAmount
+      yearsExperience
+      specialties
+      languages
+      portfolioPhotos
+      servesAtHome
+      servesInSalon
       reviews {
         nextToken
         __typename
       }
       hours {
+        nextToken
+        __typename
+      }
+      appointments {
+        nextToken
+        __typename
+      }
+      vouches {
         nextToken
         __typename
       }
@@ -261,6 +324,141 @@ export const onDeleteBusinessHour = /* GraphQL */ `
       shopID
       day
       time
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onCreateAppointment = /* GraphQL */ `
+  subscription OnCreateAppointment(
+    $filter: ModelSubscriptionAppointmentFilterInput
+    $owner: String
+  ) {
+    onCreateAppointment(filter: $filter, owner: $owner) {
+      id
+      shopID
+      customerName
+      customerPhone
+      service
+      date
+      time
+      status
+      notes
+      depositPaid
+      totalPrice
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateAppointment = /* GraphQL */ `
+  subscription OnUpdateAppointment(
+    $filter: ModelSubscriptionAppointmentFilterInput
+    $owner: String
+  ) {
+    onUpdateAppointment(filter: $filter, owner: $owner) {
+      id
+      shopID
+      customerName
+      customerPhone
+      service
+      date
+      time
+      status
+      notes
+      depositPaid
+      totalPrice
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteAppointment = /* GraphQL */ `
+  subscription OnDeleteAppointment(
+    $filter: ModelSubscriptionAppointmentFilterInput
+    $owner: String
+  ) {
+    onDeleteAppointment(filter: $filter, owner: $owner) {
+      id
+      shopID
+      customerName
+      customerPhone
+      service
+      date
+      time
+      status
+      notes
+      depositPaid
+      totalPrice
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onCreateVouch = /* GraphQL */ `
+  subscription OnCreateVouch(
+    $filter: ModelSubscriptionVouchFilterInput
+    $owner: String
+  ) {
+    onCreateVouch(filter: $filter, owner: $owner) {
+      id
+      shopID
+      authorName
+      authorPhone
+      rating
+      comment
+      category
+      verified
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateVouch = /* GraphQL */ `
+  subscription OnUpdateVouch(
+    $filter: ModelSubscriptionVouchFilterInput
+    $owner: String
+  ) {
+    onUpdateVouch(filter: $filter, owner: $owner) {
+      id
+      shopID
+      authorName
+      authorPhone
+      rating
+      comment
+      category
+      verified
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteVouch = /* GraphQL */ `
+  subscription OnDeleteVouch(
+    $filter: ModelSubscriptionVouchFilterInput
+    $owner: String
+  ) {
+    onDeleteVouch(filter: $filter, owner: $owner) {
+      id
+      shopID
+      authorName
+      authorPhone
+      rating
+      comment
+      category
+      verified
       createdAt
       updatedAt
       owner

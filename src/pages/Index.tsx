@@ -5,6 +5,7 @@ import CategoryRibbon from "@/components/CategoryRibbon";
 import BusinessSection from "@/components/BusinessSection";
 import { usebusinesss } from "@/hooks/useShops";
 import { cn } from "@/lib/utils";
+import { getBizUrl } from "@/lib/bizUrl";
 import heroCustomerPortrait from "@/assets/images/hero-customer-portrait.jpg";
 import heroOwnerPortrait from "@/assets/images/hero-owner-portrait.jpg";
 import heroSalonPortrait from "@/assets/images/hero-salon-portrait.jpg";
@@ -184,7 +185,7 @@ function IndexMobileDrawer({
             </nav>
             <div className="pointer-events-auto px-6 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4">
               <a
-                href="https://biz.glowpro.rw"
+                href={getBizUrl()}
                 className="mobile-nav-link-stagger mx-auto flex w-full max-w-xs items-center justify-center rounded-full bg-primary py-4 text-center text-lg font-semibold text-white transition-colors hover:bg-primary/90"
                 style={{ animationDelay: "0.35s" }}
                 onClick={onClose}
@@ -295,7 +296,7 @@ const Index = () => {
                 <Menu className="h-6 w-6" strokeWidth={2} />
               </button>
               <a
-                href="https://biz.glowpro.rw"
+                href={getBizUrl()}
                 className="hidden md:inline-flex shrink-0 text-sm font-semibold text-white bg-[#0D1117] px-3.5 py-2 rounded-full hover:bg-[#0D1117]/90 transition-colors whitespace-nowrap"
               >
                 Join as a professional
@@ -416,7 +417,7 @@ const Index = () => {
               <Menu className="h-6 w-6" strokeWidth={2} />
             </button>
             <a
-              href="https://biz.glowpro.rw"
+              href={getBizUrl()}
               className={cn(
                 "hidden shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-semibold transition-all duration-300 ease-in-out md:inline-flex",
                 navScrolled
@@ -618,7 +619,7 @@ const Index = () => {
                 Create your profile on GlowPro for free. Takes 5 minutes. No technical skills needed.
               </p>
               <a
-                href="https://biz.glowpro.rw"
+                href={getBizUrl()}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
               >
                 Join free →
@@ -658,7 +659,7 @@ const Index = () => {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
-                <a href="https://biz.glowpro.rw" className="text-white/75 hover:text-white">
+                <a href={getBizUrl()} className="text-white/75 hover:text-white">
                   For Professionals
                 </a>
                 <span className="text-white/30" aria-hidden>
@@ -710,7 +711,7 @@ const EmptyState = ({
             Show all professionals
           </button>
           <a
-            href="https://biz.glowpro.rw"
+            href={getBizUrl()}
             className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
           >
             <Store className="w-4 h-4" />
@@ -747,7 +748,7 @@ const EmptyState = ({
         GlowPro is just getting started. Create your profile and reach thousands of clients in Rwanda.
       </p>
       <a
-        href="https://biz.glowpro.rw"
+        href={getBizUrl()}
         className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-semibold"
       >
         <Store className="w-4 h-4" />

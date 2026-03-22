@@ -127,7 +127,7 @@
             "ApiId"
           ]
         },
-        "Expires": 1774738582
+        "Expires": 1774791398
       }
     },
     "GraphQLAPINONEDS95A13CF0": {
@@ -514,6 +514,230 @@
         "GraphQLAPITransformerSchema3CB2AE18"
       ]
     },
+    "Appointment": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "Parameters": {
+          "DynamoDBModelTableReadIOPS": {
+            "Ref": "DynamoDBModelTableReadIOPS"
+          },
+          "DynamoDBModelTableWriteIOPS": {
+            "Ref": "DynamoDBModelTableWriteIOPS"
+          },
+          "DynamoDBBillingMode": {
+            "Ref": "DynamoDBBillingMode"
+          },
+          "DynamoDBEnablePointInTimeRecovery": {
+            "Ref": "DynamoDBEnablePointInTimeRecovery"
+          },
+          "DynamoDBEnableServerSideEncryption": {
+            "Ref": "DynamoDBEnableServerSideEncryption"
+          },
+          "referencetotransformerrootstackenv10C5A902Ref": {
+            "Ref": "env"
+          },
+          "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+            "Fn::GetAtt": [
+              "GraphQLAPI",
+              "ApiId"
+            ]
+          },
+          "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+            "Ref": "S3DeploymentBucket"
+          },
+          "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+            "Ref": "S3DeploymentRootKey"
+          },
+          "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId": {
+            "Fn::GetAtt": [
+              "BusinessHour",
+              "Outputs.transformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+            "Fn::GetAtt": [
+              "GraphQLAPINONEDS95A13CF0",
+              "Name"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationcreateShopinit0FunctionMutationcreateShopinit0FunctionAppSyncFunction0AAABB9FFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopMutationcreateShopinit0FunctionMutationcreateShopinit0FunctionAppSyncFunction0AAABB9FFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationupdateShopinit0FunctionMutationupdateShopinit0FunctionAppSyncFunction184BEA30FunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopMutationupdateShopinit0FunctionMutationupdateShopinit0FunctionAppSyncFunction184BEA30FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId": {
+            "Fn::GetAtt": [
+              "BusinessHour",
+              "Outputs.transformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopSubscriptionOnCreateShopDataResolverFnSubscriptionOnCreateShopDataResolverFnAppSyncFunctionDFC345B8FunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopSubscriptionOnCreateShopDataResolverFnSubscriptionOnCreateShopDataResolverFnAppSyncFunctionDFC345B8FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopShopOwnerDataResolverFnShopOwnerDataResolverFnAppSyncFunctionC9F7A6BEFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopShopOwnerDataResolverFnShopOwnerDataResolverFnAppSyncFunctionC9F7A6BEFunctionId"
+            ]
+          }
+        },
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "AWS::URLSuffix"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentBucket"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentRootKey"
+              },
+              "/stacks/Appointment.json"
+            ]
+          ]
+        }
+      },
+      "DependsOn": [
+        "GraphQLAPITransformerSchema3CB2AE18"
+      ]
+    },
+    "Vouch": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "Parameters": {
+          "DynamoDBModelTableReadIOPS": {
+            "Ref": "DynamoDBModelTableReadIOPS"
+          },
+          "DynamoDBModelTableWriteIOPS": {
+            "Ref": "DynamoDBModelTableWriteIOPS"
+          },
+          "DynamoDBBillingMode": {
+            "Ref": "DynamoDBBillingMode"
+          },
+          "DynamoDBEnablePointInTimeRecovery": {
+            "Ref": "DynamoDBEnablePointInTimeRecovery"
+          },
+          "DynamoDBEnableServerSideEncryption": {
+            "Ref": "DynamoDBEnableServerSideEncryption"
+          },
+          "referencetotransformerrootstackenv10C5A902Ref": {
+            "Ref": "env"
+          },
+          "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+            "Fn::GetAtt": [
+              "GraphQLAPI",
+              "ApiId"
+            ]
+          },
+          "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+            "Ref": "S3DeploymentBucket"
+          },
+          "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+            "Ref": "S3DeploymentRootKey"
+          },
+          "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId": {
+            "Fn::GetAtt": [
+              "BusinessHour",
+              "Outputs.transformerrootstackBusinessHourQuerygetBusinessHourauth0FunctionQuerygetBusinessHourauth0FunctionAppSyncFunctionCCBF3CACFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopQuerygetShoppostAuth0FunctionQuerygetShoppostAuth0FunctionAppSyncFunction6FAA0A8AFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+            "Fn::GetAtt": [
+              "GraphQLAPINONEDS95A13CF0",
+              "Name"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationcreateShopinit0FunctionMutationcreateShopinit0FunctionAppSyncFunction0AAABB9FFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopMutationcreateShopinit0FunctionMutationcreateShopinit0FunctionAppSyncFunction0AAABB9FFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopMutationupdateShopinit0FunctionMutationupdateShopinit0FunctionAppSyncFunction184BEA30FunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopMutationupdateShopinit0FunctionMutationupdateShopinit0FunctionAppSyncFunction184BEA30FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackBusinessHourNestedStackBusinessHourNestedStackResource4C0B74D9OutputstransformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId": {
+            "Fn::GetAtt": [
+              "BusinessHour",
+              "Outputs.transformerrootstackBusinessHourSubscriptiononCreateBusinessHourauth0FunctionSubscriptiononCreateBusinessHourauth0FunctionAppSyncFunction739C2528FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopSubscriptionOnCreateShopDataResolverFnSubscriptionOnCreateShopDataResolverFnAppSyncFunctionDFC345B8FunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopSubscriptionOnCreateShopDataResolverFnSubscriptionOnCreateShopDataResolverFnAppSyncFunctionDFC345B8FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackShopNestedStackShopNestedStackResource86971CFCOutputstransformerrootstackShopShopOwnerDataResolverFnShopOwnerDataResolverFnAppSyncFunctionC9F7A6BEFunctionId": {
+            "Fn::GetAtt": [
+              "Shop",
+              "Outputs.transformerrootstackShopShopOwnerDataResolverFnShopOwnerDataResolverFnAppSyncFunctionC9F7A6BEFunctionId"
+            ]
+          }
+        },
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "AWS::URLSuffix"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentBucket"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentRootKey"
+              },
+              "/stacks/Vouch.json"
+            ]
+          ]
+        }
+      },
+      "DependsOn": [
+        "GraphQLAPITransformerSchema3CB2AE18"
+      ]
+    },
     "ConnectionStack": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -559,6 +783,30 @@
               "BusinessHour",
               "Outputs.transformerrootstackBusinessHourBusinessHourTableDA22B697Ref"
             ]
+          },
+          "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentDataSource0C2DCDC3Name": {
+            "Fn::GetAtt": [
+              "Appointment",
+              "Outputs.transformerrootstackAppointmentAppointmentDataSource0C2DCDC3Name"
+            ]
+          },
+          "referencetotransformerrootstackAppointmentNestedStackAppointmentNestedStackResource66D0B543OutputstransformerrootstackAppointmentAppointmentTable0F838664Ref": {
+            "Fn::GetAtt": [
+              "Appointment",
+              "Outputs.transformerrootstackAppointmentAppointmentTable0F838664Ref"
+            ]
+          },
+          "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchDataSourceB2D940F9Name": {
+            "Fn::GetAtt": [
+              "Vouch",
+              "Outputs.transformerrootstackVouchVouchDataSourceB2D940F9Name"
+            ]
+          },
+          "referencetotransformerrootstackVouchNestedStackVouchNestedStackResourceB2EA6A73OutputstransformerrootstackVouchVouchTable4A5E12ABRef": {
+            "Fn::GetAtt": [
+              "Vouch",
+              "Outputs.transformerrootstackVouchVouchTable4A5E12ABRef"
+            ]
           }
         },
         "TemplateURL": {
@@ -587,9 +835,11 @@
         }
       },
       "DependsOn": [
+        "Appointment",
         "BusinessHour",
         "GraphQLAPITransformerSchema3CB2AE18",
-        "Review"
+        "Review",
+        "Vouch"
       ]
     },
     "CustomResourcesjson": {
@@ -639,6 +889,8 @@
         "Review",
         "BusinessHour",
         "ShopEvent",
+        "Appointment",
+        "Vouch",
         "ConnectionStack"
       ]
     }
