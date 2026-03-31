@@ -2,7 +2,7 @@
 
 GlowPro is a premium beauty and salon booking platform for Rwanda. Find and book salons and stylists, discover services, and onboard your salon with a guided multi-step wizard.
 
-**Working domain (placeholder):** https://glowpro.rw
+**Working domain (placeholder):**
 
 ## Tech Stack
 
